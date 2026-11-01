@@ -47,7 +47,7 @@
   .bmi-box input:focus { border-color: #39ff14; }
   .bmi-box button { width: 100%; background: #39ff14; color: #0d0d0d; padding: 15px; border: none; border-radius: 10px; font-weight: 800; font-size: 18px; cursor: pointer; transition: 0.2s; font-family: 'Montserrat', sans-serif; }
   .bmi-box button:hover { background: #2ecc71; box-shadow: 0 0 15px rgba(57,255,20,0.5); }
-  #resultat-imc { margin-top: 20px; font-size: 20px; font-weight: 800; color: #fff; display: none; }
+  #resultat-imc { margin-top: 20px; font-size: 20px; font-weight: 800; color: #fff; }
 
   /* POURQUOI */
   .why-section { background: #111; border-bottom: 1px solid #1f3d1f; text-align: center; }
@@ -88,7 +88,6 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <div class="nav-brand">
     <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/></svg>
@@ -98,12 +97,12 @@
     <li><a href="index.html" class="active">Accueil</a></li>
     <li><a href="exercices.html">Exercices</a></li>
     <li><a href="fuel.html">Fuel (Nutrition)</a></li>
+    <li><a href="suivi.html">Mon Suivi</a></li> <!-- NOUVEAU LIEN -->
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="#" class="btn-nav">Commencer</a>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
   <div class="hero-text">
     <h1>Ton coach sport & nutrition intelligent</h1>
@@ -120,7 +119,6 @@
   </div>
 </header>
 
-<!-- CALCULATEUR IMC (Juste en dessous de l'accueil) -->
 <section class="bmi-section">
   <div class="section-title">
     <h2>Calcule ton IMC</h2>
@@ -134,7 +132,6 @@
   </div>
 </section>
 
-<!-- SECTION POURQUOI -->
 <section class="why-section">
   <div class="section-title">
     <h2>Pourquoi NutriPulse ?</h2>
@@ -143,16 +140,15 @@
   <div class="why-grid">
     <div class="why-item">
       <h3>100% Gratuit</h3>
-      <p>Accède à toutes nos vidéos et recettes sans jamais sortir ta carte bancaire. Pas d'abonnement caché.</p>
+      <p>Accède à toutes nos vidéos et recettes sans jamais sortir ta carte bancaire.</p>
     </div>
     <div class="why-item">
       <h3>Sans engagement</h3>
-      <p>Entraîne-toi quand tu veux, où tu veux. Aucune limite de temps. Ton corps, tes règles.</p>
+      <p>Entraîne-toi quand tu veux, où tu veux. Aucune limite de temps.</p>
     </div>
   </div>
 </section>
 
-<!-- SECTION EXPLORER -->
 <section>
   <div class="section-title">
     <h2>Explore NutriPulse</h2>
@@ -162,22 +158,21 @@
     <a href="exercices.html" class="card" style="text-decoration:none;">
       <div class="icon">🏋️</div>
       <h3>Exercices</h3>
-      <p>Des vidéos et des programmes pour t'entraîner à la maison ou en salle.</p>
+      <p>Des vidéos et des programmes pour t'entraîner.</p>
     </a>
     <a href="fuel.html" class="card" style="text-decoration:none;">
       <div class="icon">🥗</div>
       <h3>Fuel (Nutrition)</h3>
-      <p>Des recettes saines, rapides et adaptées à tes objectifs sportifs.</p>
+      <p>Des recettes saines adaptées à tes objectifs.</p>
     </a>
-    <a href="contact.html" class="card" style="text-decoration:none;">
-      <div class="icon">📩</div>
-      <h3>Contact</h3>
-      <p>Une question ? Un partenariat pub ? Écris-nous directement.</p>
+    <a href="suivi.html" class="card" style="text-decoration:none;">
+      <div class="icon">📅</div>
+      <h3>Mon Suivi</h3>
+      <p>Coche tes jours de sport et garde ta motivation.</p>
     </a>
   </div>
 </section>
 
-<!-- TÉMOIGNAGES -->
 <section class="testimonials">
   <div class="section-title">
     <h2>Ils ont changé leur quotidien</h2>
@@ -194,15 +189,9 @@
       <p>"Les recettes sont claires et délicieuses. J'ai perdu 5 kg sans me priver."</p>
       <span class="testi-name">— Thomas, 34 ans</span>
     </div>
-    <div class="card" style="background: #141414;">
-      <div class="stars">★★★★★</div>
-      <p>"Le calculateur d'IMC m'aide à suivre mes progrès. C'est devenu un réflexe quotidien."</p>
-      <span class="testi-name">— Léa, 22 ans</span>
-    </div>
   </div>
 </section>
 
-<!-- FOOTER COMPLET -->
 <footer>
   <div class="footer-grid">
     <div>
@@ -216,34 +205,26 @@
       <a href="index.html">Accueil</a>
       <a href="exercices.html">Exercices</a>
       <a href="fuel.html">Nutrition</a>
+      <a href="suivi.html">Mon Suivi</a>
       <a href="contact.html">Contact</a>
     </div>
     <div>
       <h4>Ressources</h4>
-      <a href="#">Blog (Bientôt)</a>
-      <a href="fuel.html">Recettes</a>
       <a href="faq.html">FAQ</a>
       <a href="mentions-legales.html">Mentions légales</a>
     </div>
-    <div>
-      <h4>Suis-nous</h4>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">YouTube</a>
-    </div>
   </div>
-  <div class="footer-bottom">© 2025 NutriPulse. Tous droits réservés. | <a href="mentions-legales.html" style="color:#8fa394; text-decoration:underline;">Politique de confidentialité</a></div>
+  <div class="footer-bottom">© 2025 NutriPulse. Tous droits réservés.</div>
 </footer>
 
-<!-- LE SCRIPT POUR LE CALCULATEUR IMC -->
 <script>
+  // --- CALCULATEUR IMC AVEC SAUVEGARDE ---
   function calculerIMC() {
     const poids = parseFloat(document.getElementById('poids').value);
     const tailleCm = parseFloat(document.getElementById('taille').value);
     const resultatDiv = document.getElementById('resultat-imc');
 
     if (!poids || !tailleCm || poids <= 0 || tailleCm <= 0) {
-      resultatDiv.style.display = 'block';
       resultatDiv.innerHTML = '<span style="color: #ff4d4d;">Remplis bien les deux cases !</span>';
       return;
     }
@@ -258,10 +239,25 @@
     else if (imc >= 25 && imc < 30) { interpretation = "Surpoids"; couleur = "#f39c12"; }
     else { interpretation = "Obésité"; couleur = "#ff4d4d"; }
 
-    resultatDiv.style.display = 'block';
     resultatDiv.innerHTML = `Ton IMC est de <span style="color: ${couleur}; font-size: 24px;">${imc}</span><br><span style="font-size: 16px; color: #b8c9bf;">${interpretation}</span>`;
+    
+    // SAUVEGARDE dans le navigateur
+    localStorage.setItem('nutripulse_imc', imc);
+    localStorage.setItem('nutripulse_imc_texte', interpretation);
+    localStorage.setItem('nutripulse_imc_couleur', couleur);
+  }
+
+  // Au chargement de la page, on vérifie s'il y a un IMC sauvegardé
+  window.onload = function() {
+    const savedImc = localStorage.getItem('nutripulse_imc');
+    const savedText = localStorage.getItem('nutripulse_imc_texte');
+    const savedColor = localStorage.getItem('nutripulse_imc_couleur');
+    
+    if(savedImc) {
+      const resultatDiv = document.getElementById('resultat-imc');
+      resultatDiv.innerHTML = `Dernier IMC enregistré : <span style="color: ${savedColor}; font-size: 24px;">${savedImc}</span><br><span style="font-size: 16px; color: #b8c9bf;">${savedText}</span>`;
+    }
   }
 </script>
-
 </body>
 </html>
