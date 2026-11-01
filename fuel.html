@@ -15,7 +15,7 @@
   .nav-brand { display: flex; align-items: center; gap: 10px; }
   .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px #39ff14); }
   .logo { font-size: 24px; font-weight: 800; color: #39ff14; letter-spacing: 1px; text-shadow: 0 0 12px #39ff14; }
-  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul { display: flex; gap: 20px; list-style: none; }
   nav ul li a { color: #cfd8cf; font-weight: 600; font-size: 15px; transition: color 0.2s; }
   nav ul li a:hover, nav ul li a.active { color: #39ff14; }
   .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
@@ -31,10 +31,10 @@
   
   .recipe-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #2a5c2a; background-color: #222; }
   
-  /* BOUTON FAVORI (LE COEUR) */
-  .btn-fav { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; backdrop-filter: blur(5px); }
+  /* LE BOUTON COEUR */
+  .btn-fav { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; backdrop-filter: blur(5px); z-index: 5; }
   .btn-fav:hover { transform: scale(1.1); }
-  .btn-fav.active { color: #ff4d4d; } /* Rouge quand c'est en favori */
+  .btn-fav.active { color: #ff4d4d; }
   .btn-fav:not(.active) { color: #fff; }
   
   .recipe-info { padding: 25px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
@@ -73,11 +73,10 @@
 <section>
   <div class="section-title">
     <h1>Fuel - Recettes Saines</h1>
-    <p>12 recettes gourmandes. Clique sur le ❤️ pour garder tes préférées !</p>
+    <p>Clique sur le ❤️ pour garder tes recettes préférées !</p>
   </div>
   
   <div class="recipe-grid">
-    
     <!-- Recette 1 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette1')">♡</button>
@@ -143,9 +142,50 @@
         <div class="macros"><span class="macro-tag">🔥 350 kcal</span><span class="macro-tag">🌱 20g Prot</span></div>
       </div>
     </div>
-
   </div>
 </section>
 
 <footer>
- 
+  <div class="nav-brand" style="justify-content: center; margin-bottom: 10px;">
+    <div class="logo" style="font-size: 20px;">NutriPulse</div>
+  </div>
+  <p style="font-size: 14px;">© 2025 NutriPulse. Tous droits réservés.</p>
+</footer>
+
+<!-- LE SCRIPT POUR LE COEUR -->
+<script>
+  function toggleFavori(btn, idRecette) {
+    let favoris = JSON.parse(localStorage.getItem('nutripulse_favoris')) || [];
+    
+    if (favoris.includes(idRecette)) {
+      favoris = favoris.filter(id => id !== idRecette);
+      btn.classList.remove('active');
+      btn.innerHTML = '♡';
+    } else {
+      favoris.push(idRecette);
+      btn.classList.add('active');
+      btn.innerHTML = '♥';
+    }
+    
+    localStorage.setItem('nutripulse_favoris', JSON.stringify(favoris));
+  }
+
+  window.onload = function() {
+    let favoris = JSON.parse(localStorage.getItem('nutripulse_favoris')) || [];
+    const boutons = document.querySelectorAll('.btn-fav');
+    
+    boutons.forEach((btn) => {
+      // On récupère l'ID depuis l'attribut onclick
+      const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+      if (match) {
+        const idRecette = match[1];
+        if (favoris.includes(idRecette)) {
+          btn.classList.add('active');
+          btn.innerHTML = '♥';
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>
