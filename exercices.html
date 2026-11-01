@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NutriPulse — Exercices</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d0d0d; color: #fff; line-height: 1.6; }
+  a { text-decoration: none; }
+  
+  /* NAVBAR (identique à l'accueil) */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
+  .nav-brand { display: flex; align-items: center; gap: 10px; }
+  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px #39ff14); }
+  .logo { font-size: 24px; font-weight: 800; color: #39ff14; letter-spacing: 1px; text-shadow: 0 0 12px #39ff14; }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul li a { color: #cfd8cf; font-weight: 600; font-size: 15px; transition: color 0.2s; }
+  nav ul li a:hover, nav ul li a.active { color: #39ff14; }
+  .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
+
+  /* SECTION EXERCICES */
+  section { padding: 60px 40px; }
+  .section-title { text-align: center; margin-bottom: 50px; }
+  .section-title h1 { font-size: 42px; color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.4); margin-bottom: 10px; }
+  .section-title p { color: #8fa394; font-size: 17px; }
+  
+  .video-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+  .video-card { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; overflow: hidden; width: 350px; transition: transform 0.2s, box-shadow 0.2s; }
+  .video-card:hover { transform: translateY(-6px); box-shadow: 0 0 25px rgba(57,255,20,0.25); border-color: #39ff14; }
+  
+  /* Le conteneur de la vidéo pour qu'elle soit bien proportionnée */
+  .video-container { position: relative; padding-bottom: 56.25%; /* Ratio 16:9 */ height: 0; overflow: hidden; }
+  .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  
+  .video-info { padding: 20px; text-align: center; }
+  .video-info h3 { color: #fff; margin-bottom: 10px; font-size: 20px; }
+  .video-info p { color: #8fa394; font-size: 14px; }
+  .tag { display: inline-block; margin-top: 15px; background: rgba(57,255,20,0.12); color: #39ff14; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; border: 1px solid #39ff14; }
+
+  /* FOOTER */
+  footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; text-align: center; }
+  .footer-bottom { border-top: 1px solid #1f3d1f; padding-top: 20px; font-size: 13px; margin-top: 20px; }
+
+  @media (max-width: 700px) {
+    nav ul { display: none; }
+    .section-title h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-brand">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/>
+      <rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/>
+      <rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/>
+      <rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/>
+      <line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+    <div class="logo">NutriPulse</div>
+  </div>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="exercices.html" class="active">Exercices</a></li>
+    <li><a href="fuel.html">Fuel (Nutrition)</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="#" class="btn-nav">Commencer</a>
+</nav>
+
+<!-- CONTENU EXERCICES -->
+<section>
+  <div class="section-title">
+    <h1>Programmes d'Exercices</h1>
+    <p>Entraîne-toi avec nos vidéos gratuites, chez toi ou à la salle.</p>
+  </div>
+  
+  <div class="video-grid">
+    
+    <!-- Vidéo 1 : Full Body -->
+    <div class="video-card">
+      <div class="video-container">
+        <!-- Remplace l'ID après embed/ par l'ID de la vidéo YouTube -->
+        <iframe src="https://www.youtube.com/embed/UBMk30rjy0o" title="Full Body Workout" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>Full Body Débutant</h3>
+        <p>Un entraînement complet pour tout le corps, sans matériel.</p>
+        <span class="tag">20 min</span>
+      </div>
+    </div>
+    
+    <!-- Vidéo 2 : Cardio HIIT -->
+    <div class="video-card">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/ml6cT4AZdqI" title="HIIT Workout" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>Cardio HIIT</h3>
+        <p>Brûle un maximum de calories et améliore ton endurance.</p>
+        <span class="tag">15 min</span>
+      </div>
+    </div>
+    
+    <!-- Vidéo 3 : Yoga / Étirements -->
+    <div class="video-card">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/v7AYKMP6rOE" title="Yoga Stretching" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>Yoga & Récupération</h3>
+        <p>Idéal pour s'étirer après une séance intense ou se détendre.</p>
+        <span class="tag">10 min</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="nav-brand" style="justify-content: center; margin-bottom: 10px;">
+    <div class="logo" style="font-size: 20px;">NutriPulse</div>
+  </div>
+  <p style="font-size: 14px;">© 2025 NutriPulse. Tous droits réservés.</p>
+  <div class="footer-bottom">Fait avec passion pour ton équilibre.</div>
+</footer>
+
+</body>
+</html>
