@@ -22,42 +22,54 @@
   .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
 
   /* CONTENU SUIVI */
-  section { padding: 60px 40px; max-width: 1000px; margin: 0 auto; }
+  section { padding: 40px 40px 60px; max-width: 900px; margin: 0 auto; }
   .section-title { text-align: center; margin-bottom: 40px; }
   .section-title h1 { font-size: 42px; color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.4); margin-bottom: 10px; }
   .section-title p { color: #8fa394; font-size: 17px; }
 
-  /* GRILLE DASHBOARD */
-  .dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-  @media (max-width: 800px) { .dashboard { grid-template-columns: 1fr; } }
-
-  /* BLOCS GÉNÉRIQUES */
-  .bloc { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; padding: 30px; box-shadow: 0 0 20px rgba(57,255,20,0.05); }
-  .bloc h2 { color: #39ff14; font-size: 22px; margin-bottom: 20px; border-bottom: 1px solid #1f3d1f; padding-bottom: 10px; }
+  /* BLOC PROFIL GAMIFICATION */
+  .gamification-panel { background: #141414; border: 1px solid #39ff14; border-radius: 18px; padding: 30px; margin-bottom: 40px; box-shadow: 0 0 20px rgba(57,255,20,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
   
-  /* CALENDRIER HEBDO */
-  .week-grid { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-  .day-btn { flex: 1; min-width: 60px; background: #0d0d0d; border: 2px solid #2a5c2a; border-radius: 12px; padding: 15px 5px; color: #fff; cursor: pointer; transition: 0.2s; display: flex; flex-direction: column; align-items: center; gap: 5px; font-weight: bold; }
-  .day-btn:hover { border-color: #39ff14; }
-  .day-btn.active { background: rgba(57,255,20,0.1); border-color: #39ff14; color: #39ff14; }
-  .day-btn .icon { font-size: 20px; }
+  .level-info { display: flex; align-items: center; gap: 20px; }
+  .level-circle { width: 80px; height: 80px; border-radius: 50%; background: radial-gradient(circle, rgba(57,255,20,0.2), transparent); border: 3px solid #39ff14; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0 0 15px rgba(57,255,20,0.5); }
+  .level-circle span { font-size: 12px; color: #39ff14; font-weight: 800; text-transform: uppercase; }
+  .level-circle strong { font-size: 28px; color: #fff; line-height: 1; }
+  
+  .xp-bar-container { flex: 1; min-width: 250px; }
+  .xp-text { display: flex; justify-content: space-between; font-size: 14px; color: #8fa394; margin-bottom: 5px; font-weight: 600; }
+  .xp-bar-bg { width: 100%; height: 15px; background: #0d0d0d; border-radius: 10px; border: 1px solid #2a5c2a; overflow: hidden; }
+  .xp-bar-fill { height: 100%; background: #39ff14; width: 0%; transition: width 0.5s ease-in-out; box-shadow: 0 0 10px #39ff14; }
 
-  /* FORMULAIRE POIDS / CALORIES */
-  .form-row { display: flex; gap: 15px; margin-bottom: 15px; }
-  .input-group { flex: 1; }
-  .input-group label { display: block; color: #8fa394; font-size: 13px; margin-bottom: 5px; font-weight: 600; }
-  .input-group input, .input-group select { width: 100%; padding: 12px; background: #0d0d0d; border: 1px solid #2a5c2a; border-radius: 8px; color: #fff; font-size: 15px; outline: none; }
-  .input-group input:focus, .input-group select:focus { border-color: #39ff14; }
-  .btn-save { width: 100%; background: #39ff14; color: #0d0d0d; padding: 12px; border: none; border-radius: 8px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; margin-top: 10px; }
-  .btn-save:hover { background: #2ecc71; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
+  .nutricoins-box { background: #1a1a1a; border: 1px solid #f1c40f; border-radius: 12px; padding: 15px 25px; text-align: center; box-shadow: 0 0 15px rgba(241,196,15,0.2); }
+  .nutricoins-box span { font-size: 24px; display: block; margin-bottom: 5px; }
+  .nutricoins-box strong { color: #f1c40f; font-size: 22px; }
 
-  /* BILAN DU MOIS */
-  .bilan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-  .bilan-item { background: #0d0d0d; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #2a5c2a; }
-  .bilan-item h3 { color: #8fa394; font-size: 14px; margin-bottom: 5px; }
-  .bilan-item .value { color: #39ff14; font-size: 28px; font-weight: 800; text-shadow: 0 0 10px rgba(57,255,20,0.3); }
+  /* BADGES */
+  .badges-container { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; justify-content: center; }
+  .badge { background: #141414; border: 1px solid #333; border-radius: 12px; padding: 15px; text-align: center; width: 130px; opacity: 0.3; filter: grayscale(100%); transition: 0.3s; }
+  .badge.unlocked { opacity: 1; filter: grayscale(0%); border-color: #39ff14; box-shadow: 0 0 15px rgba(57,255,20,0.2); }
+  .badge .icon { font-size: 30px; margin-bottom: 5px; }
+  .badge h4 { font-size: 13px; color: #fff; }
+
+  /* CALENDRIER */
+  .calendar-box { background: #141414; border: 1px solid #2a5c2a; border-radius: 20px; padding: 30px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+  .calendar-box h2 { color: #39ff14; margin-bottom: 20px; font-size: 22px; text-align: center; }
+  .week-grid { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .day-btn { flex: 1; min-width: 80px; background: #0d0d0d; border: 2px solid #2a5c2a; border-radius: 15px; padding: 15px 10px; color: #fff; cursor: pointer; transition: 0.2s; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .day-btn:hover { border-color: #39ff14; transform: translateY(-3px); }
+  .day-btn.active { background: rgba(57,255,20,0.1); border-color: #39ff14; box-shadow: 0 0 15px rgba(57,255,20,0.3); }
+  .day-btn .jour { font-weight: 800; font-size: 16px; color: #8fa394; }
+  .day-btn.active .jour { color: #39ff14; }
+  .day-btn .icon { font-size: 24px; }
 
   footer { background: #050505; color: #8fa394; padding: 30px; border-top: 1px solid #1f3d1f; text-align: center; font-size: 13px; margin-top: 50px; }
+
+  @media (max-width: 700px) {
+    nav ul { display: none; }
+    .gamification-panel { flex-direction: column; text-align: center; }
+    .week-grid { justify-content: center; }
+    .day-btn { flex: none; width: 45%; }
+  }
 </style>
 </head>
 <body>
@@ -79,71 +91,59 @@
 
 <section>
   <div class="section-title">
-    <h1>Mon Tableau de Bord</h1>
-    <p>Gère tes séances, ton poids et tes objectifs au même endroit.</p>
+    <h1>Mon Espace Progression</h1>
+    <p>Coche tes séances, gagne de l'XP et débloque des récompenses !</p>
   </div>
 
-  <div class="dashboard">
+  <!-- BLOC GAMIFICATION (XP, NIVEAU, NUTRICOINS) -->
+  <div class="gamification-panel">
+    <div class="level-info">
+      <div class="level-circle">
+        <span>Niveau</span>
+        <strong id="niveau-actuel">1</strong>
+      </div>
+      <div class="xp-bar-container">
+        <div class="xp-text">
+          <span id="texte-xp">0 / 500 XP</span>
+          <span>Prochain niveau</span>
+        </div>
+        <div class="xp-bar-bg">
+          <div class="xp-bar-fill" id="barre-xp"></div>
+        </div>
+      </div>
+    </div>
     
-    <!-- BLOC 1 : CALENDRIER SEMAINE -->
-    <div class="bloc">
-      <h2>📅 Mes Séances (Cette semaine)</h2>
-      <div class="week-grid" id="calendrier"></div>
-      <div style="text-align: center; margin-top: 15px;">
-        <span style="color: #39ff14; font-weight: 800; font-size: 18px;" id="compteur-seances">0 / 4 séances</span>
-      </div>
+    <div class="nutricoins-box">
+      <span>🪙</span>
+      <strong id="nutricoins">0</strong> NC
     </div>
-
-    <!-- BLOC 2 : FORMULAIRE POIDS / CALORIES -->
-    <div class="bloc">
-      <h2>⚖️ Ma Journée</h2>
-      <div class="form-row">
-        <div class="input-group">
-          <label>Objectif actuel</label>
-          <select id="objectif">
-            <option value="seche">Sèche (Perte de poids)</option>
-            <option value="maintien">Maintien</option>
-            <option value="masse">Prise de masse</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-group">
-          <label>Poids (kg)</label>
-          <input type="number" id="poids-jour" placeholder="Ex: 75.5" step="0.1">
-        </div>
-        <div class="input-group">
-          <label>Calories (kcal)</label>
-          <input type="number" id="calories-jour" placeholder="Ex: 2000">
-        </div>
-      </div>
-      <button class="btn-save" onclick="sauvegarderJournee()">Enregistrer pour aujourd'hui</button>
-    </div>
-
-    <!-- BLOC 3 : BILAN DU MOIS -->
-    <div class="bloc" style="grid-column: 1 / -1;">
-      <h2>📊 Mon Bilan du Mois</h2>
-      <div class="bilan-grid">
-        <div class="bilan-item">
-          <h3>Total Séances</h3>
-          <div class="value" id="bilan-seances">0</div>
-        </div>
-        <div class="bilan-item">
-          <h3>Poids Actuel</h3>
-          <div class="value" id="bilan-poids">-- kg</div>
-        </div>
-        <div class="bilan-item">
-          <h3>Moyenne Calories / Jour</h3>
-          <div class="value" id="bilan-calories">-- kcal</div>
-        </div>
-        <div class="bilan-item">
-          <h3>Évolution Poids</h3>
-          <div class="value" id="bilan-evolution">-- kg</div>
-        </div>
-      </div>
-    </div>
-
   </div>
+
+  <!-- BADGES -->
+  <div class="badges-container" id="badges-container">
+    <div class="badge" id="badge-1">
+      <div class="icon">🥇</div>
+      <h4>1ère Séance</h4>
+    </div>
+    <div class="badge" id="badge-3">
+      <div class="icon">⚔️</div>
+      <h4>Guerrier (3j)</h4>
+    </div>
+    <div class="badge" id="badge-5">
+      <div class="icon">🔥</div>
+      <h4>En Feu (5j)</h4>
+    </div>
+  </div>
+
+  <!-- CALENDRIER -->
+  <div class="calendar-box">
+    <h2>📅 Mes Séances de la Semaine</h2>
+    <div class="week-grid" id="calendrier"></div>
+    <p style="text-align: center; color: #8fa394; font-size: 14px; margin-top: 15px;">
+      Chaque jour coché te rapporte <strong style="color:#39ff14;">50 XP</strong> et <strong style="color:#f1c40f;">10 NutriCoins</strong>.
+    </p>
+  </div>
+
 </section>
 
 <footer>
@@ -151,103 +151,78 @@
 </footer>
 
 <script>
+  // --- VARIABLES GLOBALES ---
   const joursSemaine = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
   const calendrierDiv = document.getElementById('calendrier');
-  const compteurSeances = document.getElementById('compteur-seances');
 
-  // Charger les données du navigateur
+  // Récupération des données (ou initialisation à 0)
   let joursCoches = JSON.parse(localStorage.getItem('nutripulse_sport')) || [false, false, false, false, false, false, false];
-  let donneesJournee = JSON.parse(localStorage.getItem('nutripulse_journee')) || { poids: null, calories: null, historiquePoids: [] };
+  let userXP = parseInt(localStorage.getItem('nutripulse_xp')) || 0;
+  let userCoins = parseInt(localStorage.getItem('nutripulse_coins')) || 0;
 
-  // 1. AFFICHER LE CALENDRIER
+  // --- 1. FONCTION POUR METTRE À JOUR L'INTERFACE (XP, NIVEAU, COINS) ---
+  function mettreAJourInterface() {
+    // Calcul du niveau (tous les 500 XP)
+    let niveau = Math.floor(userXP / 500) + 1;
+    let xpDansLeNiveau = userXP % 500;
+    let pourcentage = (xpDansLeNiveau / 500) * 100;
+
+    // Mise à jour des textes
+    document.getElementById('niveau-actuel').innerText = niveau;
+    document.getElementById('texte-xp').innerText = `${xpDansLeNiveau} / 500 XP`;
+    document.getElementById('barre-xp').style.width = `${pourcentage}%`;
+    document.getElementById('nutricoins').innerText = userCoins;
+
+    // Vérification des badges
+    let seancesFaites = joursCoches.filter(jour => jour === true).length;
+    
+    if (seancesFaites >= 1) document.getElementById('badge-1').classList.add('unlocked');
+    if (seancesFaites >= 3) document.getElementById('badge-3').classList.add('unlocked');
+    if (seancesFaites >= 5) document.getElementById('badge-5').classList.add('unlocked');
+  }
+
+  // --- 2. FONCTION POUR AFFICHER LE CALENDRIER ---
   function afficherCalendrier() {
     calendrierDiv.innerHTML = '';
-    let seancesFaites = 0;
 
     joursSemaine.forEach((jour, index) => {
       const btn = document.createElement('button');
       btn.classList.add('day-btn');
-      if(joursCoches[index]) { btn.classList.add('active'); seancesFaites++; }
+      if(joursCoches[index]) { btn.classList.add('active'); }
       
       btn.innerHTML = `<span>${jour}</span><span class="icon">${joursCoches[index] ? '🔥' : '⚪'}</span>`;
       
       btn.onclick = function() {
+        // Inverser l'état (coché ou non)
         joursCoches[index] = !joursCoches[index];
+        
+        // Mise à jour des XP et Coins
+        if (joursCoches[index]) {
+          userXP += 50;
+          userCoins += 10;
+        } else {
+          userXP -= 50;
+          userCoins -= 10;
+        }
+
+        // Sauvegarde dans le navigateur
         localStorage.setItem('nutripulse_sport', JSON.stringify(joursCoches));
-        afficherCalendrier(); // Recharger pour mettre à jour le compteur
+        localStorage.setItem('nutripulse_xp', userXP);
+        localStorage.setItem('nutripulse_coins', userCoins);
+
+        // Rafraîchir l'affichage
+        afficherCalendrier();
+        mettreAJourInterface();
       };
+      
       calendrierDiv.appendChild(btn);
     });
-
-    compteurSeances.innerText = `${seancesFaites} / 4 séances`;
-    document.getElementById('bilan-seances').innerText = seancesFaites * 4; // Simulation sur le mois
   }
 
-  // 2. SAUVEGARDER POIDS ET CALORIES
-  function sauvegarderJournee() {
-    const poidsInput = document.getElementById('poids-jour').value;
-    const caloriesInput = document.getElementById('calories-jour').value;
-    const objectifInput = document.getElementById('objectif').value;
-
-    if(!poidsInput || !caloriesInput) {
-      alert("Remplis le poids et les calories pour enregistrer !");
-      return;
-    }
-
-    donneesJournee.poids = parseFloat(poidsInput);
-    donneesJournee.calories = parseInt(caloriesInput);
-    donneesJournee.objectif = objectifInput;
-
-    // On garde un historique pour calculer l'évolution
-    if(!donneesJournee.historiquePoids) donneesJournee.historiquePoids = [];
-    donneesJournee.historiquePoids.push(donneesJournee.poids);
-
-    localStorage.setItem('nutripulse_journee', JSON.stringify(donneesJournee));
-    alert("Journée enregistrée avec succès ! 💪");
-    mettreAJourBilan();
-  }
-
-  // 3. METTRE À JOUR LE BILAN
-  function mettreAJourBilan() {
-    // Poids
-    if(donneesJournee.poids) {
-      document.getElementById('bilan-poids').innerText = donneesJournee.poids + ' kg';
-      document.getElementById('poids-jour').value = donneesJournee.poids;
-    }
-    // Calories
-    if(donneesJournee.calories) {
-      document.getElementById('bilan-calories').innerText = donneesJournee.calories + ' kcal';
-      document.getElementById('calories-jour').value = donneesJournee.calories;
-    }
-    // Objectif
-    if(donneesJournee.objectif) {
-      document.getElementById('objectif').value = donneesJournee.objectif;
-    }
-
-    // Évolution (si on a au moins 2 poids enregistrés)
-    if(donneesJournee.historiquePoids && donneesJournee.historiquePoids.length > 1) {
-      const premierPoids = donneesJournee.historiquePoids[0];
-      const dernierPoids = donneesJournee.historiquePoids[donneesJournee.historiquePoids.length - 1];
-      const evolution = (dernierPoids - premierPoids).toFixed(1);
-      
-      const evoDiv = document.getElementById('bilan-evolution');
-      if(evolution < 0) {
-        evoDiv.innerText = evolution + ' kg';
-        evoDiv.style.color = '#39ff14'; // Vert si perte de poids
-      } else if (evolution > 0) {
-        evoDiv.innerText = '+' + evolution + ' kg';
-        evoDiv.style.color = '#f39c12'; // Orange si prise
-      } else {
-        evoDiv.innerText = '0 kg';
-        evoDiv.style.color = '#fff';
-      }
-    }
-  }
-
-  // LANCEMENT AU CHARGEMENT DE LA PAGE
+  // --- 3. LANCEMENT AU CHARGEMENT ---
   window.onload = function() {
     afficherCalendrier();
-    mettreAJourBilan();
+    mettreAJourInterface();
   }
 </script>
 </body>
