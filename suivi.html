@@ -21,94 +21,115 @@
   nav ul li a:hover, nav ul li a.active { color: #39ff14; }
   .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
 
+  /* MODAL DE BIENVENUE */
+  .welcome-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
+  .welcome-box { background: #121212; border: 2px solid #39ff14; border-radius: 20px; padding: 40px; text-align: center; max-width: 400px; width: 90%; box-shadow: 0 0 50px rgba(57,255,20,0.2); }
+  .welcome-box h2 { color: #39ff14; margin-bottom: 15px; font-size: 28px; }
+  .welcome-box p { color: #8fa394; margin-bottom: 25px; }
+  .welcome-box input { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #39ff14; border-radius: 10px; color: #fff; font-size: 18px; text-align: center; outline: none; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; }
+  .welcome-box button { width: 100%; background: #39ff14; color: #000; border: none; padding: 15px; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; }
+  .welcome-box button:hover { background: #fff; box-shadow: 0 0 20px rgba(57,255,20,0.5); }
+
   /* CONTENEUR PRINCIPAL */
   section { padding: 40px 20px 80px; max-width: 1100px; margin: 0 auto; }
   
-  .header-title { text-align: center; margin-bottom: 40px; }
-  .header-title h1 { font-size: 42px; color: #39ff14; text-shadow: 0 0 25px rgba(57,255,20,0.6); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
-  .header-title p { color: #8fa394; font-size: 17px; }
+  .header-title { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 20px; flex-wrap: wrap; gap: 20px; }
+  .header-title h1 { font-size: 36px; color: #fff; line-height: 1.2; }
+  .header-title h1 span { color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.5); }
+  .header-date { color: #8fa394; font-size: 15px; font-weight: 600; text-transform: capitalize; }
 
-  /* CARTES DASHBOARD (GRILLE) */
+  /* MESSAGE DU COACH */
+  .coach-message { background: linear-gradient(90deg, rgba(57,255,20,0.1) 0%, transparent 100%); border-left: 4px solid #39ff14; padding: 20px; border-radius: 0 15px 15px 0; margin-bottom: 30px; display: flex; align-items: center; gap: 20px; }
+  .coach-icon { font-size: 40px; flex-shrink: 0; }
+  .coach-text h3 { color: #39ff14; font-size: 18px; margin-bottom: 5px; }
+  .coach-text p { color: #cfd8cf; font-size: 15px; font-style: italic; }
+
+  /* GRILLE DASHBOARD */
   .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
   @media (max-width: 800px) { .dashboard-grid { grid-template-columns: 1fr; } }
 
   .card { background: #121212; border: 1px solid #2a5c2a; border-radius: 20px; padding: 30px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
   .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #39ff14; box-shadow: 0 0 15px #39ff14; }
-  
   .card h2 { font-size: 20px; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #222; padding-bottom: 15px; }
 
-  /* --- CARTE PROFIL (XP & NIVEAU) --- */
+  /* PROFIL (XP & NIVEAU & STREAK) */
   .profile-card { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; background: linear-gradient(135deg, #121212, #0a1a0a); }
-  
   .avatar-level { display: flex; align-items: center; gap: 20px; }
-  .level-shield { width: 90px; height: 100px; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L100 20 L100 80 Q100 110 50 120 Q0 110 0 80 L0 20 Z" fill="%23121212" stroke="%2339ff14" stroke-width="4"/></svg>') no-repeat center center; background-size: contain; display: flex; flex-direction: column; justify-content: center; align-items: center; filter: drop-shadow(0 0 10px rgba(57,255,20,0.5)); }
-  .level-shield span { font-size: 10px; color: #39ff14; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;}
-  .level-shield strong { font-size: 32px; color: #fff; line-height: 1; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
   
-  .xp-container { flex: 1; min-width: 250px; }
+  .level-shield { width: 80px; height: 90px; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L100 20 L100 80 Q100 110 50 120 Q0 110 0 80 L0 20 Z" fill="%23121212" stroke="%2339ff14" stroke-width="6"/></svg>') no-repeat center center; background-size: contain; display: flex; flex-direction: column; justify-content: center; align-items: center; filter: drop-shadow(0 0 10px rgba(57,255,20,0.5)); }
+  .level-shield span { font-size: 9px; color: #39ff14; font-weight: 800; text-transform: uppercase; }
+  .level-shield strong { font-size: 28px; color: #fff; line-height: 1; }
+  
+  .streak-box { background: #1a1a1a; border: 1px solid #ff4d4d; border-radius: 15px; padding: 10px 20px; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 15px rgba(255,77,77,0.2); }
+  .streak-box .fire { font-size: 26px; }
+  .streak-box .streak-text { display: flex; flex-direction: column; }
+  .streak-box strong { color: #ff4d4d; font-size: 22px; line-height: 1; }
+  .streak-box span { color: #8fa394; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+
+  .xp-container { flex: 1; min-width: 250px; margin: 0 20px; }
   .xp-header { display: flex; justify-content: space-between; font-size: 14px; font-weight: 800; margin-bottom: 8px; color: #8fa394; }
   .xp-header span:last-child { color: #39ff14; }
   .xp-track { width: 100%; height: 20px; background: #000; border-radius: 20px; border: 1px solid #333; overflow: hidden; position: relative; box-shadow: inset 0 2px 5px rgba(0,0,0,0.8); }
-  .xp-progress { height: 100%; background: linear-gradient(90deg, #1faa00, #39ff14); width: 0%; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 15px #39ff14; position: relative; }
-  .xp-progress::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(255,255,255,0.3), transparent); }
+  .xp-progress { height: 100%; background: linear-gradient(90deg, #1faa00, #39ff14); width: 0%; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 15px #39ff14; }
 
-  .coins-display { background: #1a1a1a; border: 2px solid #f1c40f; border-radius: 15px; padding: 15px 25px; display: flex; align-items: center; gap: 15px; box-shadow: 0 0 20px rgba(241,196,15,0.15); }
-  .coins-display .coin-icon { font-size: 36px; filter: drop-shadow(0 0 10px #f1c40f); }
+  .coins-display { background: #1a1a1a; border: 2px solid #f1c40f; border-radius: 15px; padding: 12px 20px; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 20px rgba(241,196,15,0.15); }
+  .coins-display .coin-icon { font-size: 28px; }
   .coins-display .coin-text { display: flex; flex-direction: column; }
-  .coins-display strong { color: #f1c40f; font-size: 28px; line-height: 1; }
-  .coins-display span { color: #8fa394; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+  .coins-display strong { color: #f1c40f; font-size: 24px; line-height: 1; }
+  .coins-display span { color: #8fa394; font-size: 10px; font-weight: 800; text-transform: uppercase; }
 
-  /* --- CARTE CALENDRIER & VALIDATION --- */
+  /* CALENDRIER & VALIDATION */
   .action-area { grid-column: 1 / -1; text-align: center; }
   .week-row { display: flex; justify-content: center; gap: 15px; margin: 20px 0 30px; flex-wrap: wrap; }
-  .day-box { width: 70px; height: 90px; background: #0a0a0a; border: 2px solid #222; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; position: relative; }
+  .day-box { width: 70px; height: 90px; background: #0a0a0a; border: 2px solid #222; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; }
   .day-box.active { border-color: #39ff14; background: rgba(57,255,20,0.05); box-shadow: 0 0 20px rgba(57,255,20,0.2); transform: translateY(-5px); }
   .day-box .day-name { font-size: 14px; font-weight: 800; color: #666; text-transform: uppercase; }
   .day-box.active .day-name { color: #39ff14; }
   .day-box .day-icon { font-size: 28px; margin-top: 5px; filter: grayscale(100%) opacity(0.3); }
   .day-box.active .day-icon { filter: grayscale(0%) opacity(1); }
 
-  .btn-validate { background: #39ff14; color: #000; border: none; padding: 20px 50px; border-radius: 50px; font-size: 20px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 0 30px rgba(57,255,20,0.3); text-transform: uppercase; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 15px; }
+  .btn-validate { background: #39ff14; color: #000; border: none; padding: 18px 50px; border-radius: 50px; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 0 30px rgba(57,255,20,0.3); text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; }
   .btn-validate:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(57,255,20,0.6); background: #fff; }
-  .btn-validate:disabled { background: #333; color: #666; box-shadow: none; cursor: not-allowed; transform: none; }
 
-  /* --- SALLE DES TROPHÉES (BADGES) --- */
-  .trophy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 20px; }
-  .trophy-card { background: #0a0a0a; border: 1px solid #222; border-radius: 15px; padding: 20px 10px; text-align: center; transition: 0.3s; position: relative; overflow: hidden; }
-  
-  /* Badge non débloqué */
+  /* SALLE DES TROPHÉES */
+  .trophy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
+  .trophy-card { background: #0a0a0a; border: 1px solid #222; border-radius: 15px; padding: 15px 10px; text-align: center; transition: 0.3s; }
   .trophy-card.locked { opacity: 0.4; filter: grayscale(100%); }
-  .trophy-card.locked .trophy-icon::after { content: '🔒'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 30px; z-index: 2; }
-  
-  /* Badge débloqué */
   .trophy-card.unlocked { border-color: #39ff14; background: rgba(57,255,20,0.05); box-shadow: 0 0 20px rgba(57,255,20,0.1); }
-  .trophy-card.unlocked:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(57,255,20,0.3); }
   .trophy-card.unlocked .trophy-icon { filter: drop-shadow(0 0 10px rgba(57,255,20,0.5)); animation: float 3s ease-in-out infinite; }
-  
-  .trophy-icon { font-size: 45px; margin-bottom: 10px; position: relative; display: inline-block; }
-  .trophy-title { font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 5px; }
-  .trophy-desc { font-size: 11px; color: #8fa394; }
-
+  .trophy-icon { font-size: 40px; margin-bottom: 10px; }
+  .trophy-title { font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 3px; }
+  .trophy-desc { font-size: 10px; color: #8fa394; }
   @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0px); } }
 
-  /* --- CARTE BILAN --- */
+  /* FORMULAIRE & BILAN */
+  .input-pro { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 15px; margin-bottom: 15px; outline: none; transition: 0.2s; }
+  .input-pro:focus { border-color: #39ff14; }
+  .coach-tip { background: rgba(57,255,20,0.05); border: 1px dashed #39ff14; padding: 10px; border-radius: 8px; color: #39ff14; font-size: 13px; text-align: center; margin-bottom: 15px; display: none; }
+  .btn-save-pro { width: 100%; background: transparent; border: 2px solid #39ff14; color: #39ff14; padding: 15px; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; }
+  .btn-save-pro:hover { background: #39ff14; color: #000; }
+
   .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
   .stat-box { background: #0a0a0a; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #222; }
-  .stat-box h3 { color: #8fa394; font-size: 12px; text-transform: uppercase; margin-bottom: 8px; }
-  .stat-box .val { font-size: 26px; font-weight: 800; color: #fff; }
-  .stat-box .val.green { color: #39ff14; text-shadow: 0 0 10px rgba(57,255,20,0.3); }
+  .stat-box h3 { color: #8fa394; font-size: 11px; text-transform: uppercase; margin-bottom: 8px; }
+  .stat-box .val { font-size: 24px; font-weight: 800; color: #fff; }
+  .stat-box .val.green { color: #39ff14; }
   .stat-box .val.orange { color: #f39c12; }
-  
-  /* INPUTS PRO */
-  .input-pro { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 16px; margin-bottom: 15px; outline: none; transition: 0.2s; }
-  .input-pro:focus { border-color: #39ff14; box-shadow: 0 0 10px rgba(57,255,20,0.2); }
-  .btn-save-pro { width: 100%; background: transparent; border: 2px solid #39ff14; color: #39ff14; padding: 15px; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; }
-  .btn-save-pro:hover { background: #39ff14; color: #000; box-shadow: 0 0 20px rgba(57,255,20,0.4); }
 
   footer { background: #050505; color: #8fa394; padding: 30px; border-top: 1px solid #1f3d1f; text-align: center; font-size: 13px; }
 </style>
 </head>
 <body>
+
+<!-- FENÊTRE DE BIENVENUE -->
+<div class="welcome-modal" id="welcome-modal" style="display: none;">
+  <div class="welcome-box">
+    <h2>Bienvenue sur NutriPulse</h2>
+    <p>Comment veux-tu qu'on t'appelle, Champion ?</p>
+    <input type="text" id="input-prenom" placeholder="Ton prénom..." maxlength="15">
+    <button onclick="sauvegarderPrenom()">C'est parti ! 🚀</button>
+  </div>
+</div>
 
 <nav>
   <div class="nav-brand">
@@ -126,23 +147,36 @@
 </nav>
 
 <section>
+  <!-- EN-TÊTE PERSONNALISÉ -->
   <div class="header-title">
-    <h1>QG du Champion</h1>
-    <p>Ton espace de progression ultime.</p>
+    <h1>Salut <span id="nom-utilisateur">Champion</span>,<br>prêt à tout casser ?</h1>
+    <div class="header-date" id="date-du-jour"></div>
+  </div>
+
+  <!-- MESSAGE DU COACH -->
+  <div class="coach-message">
+    <div class="coach-icon">🤖</div>
+    <div class="coach-text">
+      <h3>Le conseil de ton Coach</h3>
+      <p id="message-coach">Allez, on commence ? Valide ta première séance de la semaine !</p>
+    </div>
   </div>
 
   <div class="dashboard-grid">
 
-    <!-- CARTE 1 : PROFIL (XP, NIVEAU, COINS) -->
+    <!-- PROFIL -->
     <div class="card profile-card">
       <div class="avatar-level">
         <div class="level-shield">
-          <span>Niveau</span>
+          <span>Niv.</span>
           <strong id="niveau-actuel">1</strong>
         </div>
-        <div>
-          <h2 style="margin:0; border:none; padding:0; font-size:24px;">Statut : Champion</h2>
-          <p style="color:#8fa394; font-size:14px;">Continue comme ça !</p>
+        <div class="streak-box">
+          <span class="fire">🔥</span>
+          <div class="streak-text">
+            <strong id="streak-count">0</strong>
+            <span>Jours d'affilée</span>
+          </div>
         </div>
       </div>
       
@@ -165,96 +199,51 @@
       </div>
     </div>
 
-    <!-- CARTE 2 : CALENDRIER & VALIDATION -->
+    <!-- ENTRAINEMENT -->
     <div class="card action-area">
-      <h2 style="justify-content: center;">🔥 Ton Entraînement de la Semaine</h2>
+      <h2 style="justify-content: center;">🔥 Semaine Actuelle</h2>
       <div class="week-row" id="calendrier"></div>
       
       <button class="btn-validate" id="btn-valider" onclick="validerSeance()">
         <span>💪</span> Valider ma séance
       </button>
-      <p style="color: #666; font-size: 13px; margin-top: 20px;">Gagne 50 XP et 10 NC par séance validée.</p>
     </div>
 
-    <!-- CARTE 3 : SALLE DES TROPHÉES -->
+    <!-- SALLE DES TROPHÉES -->
     <div class="card" style="grid-column: 1 / -1;">
       <h2>🏆 Salle des Trophées</h2>
       <div class="trophy-grid">
-        
-        <div class="trophy-card locked" id="badge-1">
-          <div class="trophy-icon">🥇</div>
-          <div class="trophy-title">Premier Pas</div>
-          <div class="trophy-desc">Terminer 1 séance</div>
-        </div>
-
-        <div class="trophy-card locked" id="badge-2">
-          <div class="trophy-icon">⚔️</div>
-          <div class="trophy-title">Guerrier</div>
-          <div class="trophy-desc">Terminer 3 séances</div>
-        </div>
-
-        <div class="trophy-card locked" id="badge-3">
-          <div class="trophy-icon">🔥</div>
-          <div class="trophy-title">En Feu</div>
-          <div class="trophy-desc">Terminer 5 séances</div>
-        </div>
-
-        <div class="trophy-card locked" id="badge-4">
-          <div class="trophy-icon">⚡</div>
-          <div class="trophy-title">Machine</div>
-          <div class="trophy-desc">Atteindre le Niveau 3</div>
-        </div>
-
-        <div class="trophy-card locked" id="badge-5">
-          <div class="trophy-icon">👑</div>
-          <div class="trophy-title">Légende</div>
-          <div class="trophy-desc">Atteindre le Niveau 5</div>
-        </div>
-
-        <div class="trophy-card locked" id="badge-6">
-          <div class="trophy-icon">🦍</div>
-          <div class="trophy-title">Bête</div>
-          <div class="trophy-desc">7 jours d'affilée</div>
-        </div>
-
+        <div class="trophy-card locked" id="badge-1"><div class="trophy-icon">🥇</div><div class="trophy-title">Premier Pas</div><div class="trophy-desc">1 séance</div></div>
+        <div class="trophy-card locked" id="badge-2"><div class="trophy-icon">⚔️</div><div class="trophy-title">Guerrier</div><div class="trophy-desc">3 séances</div></div>
+        <div class="trophy-card locked" id="badge-3"><div class="trophy-icon">🔥</div><div class="trophy-title">En Feu</div><div class="trophy-desc">5 séances</div></div>
+        <div class="trophy-card locked" id="badge-4"><div class="trophy-icon">⚡</div><div class="trophy-title">Machine</div><div class="trophy-desc">Niveau 3</div></div>
+        <div class="trophy-card locked" id="badge-5"><div class="trophy-icon">👑</div><div class="trophy-title">Légende</div><div class="trophy-desc">Niveau 5</div></div>
+        <div class="trophy-card locked" id="badge-6"><div class="trophy-icon">🦍</div><div class="trophy-title">Bête</div><div class="trophy-desc">7 jours de suite</div></div>
       </div>
     </div>
 
-    <!-- CARTE 4 : SUIVI DU POIDS / CALORIES -->
+    <!-- SUIVI -->
     <div class="card">
       <h2>⚖️ Ma Journée</h2>
-      <div style="margin-bottom: 15px;">
-        <select class="input-pro" id="objectif">
-          <option value="seche">Objectif : Sèche (Perte)</option>
-          <option value="maintien">Objectif : Maintien</option>
-          <option value="masse">Objectif : Prise de masse</option>
-        </select>
-        <input type="number" class="input-pro" id="poids-jour" placeholder="Poids actuel (kg) - Ex: 75.5" step="0.1">
-        <input type="number" class="input-pro" id="calories-jour" placeholder="Calories consommées - Ex: 2200">
-      </div>
-      <button class="btn-save-pro" onclick="sauvegarderJournee()">Enregistrer mes données</button>
+      <select class="input-pro" id="objectif" onchange="afficherConseilObjectif()">
+        <option value="seche">Objectif : Sèche</option>
+        <option value="maintien">Objectif : Maintien</option>
+        <option value="masse">Objectif : Prise de masse</option>
+      </select>
+      <div class="coach-tip" id="coach-tip"></div>
+      <input type="number" class="input-pro" id="poids-jour" placeholder="Poids actuel (kg)" step="0.1">
+      <input type="number" class="input-pro" id="calories-jour" placeholder="Calories consommées">
+      <button class="btn-save-pro" onclick="sauvegarderJournee()">Enregistrer</button>
     </div>
 
-    <!-- CARTE 5 : BILAN DU MOIS -->
+    <!-- BILAN -->
     <div class="card">
-      <h2>📊 Mon Bilan Global</h2>
+      <h2>📊 Bilan Global</h2>
       <div class="stats-grid">
-        <div class="stat-box">
-          <h3>Séances ce mois</h3>
-          <div class="val green" id="bilan-seances">0</div>
-        </div>
-        <div class="stat-box">
-          <h3>Poids Actuel</h3>
-          <div class="val" id="bilan-poids">-- kg</div>
-        </div>
-        <div class="stat-box">
-          <h3>Calories / Jour</h3>
-          <div class="val" id="bilan-calories">-- kcal</div>
-        </div>
-        <div class="stat-box">
-          <h3>Évolution</h3>
-          <div class="val green" id="bilan-evolution">-- kg</div>
-        </div>
+        <div class="stat-box"><h3>Séances</h3><div class="val green" id="bilan-seances">0</div></div>
+        <div class="stat-box"><h3>Poids Actuel</h3><div class="val" id="bilan-poids">-- kg</div></div>
+        <div class="stat-box"><h3>Calories/Jour</h3><div class="val" id="bilan-calories">-- kcal</div></div>
+        <div class="stat-box"><h3>Évolution</h3><div class="val green" id="bilan-evolution">-- kg</div></div>
       </div>
     </div>
 
@@ -266,42 +255,82 @@
 </footer>
 
 <script>
-  // Variables
+    // --- DONNÉES GLOBALES ---
   const joursSemaine = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
   const calendrierDiv = document.getElementById('calendrier');
   const btnValider = document.getElementById('btn-valider');
 
-  // Données sauvegardées
+  let prenom = localStorage.getItem('nutripulse_prenom') || "";
   let joursCoches = JSON.parse(localStorage.getItem('nutripulse_sport')) || [false, false, false, false, false, false, false];
   let userXP = parseInt(localStorage.getItem('nutripulse_xp')) || 0;
   let userCoins = parseInt(localStorage.getItem('nutripulse_coins')) || 0;
+  let streak = parseInt(localStorage.getItem('nutripulse_streak')) || 0;
   let donneesJournee = JSON.parse(localStorage.getItem('nutripulse_journee')) || { poids: null, calories: null, historiquePoids: [], objectif: 'maintien' };
 
-  // --- 1. METTRE À JOUR L'INTERFACE & LES BADGES ---
+  // --- 1. INITIALISATION & DATE ---
+  window.onload = function() {
+    // Affichage de la date
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('date-du-jour').innerText = new Date().toLocaleDateString('fr-FR', options);
+
+    // Gestion du prénom
+    if (!prenom) {
+      document.getElementById('welcome-modal').style.display = 'flex';
+    } else {
+      document.getElementById('nom-utilisateur').innerText = prenom;
+    }
+
+    afficherCalendrier();
+    mettreAJourInterface();
+    mettreAJourBilan();
+  }
+
+  // --- 2. SAUVEGARDE DU PRÉNOM ---
+  function sauvegarderPrenom() {
+    let input = document.getElementById('input-prenom').value.trim();
+    if (input) {
+      prenom = input;
+      localStorage.setItem('nutripulse_prenom', prenom);
+      document.getElementById('nom-utilisateur').innerText = prenom;
+      document.getElementById('welcome-modal').style.display = 'none';
+    } else {
+      alert("N'oublie pas d'écrire ton prénom !");
+    }
+  }
+
+  // --- 3. MISE À JOUR DE L'INTERFACE & DES BADGES ---
   function mettreAJourInterface() {
+    // XP et Niveau
     let niveau = Math.floor(userXP / 500) + 1;
     let xpDansLeNiveau = userXP % 500;
     let pourcentage = (xpDansLeNiveau / 500) * 100;
 
-    // Mise à jour Profil
     document.getElementById('niveau-actuel').innerText = niveau;
     document.getElementById('texte-xp').innerText = `${xpDansLeNiveau} / 500 XP`;
     document.getElementById('barre-xp').style.width = `${pourcentage}%`;
     document.getElementById('nutricoins').innerText = userCoins;
+    document.getElementById('streak-count').innerText = streak;
 
-    // Calcul des séances
+    // Calcul séances
     let seancesFaites = joursCoches.filter(jour => jour === true).length;
-    
-    // Mise à jour du Bilan
     document.getElementById('bilan-seances').innerText = seancesFaites * 4; // Simulation sur le mois
 
-    // --- SYSTEME DE BADGES (DÉBLOQUAGE) ---
+    // Message du Coach dynamique
+    let message = "";
+    if (seancesFaites === 0) message = "Allez, une petite séance de 15 min pour lancer la machine ?";
+    else if (seancesFaites < 3) message = "C'est un bon début ! Continue sur ta lancée.";
+    else if (seancesFaites < 5) message = "Tu es en feu ! Ne lâche rien, tu es sur la bonne voie.";
+    else if (seancesFaites < 7) message = "Incroyable ! Tu es une vraie machine cette semaine.";
+    else message = "LÉGENDE ! Tu as tout donné. Pense à bien récupérer maintenant.";
+    document.getElementById('message-coach').innerText = message;
+
+    // Déblocage des badges
     if (seancesFaites >= 1) unlockBadge('badge-1');
     if (seancesFaites >= 3) unlockBadge('badge-2');
     if (seancesFaites >= 5) unlockBadge('badge-3');
     if (niveau >= 3) unlockBadge('badge-4');
     if (niveau >= 5) unlockBadge('badge-5');
-    if (seancesFaites >= 7) unlockBadge('badge-6');
+    if (streak >= 7) unlockBadge('badge-6');
   }
 
   function unlockBadge(id) {
@@ -312,7 +341,7 @@
     }
   }
 
-  // --- 2. AFFICHER LE CALENDRIER ---
+  // --- 4. AFFICHAGE DU CALENDRIER ---
   function afficherCalendrier() {
     calendrierDiv.innerHTML = '';
     joursSemaine.forEach((jour, index) => {
@@ -328,7 +357,7 @@
     });
   }
 
-  // --- 3. BOUTON VALIDER ---
+  // --- 5. BOUTON VALIDER LA SÉANCE (+ XP, COINS, STREAK) ---
   function validerSeance() {
     let jourIndex = joursCoches.indexOf(false);
     
@@ -336,16 +365,18 @@
       joursCoches[jourIndex] = true;
       userXP += 50;
       userCoins += 10;
+      streak += 1; 
 
       localStorage.setItem('nutripulse_sport', JSON.stringify(joursCoches));
       localStorage.setItem('nutripulse_xp', userXP);
       localStorage.setItem('nutripulse_coins', userCoins);
+      localStorage.setItem('nutripulse_streak', streak);
 
       afficherCalendrier();
       mettreAJourInterface();
       
-      // Animation Bouton
-      btnValider.innerHTML = `<span>✅</span> Séance validée ! +50 XP`;
+      // Animation du bouton
+      btnValider.innerHTML = `<span>✅</span> Séance validée !`;
       btnValider.style.background = '#fff';
       
       setTimeout(() => {
@@ -358,7 +389,18 @@
     }
   }
 
-  // --- 4. SAUVEGARDER POIDS ET CALORIES ---
+  // --- 6. CONSEILS OBJECTIFS ---
+  function afficherConseilObjectif() {
+    const objectif = document.getElementById('objectif').value;
+    const tipDiv = document.getElementById('coach-tip');
+    tipDiv.style.display = 'block';
+
+    if (objectif === 'seche') tipDiv.innerText = "💡 Astuce Sèche : Maintiens un déficit de 300 kcal et privilégie les protéines.";
+    else if (objectif === 'masse') tipDiv.innerText = "💡 Astuce Masse : Mange 300 kcal de plus que ta maintenance. Ne néglige pas les glucides !";
+    else tipDiv.innerText = "💡 Astuce Maintien : Continue comme ça, l'équilibre c'est la clé.";
+  }
+
+  // --- 7. SAUVEGARDE POIDS ET CALORIES ---
   function sauvegarderJournee() {
     const poidsInput = document.getElementById('poids-jour').value;
     const caloriesInput = document.getElementById('calories-jour').value;
@@ -381,7 +423,7 @@
     mettreAJourBilan();
   }
 
-  // --- 5. METTRE À JOUR LE BILAN ---
+  // --- 8. MISE À JOUR DU BILAN (POIDS, ÉVOLUTION) ---
   function mettreAJourBilan() {
     if(donneesJournee.poids) {
       document.getElementById('bilan-poids').innerText = donneesJournee.poids + ' kg';
@@ -401,17 +443,19 @@
       const evolution = (dernierPoids - premierPoids).toFixed(1);
       
       const evoDiv = document.getElementById('bilan-evolution');
-      if(evolution < 0) { evoDiv.innerText = evolution + ' kg'; evoDiv.className = 'val green'; }
-      else if (evolution > 0) { evoDiv.innerText = '+' + evolution + ' kg'; evoDiv.className = 'val orange'; }
-      else { evoDiv.innerText = '0 kg'; evoDiv.className = 'val'; }
+      if(evolution < 0) { 
+        evoDiv.innerText = evolution + ' kg'; 
+        evoDiv.className = 'val green'; 
+      }
+      else if (evolution > 0) { 
+        evoDiv.innerText = '+' + evolution + ' kg'; 
+        evoDiv.className = 'val orange'; 
+      }
+      else { 
+        evoDiv.innerText = '0 kg'; 
+        evoDiv.className = 'val'; 
+      }
     }
-  }
-
-  // Lancement
-  window.onload = function() {
-    afficherCalendrier();
-    mettreAJourInterface();
-    mettreAJourBilan();
   }
 </script>
 </body>
