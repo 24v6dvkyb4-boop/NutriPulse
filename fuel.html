@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NutriPulse — Fuel (Nutrition)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d0d0d; color: #fff; line-height: 1.6; }
+  a { text-decoration: none; }
+  
+  /* NAVBAR (identique à l'accueil) */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
+  .nav-brand { display: flex; align-items: center; gap: 10px; }
+  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px #39ff14); }
+  .logo { font-size: 24px; font-weight: 800; color: #39ff14; letter-spacing: 1px; text-shadow: 0 0 12px #39ff14; }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul li a { color: #cfd8cf; font-weight: 600; font-size: 15px; transition: color 0.2s; }
+  nav ul li a:hover, nav ul li a.active { color: #39ff14; }
+  .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
+
+  /* SECTION FUEL */
+  section { padding: 60px 40px; }
+  .section-title { text-align: center; margin-bottom: 50px; }
+  .section-title h1 { font-size: 42px; color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.4); margin-bottom: 10px; }
+  .section-title p { color: #8fa394; font-size: 17px; }
+  
+  .recipe-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+  .recipe-card { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; overflow: hidden; width: 320px; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+  .recipe-card:hover { transform: translateY(-6px); box-shadow: 0 0 25px rgba(57,255,20,0.25); border-color: #39ff14; }
+  
+  .recipe-card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #2a5c2a; }
+  
+  .recipe-info { padding: 25px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
+  .recipe-info h3 { color: #fff; margin-bottom: 10px; font-size: 20px; }
+  .recipe-info p { color: #8fa394; font-size: 14px; margin-bottom: 20px; flex-grow: 1; }
+  
+  /* Les petites étiquettes pour les calories et protéines */
+  .macros { display: flex; justify-content: center; gap: 10px; font-size: 13px; color: #39ff14; font-weight: 700; }
+  .macro-tag { background: rgba(57,255,20,0.1); border: 1px solid rgba(57,255,20,0.3); padding: 6px 12px; border-radius: 20px; }
+
+  /* FOOTER */
+  footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; text-align: center; }
+  .footer-bottom { border-top: 1px solid #1f3d1f; padding-top: 20px; font-size: 13px; margin-top: 20px; }
+
+  @media (max-width: 700px) {
+    nav ul { display: none; }
+    .section-title h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-brand">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/>
+      <rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/>
+      <rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/>
+      <rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/>
+      <line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+    <div class="logo">NutriPulse</div>
+  </div>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="exercices.html">Exercices</a></li>
+    <li><a href="fuel.html" class="active">Fuel (Nutrition)</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="#" class="btn-nav">Commencer</a>
+</nav>
+
+<!-- CONTENU FUEL -->
+<section>
+  <div class="section-title">
+    <h1>Fuel - Recettes Saines</h1>
+    <p>Mange équilibré, atteins tes objectifs sans te priver.</p>
+  </div>
+  
+  <div class="recipe-grid">
+    
+    <!-- Recette 1 -->
+    <div class="recipe-card">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bowl Poulet Quinoa">
+      <div class="recipe-info">
+        <h3>Bowl Poulet & Quinoa</h3>
+        <p>Riche en protéines, parfait pour la prise de muscle après la musculation.</p>
+        <div class="macros">
+          <span class="macro-tag">🔥 450 kcal</span>
+          <span class="macro-tag">🥩 35g Prot</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Recette 2 -->
+    <div class="recipe-card">
+      <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smoothie Bowl Protéiné">
+      <div class="recipe-info">
+        <h3>Smoothie Bowl Protéiné</h3>
+        <p>Le plein d'énergie et de vitamines pour bien commencer la journée.</p>
+        <div class="macros">
+          <span class="macro-tag">🔥 320 kcal</span>
+          <span class="macro-tag">🍌 15g Prot</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Recette 3 -->
+    <div class="recipe-card">
+      <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Saumon et Brocolis">
+      <div class="recipe-info">
+        <h3>Saumon & Brocolis</h3>
+        <p>Riche en Oméga-3 et en fibres, idéal pour la récupération musculaire.</p>
+        <div class="macros">
+          <span class="macro-tag">🔥 520 kcal</span>
+          <span class="macro-tag">🐟 40g Prot</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="nav-brand" style="justify-content: center; margin-bottom: 10px;">
+    <div class="logo" style="font-size: 20px;">NutriPulse</div>
+  </div>
+  <p style="font-size: 14px;">© 2025 NutriPulse. Tous droits réservés.</p>
+  <div class="footer-bottom">Fait avec passion pour ton équilibre.</div>
+</footer>
+
+</body>
+</html>
