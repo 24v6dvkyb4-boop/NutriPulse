@@ -25,23 +25,25 @@
   .section-title h1 { font-size: 42px; color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.4); margin-bottom: 10px; }
   .section-title p { color: #8fa394; font-size: 17px; }
   
+  /* GRILLE DES RECETTES */
   .recipe-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
-  .recipe-card { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; overflow: hidden; width: 320px; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+  .recipe-card { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; overflow: hidden; width: 350px; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
   .recipe-card:hover { transform: translateY(-6px); box-shadow: 0 0 25px rgba(57,255,20,0.25); border-color: #39ff14; }
   
-  /* NOUVEAU : La zone avec l'emoji à la place de l'image */
-  .recipe-emoji { width: 100%; height: 180px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; font-size: 90px; border-bottom: 1px solid #2a5c2a; }
+  /* IMAGE */
+  .recipe-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #2a5c2a; background-color: #222; }
   
+  /* INFOS */
   .recipe-info { padding: 25px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
   .recipe-info h3 { color: #fff; margin-bottom: 10px; font-size: 20px; }
   .recipe-info p { color: #8fa394; font-size: 14px; margin-bottom: 20px; flex-grow: 1; }
   
-  /* Les petites étiquettes pour les calories et protéines */
-  .macros { display: flex; justify-content: center; gap: 10px; font-size: 13px; color: #39ff14; font-weight: 700; }
+  /* MACROS */
+  .macros { display: flex; justify-content: center; gap: 10px; font-size: 13px; color: #39ff14; font-weight: 700; flex-wrap: wrap; }
   .macro-tag { background: rgba(57,255,20,0.1); border: 1px solid rgba(57,255,20,0.3); padding: 6px 12px; border-radius: 20px; }
 
   /* FOOTER */
-  footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; text-align: center; }
+  footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; text-align: center; margin-top: 50px; }
   .footer-bottom { border-top: 1px solid #1f3d1f; padding-top: 20px; font-size: 13px; margin-top: 20px; }
 
   @media (max-width: 700px) {
@@ -82,9 +84,9 @@
   
   <div class="recipe-grid">
     
-    <!-- Recette 1 -->
+    <!-- Recette 1 : Bowl Poulet -->
     <div class="recipe-card">
-      <div class="recipe-emoji">🥗</div>
+      <img class="recipe-img" src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bowl Poulet Quinoa">
       <div class="recipe-info">
         <h3>Bowl Poulet & Quinoa</h3>
         <p>Riche en protéines, parfait pour la prise de muscle après la musculation.</p>
@@ -95,9 +97,9 @@
       </div>
     </div>
     
-    <!-- Recette 2 -->
+    <!-- Recette 2 : Saumon -->
     <div class="recipe-card">
-      <div class="recipe-emoji">🍣</div>
+      <img class="recipe-img" src="https://images.pexels.com/photos/3768146/pexels-photo-3768146.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Saumon et Brocolis">
       <div class="recipe-info">
         <h3>Saumon & Brocolis</h3>
         <p>Riche en Oméga-3 et en fibres, idéal pour la récupération musculaire.</p>
@@ -108,15 +110,54 @@
       </div>
     </div>
 
-    <!-- Recette 3 -->
+    <!-- Recette 3 : Oeufs et Avocat -->
     <div class="recipe-card">
-      <div class="recipe-emoji">🥑</div>
+      <img class="recipe-img" src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Toast Avocat Oeufs">
       <div class="recipe-info">
         <h3>Toast Avocat & Œufs</h3>
         <p>Le petit-déjeuner parfait : bons lipides et protéines pour la journée.</p>
         <div class="macros">
           <span class="macro-tag">🔥 380 kcal</span>
           <span class="macro-tag">🥚 18g Prot</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recette 4 : Smoothie Bowl -->
+    <div class="recipe-card">
+      <img class="recipe-img" src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Smoothie Bowl">
+      <div class="recipe-info">
+        <h3>Smoothie Bowl Protéiné</h3>
+        <p>Le plein d'énergie et de vitamines pour bien commencer la journée.</p>
+        <div class="macros">
+          <span class="macro-tag">🔥 320 kcal</span>
+          <span class="macro-tag">🍌 15g Prot</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recette 5 : Pâtes Complètes -->
+    <div class="recipe-card">
+      <img class="recipe-img" src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pâtes complètes poulet">
+      <div class="recipe-info">
+        <h3>Pâtes Complètes & Poulet</h3>
+        <p>Le repas idéal avant une séance de sport pour faire le plein d'énergie.</p>
+        <div class="macros">
+          <span class="macro-tag">🔥 600 kcal</span>
+          <span class="macro-tag">🍗 45g Prot</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recette 6 : Salade de Lentilles -->
+    <div class="recipe-card">
+      <img class="recipe-img" src="https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salade de lentilles">
+      <div class="recipe-info">
+        <h3>Salade de Lentilles</h3>
+        <p>Riche en fibres et en protéines végétales, parfait pour un repas léger.</p>
+        <div class="macros">
+          <span class="macro-tag">🔥 350 kcal</span>
+          <span class="macro-tag">🌱 20g Prot</span>
         </div>
       </div>
     </div>
