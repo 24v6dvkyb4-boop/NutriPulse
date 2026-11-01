@@ -13,9 +13,8 @@
 
   /* BANNIÈRE FAVORIS */
   .fav-banner { background: rgba(57,255,20,0.1); border-bottom: 1px solid #39ff14; padding: 15px; text-align: center; font-size: 14px; color: #39ff14; font-weight: 600; display: flex; justify-content: center; align-items: center; gap: 10px; position: relative; z-index: 11; }
-  .fav-banner button { background: #39ff14; color: #0d0d0d; border: none; padding: 8px 15px; border-radius: 20px; font-weight: 800; cursor: pointer; font-size: 13px; transition: 0.2s; }
-  .fav-banner button:hover { background: #2ecc71; transform: scale(1.05); }
-  .close-banner { background: transparent !important; color: #8fa394 !important; font-size: 18px !important; padding: 0 10px !important; box-shadow: none !important; }
+  .fav-banner button { background: #39ff14; color: #0d0d0d; border: none; padding: 8px 15px; border-radius: 20px; font-weight: 800; cursor: pointer; font-size: 13px; }
+  .close-banner { background: transparent !important; color: #8fa394 !important; font-size: 18px !important; padding: 0 10px !important; }
 
   /* NAVBAR */
   nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
@@ -28,12 +27,15 @@
   .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
 
   /* SECTION EXERCICES */
-  section { padding: 60px 40px; }
-  .section-title { text-align: center; margin-bottom: 50px; }
+  section { padding: 40px 40px 60px; }
+  .section-title { text-align: center; margin-bottom: 30px; }
   .section-title h1 { font-size: 42px; color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.4); margin-bottom: 10px; }
   .section-title p { color: #8fa394; font-size: 17px; }
-  
-  .video-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+
+  .category-title { font-size: 28px; color: #fff; margin: 50px 0 25px; padding-bottom: 10px; border-bottom: 1px solid #2a5c2a; display: flex; align-items: center; gap: 10px; }
+  .category-title span { color: #39ff14; font-size: 20px; }
+
+  .video-grid { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
   .video-card { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; overflow: hidden; width: 350px; transition: transform 0.3s, box-shadow 0.3s; }
   .video-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 0 30px rgba(57,255,20,0.3); border-color: #39ff14; }
   
@@ -41,18 +43,18 @@
   .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
   
   .video-info { padding: 20px; text-align: center; }
-  .video-info h3 { color: #fff; margin-bottom: 10px; font-size: 20px; }
+  .video-info h3 { color: #fff; margin-bottom: 10px; font-size: 19px; }
   .video-info p { color: #8fa394; font-size: 14px; }
   .tag { display: inline-block; margin-top: 15px; background: rgba(57,255,20,0.12); color: #39ff14; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; border: 1px solid #39ff14; }
 
   /* FOOTER */
   footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; text-align: center; margin-top: 50px; }
-  .footer-bottom { border-top: 1px solid #1f3d1f; padding-top: 20px; font-size: 13px; margin-top: 20px; }
 
   @media (max-width: 700px) {
     nav ul { display: none; }
     .section-title h1 { font-size: 32px; }
     .fav-banner { flex-direction: column; }
+    .category-title { font-size: 22px; }
   }
 </style>
 </head>
@@ -82,11 +84,70 @@
 <section>
   <div class="section-title">
     <h1>Programmes d'Exercices</h1>
-    <p>Entraîne-toi avec nos vidéos gratuites, chez toi ou à la salle.</p>
+    <p>Trouve la séance parfaite pour ton objectif, chez toi ou à la salle.</p>
   </div>
-  
+
+  <!-- CATÉGORIE : MUSCULATION & FORCE -->
+  <div class="category-title">🏋️ Musculation & Force <span>(Pour prendre du muscle)</span></div>
   <div class="video-grid">
-    <!-- 1 -->
+    <!-- Pectoraux -->
+    <div class="video-card">
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/U8jylvBpWSg" title="Pectoraux" allowfullscreen></iframe></div>
+      <div class="video-info">
+        <h3>Pectoraux (Développé)</h3>
+        <p>La technique parfaite pour des pecs plus gros et pousser plus lourd.</p>
+        <span class="tag">Technique</span>
+      </div>
+    </div>
+    <!-- Dos & Tractions -->
+    <div class="video-card">
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/8_hSDqz6gz8" title="Dos et Tractions" allowfullscreen></iframe></div>
+      <div class="video-info">
+        <h3>Dos & Tractions</h3>
+        <p>Apprends à faire des tractions et à construire un dos large et solide.</p>
+        <span class="tag">Dos</span>
+      </div>
+    </div>
+    <!-- Biceps -->
+    <div class="video-card">
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/kDrBY_AkXzc" title="Biceps" allowfullscreen></iframe></div>
+      <div class="video-info">
+        <h3>Biceps (Curl Marteau)</h3>
+        <p>L'exercice roi pour des bras plus épais et plus forts.</p>
+        <span class="tag">Bras</span>
+      </div>
+    </div>
+    <!-- Épaules -->
+    <div class="video-card">
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/MMexO-W4fVk" title="Épaules" allowfullscreen></iframe></div>
+      <div class="video-info">
+        <h3>Épaules (Développé Militaire)</h3>
+        <p>La technique pour des épaules massives et sans douleur.</p>
+        <span class="tag">Épaules</span>
+      </div>
+    </div>
+    <!-- Machines de salle -->
+    <div class="video-card">
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/2pLT-olgUJs" title="Machines de salle" allowfullscreen></iframe></div>
+      <div class="video-info">
+        <h3>Guide des Machines</h3>
+        <p>Comment utiliser les machines de la salle pour chaque partie du corps.</p>
+        <span class="tag">Débutant</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATÉGORIE : CARDIO & PERTE DE POIDS -->
+  <div class="category-title">🔥 Cardio & Perte de poids <span>(Pour brûler des calories)</span></div>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/ml6cT4AZdqI" title="HIIT" allowfullscreen></iframe></div>
+      <div class="video-info">
+        <h3>Cardio HIIT</h3>
+        <p>Brûle un maximum de calories en un minimum de temps.</p>
+        <span class="tag">15 min</span>
+      </div>
+    </div>
     <div class="video-card">
       <div class="video-container"><iframe src="https://www.youtube.com/embed/UBMk30rjy0o" title="Full Body" allowfullscreen></iframe></div>
       <div class="video-info">
@@ -95,52 +156,6 @@
         <span class="tag">20 min</span>
       </div>
     </div>
-    <!-- 2 -->
-    <div class="video-card">
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/ml6cT4AZdqI" title="HIIT" allowfullscreen></iframe></div>
-      <div class="video-info">
-        <h3>Cardio HIIT</h3>
-        <p>Brûle un maximum de calories et améliore ton endurance.</p>
-        <span class="tag">15 min</span>
-      </div>
-    </div>
-    <!-- 3 -->
-    <div class="video-card">
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/v7AYKMP6rOE" title="Yoga" allowfullscreen></iframe></div>
-      <div class="video-info">
-        <h3>Yoga & Récupération</h3>
-        <p>Idéal pour s'étirer après une séance intense ou se détendre.</p>
-        <span class="tag">10 min</span>
-      </div>
-    </div>
-    <!-- 4 -->
-    <div class="video-card">
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/2pLT-olgUJs" title="Abdos" allowfullscreen></iframe></div>
-      <div class="video-info">
-        <h3>Abdominaux & Gainage</h3>
-        <p>Renforce ta sangle abdominale et protège ton dos.</p>
-        <span class="tag">10 min</span>
-      </div>
-    </div>
-    <!-- 5 -->
-    <div class="video-card">
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/UItWltVZZmE" title="Haut du corps" allowfullscreen></iframe></div>
-      <div class="video-info">
-        <h3>Haut du corps</h3>
-        <p>Pompes, dips et exercices pour le buste et les bras.</p>
-        <span class="tag">15 min</span>
-      </div>
-    </div>
-    <!-- 6 : NOUVELLE VIDÉO BAS DU CORPS -->
-    <div class="video-card">
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/2pLT-olgUJs?start=10" title="Bas du corps" allowfullscreen></iframe></div>
-      <div class="video-info">
-        <h3>Bas du corps</h3>
-        <p>Squats et fentes pour des jambes et des fessiers solides.</p>
-        <span class="tag">15 min</span>
-      </div>
-    </div>
-    <!-- 7 -->
     <div class="video-card">
       <div class="video-container"><iframe src="https://www.youtube.com/embed/IT94xC35u6k" title="Course à pied" allowfullscreen></iframe></div>
       <div class="video-info">
@@ -149,25 +164,45 @@
         <span class="tag">20 min</span>
       </div>
     </div>
-    <!-- 8 : NOUVELLE VIDÉO MOBILITÉ -->
+  </div>
+
+  <!-- CATÉGORIE : BIEN-ÊTRE & RÉCUPÉRATION -->
+  <div class="category-title">🧘 Bien-être & Récupération <span>(Pour se détendre et s'étirer)</span></div>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/v7AYKMP6rOE" title="Yoga" allowfullscreen></iframe></div>
+      <div class="video-info">
+        <h3>Yoga & Récupération</h3>
+        <p>Idéal pour s'étirer après une séance intense.</p>
+        <span class="tag">10 min</span>
+      </div>
+    </div>
     <div class="video-card">
       <div class="video-container"><iframe src="https://www.youtube.com/embed/4pKly2JojMw" title="Mobilité" allowfullscreen></iframe></div>
       <div class="video-info">
         <h3>Mobilité & Souplesse</h3>
-        <p>Des mouvements doux pour garder des articulations en pleine forme.</p>
+        <p>Des mouvements doux pour garder des articulations en forme.</p>
         <span class="tag">12 min</span>
       </div>
     </div>
-    <!-- 9 -->
     <div class="video-card">
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/9V6s1Jf1g1w" title="Pilates" allowfullscreen></iframe></div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/K56T6z3gS5U" title="Pilates" allowfullscreen></iframe></div>
       <div class="video-info">
         <h3>Pilates</h3>
         <p>Renforce tes muscles profonds et améliore ta posture.</p>
         <span class="tag">15 min</span>
       </div>
     </div>
+    <div class="video-card">
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/2pLT-olgUJs?start=10" title="Abdos" allowfullscreen></iframe></div>
+      <div class="video-info">
+        <h3>Abdominaux & Gainage</h3>
+        <p>Renforce ta sangle abdominale et protège ton dos.</p>
+        <span class="tag">10 min</span>
+      </div>
+    </div>
   </div>
+
 </section>
 
 <footer>
