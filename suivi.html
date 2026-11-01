@@ -78,9 +78,10 @@
   .coins-display strong { color: #f1c40f; font-size: 24px; line-height: 1; }
   .coins-display span { color: #8fa394; font-size: 10px; font-weight: 800; text-transform: uppercase; }
 
-  /* --- LE BLOC UNIFIÉ --- */
-  .unified-card { grid-column: 1 / -1; text-align: center; }
-  .week-row { display: flex; justify-content: center; gap: 10px; margin: 20px 0 30px; flex-wrap: wrap; }
+  /* BLOC D'ACTION (CALENDRIER + FORMULAIRE) */
+  .action-card { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 25px; }
+  
+  .week-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
   .day-box { width: 70px; height: 90px; background: #0a0a0a; border: 2px solid #222; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; }
   .day-box.active { border-color: #39ff14; background: rgba(57,255,20,0.05); box-shadow: 0 0 20px rgba(57,255,20,0.2); transform: translateY(-5px); }
   .day-box .day-name { font-size: 14px; font-weight: 800; color: #666; text-transform: uppercase; }
@@ -88,24 +89,25 @@
   .day-box .day-icon { font-size: 28px; margin-top: 5px; filter: grayscale(100%) opacity(0.3); }
   .day-box.active .day-icon { filter: grayscale(0%) opacity(1); }
 
-  .unified-form { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 25px; }
-  .unified-form .input-pro { width: auto; flex: 1; min-width: 200px; margin-bottom: 0; }
+  .input-row { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+  .input-group { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 5px; }
+  .input-group label { font-size: 13px; color: #8fa394; font-weight: 600; margin-left: 5px; }
+  .input-pro { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 16px; outline: none; transition: 0.2s; }
+  .input-pro:focus { border-color: #39ff14; }
 
-  .btn-unified { background: #39ff14; color: #000; border: none; padding: 18px 40px; border-radius: 50px; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 0 30px rgba(57,255,20,0.3); text-transform: uppercase; display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 400px; margin: 0 auto; }
-  .btn-unified:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(57,255,20,0.6); background: #fff; }
+  .btn-unified { background: #39ff14; color: #000; border: none; padding: 18px 40px; border-radius: 50px; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 0 30px rgba(57,255,20,0.3); text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 400px; margin: 0 auto; }
+  .btn-unified:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(57,255,20,0.6); background: #fff; }
   .btn-unified:disabled { background: #333; color: #888; cursor: not-allowed; transform: none; box-shadow: none; border: 1px solid #444; }
 
-  /* FORMULAIRE GLOBAL */
-  .input-pro { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 15px; margin-bottom: 15px; outline: none; transition: 0.2s; }
-  .input-pro:focus { border-color: #39ff14; }
-  .coach-tip { background: rgba(57,255,20,0.05); border: 1px dashed #39ff14; padding: 10px; border-radius: 8px; color: #39ff14; font-size: 13px; text-align: center; margin-bottom: 15px; display: none; }
-
+  /* CARTES BILAN / OBJECTIF */
   .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
   .stat-box { background: #0a0a0a; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #222; }
   .stat-box h3 { color: #8fa394; font-size: 11px; text-transform: uppercase; margin-bottom: 8px; }
   .stat-box .val { font-size: 24px; font-weight: 800; color: #fff; }
   .stat-box .val.green { color: #39ff14; }
   .stat-box .val.orange { color: #f39c12; }
+
+  .coach-tip { background: rgba(57,255,20,0.05); border: 1px dashed #39ff14; padding: 10px; border-radius: 8px; color: #39ff14; font-size: 13px; text-align: center; margin-bottom: 15px; display: none; }
 
   /* SALLE DES TROPHÉES */
   .trophy-card-container { grid-column: 1 / -1; }
@@ -164,6 +166,7 @@
 
   <div class="dashboard-grid">
 
+    <!-- PROFIL -->
     <div class="card profile-card">
       <div class="avatar-level">
         <div class="level-shield">
@@ -198,21 +201,32 @@
       </div>
     </div>
 
-    <div class="card unified-card">
+    <!-- BLOC D'ACTION UNIFIÉ (CALENDRIER + CHAMPS) -->
+    <div class="card action-card">
       <h2 style="justify-content: center;">🔥 Mon Bilan Quotidien</h2>
       
+      <!-- Calendrier -->
       <div class="week-row" id="calendrier"></div>
       
-      <div class="unified-form">
-        <input type="number" class="input-pro" id="poids-jour" placeholder="Poids actuel (kg) ex: 75.5" step="0.1">
-        <input type="number" class="input-pro" id="calories-jour" placeholder="Calories consommées (kcal)">
+      <!-- Formulaire -->
+      <div class="input-row">
+        <div class="input-group">
+          <label>Poids (kg)</label>
+          <input type="number" class="input-pro" id="poids-jour" placeholder="Ex: 75.5" step="0.1">
+        </div>
+        <div class="input-group">
+          <label>Calories (kcal)</label>
+          <input type="number" class="input-pro" id="calories-jour" placeholder="Ex: 2200">
+        </div>
       </div>
 
+      <!-- Bouton de validation -->
       <button class="btn-unified" id="btn-valider" onclick="enregistrerJournee()">
         <span>💾</span> Enregistrer ma journée
       </button>
     </div>
 
+    <!-- BILAN GLOBAL -->
     <div class="card">
       <h2>📊 Bilan Global</h2>
       <div class="stats-grid">
@@ -223,6 +237,7 @@
       </div>
     </div>
 
+    <!-- OBJECTIF -->
     <div class="card">
       <h2>🎯 Mon Objectif</h2>
       <select class="input-pro" id="objectif" onchange="afficherConseilObjectif()">
@@ -230,9 +245,10 @@
         <option value="maintien">Objectif : Maintien</option>
         <option value="masse">Objectif : Prise de masse</option>
       </select>
-      <div class="coach-tip" id="coach-tip"></div>
+      <div class="coach-tip" id="coach-tip" style="margin-top: 15px;"></div>
     </div>
 
+    <!-- TROPHÉES -->
     <div class="card trophy-card-container">
       <h2>🏆 Salle des Trophées</h2>
       <div class="trophy-grid">
@@ -266,24 +282,23 @@
 
   // GESTION DU TEMPS RÉEL
   let today = new Date();
-  let currentDay = today.getDay(); // 0 = Dimanche, 1 = Lundi, etc.
-  let currentDayIndex = currentDay === 0 ? 6 : currentDay - 1; // Ajusté pour que Lundi = 0
-  let currentWeekStr = getWeekNumber(today); // Numéro de la semaine pour le reset
+  let currentDay = today.getDay(); 
+  let currentDayIndex = currentDay === 0 ? 6 : currentDay - 1; // Lundi = 0, Dimanche = 6
+  let currentWeekStr = getWeekNumber(today); 
 
   // Récupération de la semaine sauvegardée
   let savedWeek = localStorage.getItem('nutripulse_week');
   let joursCoches = JSON.parse(localStorage.getItem('nutripulse_sport')) || [false, false, false, false, false, false, false];
 
-  // SI NOUVELLE SEMAINE : RESET DU CALENDRIER SEULEMENT (XP et badges conservés)
+  // SI NOUVELLE SEMAINE : RESET DU CALENDRIER SEULEMENT
   if (savedWeek !== currentWeekStr) {
     joursCoches = [false, false, false, false, false, false, false];
     localStorage.setItem('nutripulse_week', currentWeekStr);
     localStorage.setItem('nutripulse_sport', JSON.stringify(joursCoches));
-    streak = 0; // On reset la flamme si on a loupé une semaine
+    streak = 0; 
     localStorage.setItem('nutripulse_streak', streak);
   }
 
-  // --- FONCTION POUR AVOIR LE NUMÉRO DE LA SEMAINE ---
   function getWeekNumber(d) {
     d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
     d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
@@ -306,7 +321,7 @@
     afficherCalendrier();
     mettreAJourInterface();
     mettreAJourBilan();
-    afficherConseilObjectif(); // Affiche le conseil par défaut
+    afficherConseilObjectif();
   }
 
   // --- 2. SAUVEGARDE PRÉNOM ---
@@ -384,7 +399,6 @@
       box.classList.add('day-box');
       if(joursCoches[index]) box.classList.add('active');
       
-      // Mettre en évidence le jour actuel avec un contour pointillé s'il n'est pas coché
       if (index === currentDayIndex && !joursCoches[index]) {
         box.style.border = "2px dashed #39ff14"; 
       }
@@ -397,7 +411,7 @@
     });
   }
 
-  // --- 5. BOUTON MAGIQUE (Enregistrer) ---
+  // --- 5. ENREGISTRER LA JOURNÉE (Bouton Unique) ---
   function enregistrerJournee() {
     const poidsInput = document.getElementById('poids-jour').value;
     const caloriesInput = document.getElementById('calories-jour').value;
@@ -407,7 +421,7 @@
       return;
     }
 
-    // Sécurité : on vérifie qu'il n'a pas déjà validé aujourd'hui
+    // Validation de la séance (seulement si pas déjà fait)
     if (!joursCoches[currentDayIndex]) {
       joursCoches[currentDayIndex] = true;
       userXP += 50;
@@ -436,7 +450,7 @@
     // Animation du bouton
     btnValider.innerHTML = `<span>🎉</span> Journée enregistrée !`;
     setTimeout(() => {
-      mettreAJourInterface(); // Remet le bouton dans son état "Déjà enregistré"
+      mettreAJourInterface();
     }, 2000);
   }
 
