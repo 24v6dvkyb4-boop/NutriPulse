@@ -31,7 +31,6 @@
   
   .recipe-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #2a5c2a; background-color: #222; }
   
-  /* LE BOUTON COEUR */
   .btn-fav { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; backdrop-filter: blur(5px); z-index: 5; }
   .btn-fav:hover { transform: scale(1.1); }
   .btn-fav.active { color: #ff4d4d; }
@@ -45,7 +44,6 @@
   .macro-tag { background: rgba(57,255,20,0.1); border: 1px solid rgba(57,255,20,0.3); padding: 6px 12px; border-radius: 20px; }
 
   footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; text-align: center; margin-top: 50px; }
-  .footer-bottom { border-top: 1px solid #1f3d1f; padding-top: 20px; font-size: 13px; margin-top: 20px; }
 
   @media (max-width: 700px) {
     nav ul { display: none; }
@@ -73,11 +71,12 @@
 <section>
   <div class="section-title">
     <h1>Fuel - Recettes Saines</h1>
-    <p>Clique sur le ❤️ pour garder tes recettes préférées !</p>
+    <p>12 recettes gourmandes. Clique sur le ❤️ pour garder tes préférées !</p>
   </div>
   
   <div class="recipe-grid">
-    <!-- Recette 1 -->
+    
+    <!-- 1 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette1')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bowl Poulet">
@@ -88,7 +87,7 @@
       </div>
     </div>
     
-    <!-- Recette 2 -->
+    <!-- 2 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette2')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Saumon Grillé">
@@ -99,7 +98,7 @@
       </div>
     </div>
 
-    <!-- Recette 3 -->
+    <!-- 3 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette3')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Toast Avocat Oeufs">
@@ -110,7 +109,7 @@
       </div>
     </div>
 
-    <!-- Recette 4 -->
+    <!-- 4 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette4')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Smoothie Bowl">
@@ -121,7 +120,7 @@
       </div>
     </div>
 
-    <!-- Recette 5 -->
+    <!-- 5 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette5')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pâtes Complètes">
@@ -132,7 +131,7 @@
       </div>
     </div>
 
-    <!-- Recette 6 -->
+    <!-- 6 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette6')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salade Lentilles">
@@ -142,6 +141,73 @@
         <div class="macros"><span class="macro-tag">🔥 350 kcal</span><span class="macro-tag">🌱 20g Prot</span></div>
       </div>
     </div>
+
+    <!-- 7 -->
+    <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette7')">♡</button>
+      <img class="recipe-img" src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Omelette">
+      <div class="recipe-info">
+        <h3>Omelette aux Légumes</h3>
+        <p>Simple, rapide et bourré de protéines.</p>
+        <div class="macros"><span class="macro-tag">🔥 300 kcal</span><span class="macro-tag">🥚 22g Prot</span></div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette8')">♡</button>
+      <img class="recipe-img" src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Burger Healthy">
+      <div class="recipe-info">
+        <h3>Burger Healthy</h3>
+        <p>Un burger maison avec pain complet.</p>
+        <div class="macros"><span class="macro-tag">🔥 550 kcal</span><span class="macro-tag">🥩 40g Prot</span></div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette9')">♡</button>
+      <img class="recipe-img" src="https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wrap Poulet">
+      <div class="recipe-info">
+        <h3>Wrap au Poulet</h3>
+        <p>Parfait pour un déjeuner sur le pouce.</p>
+        <div class="macros"><span class="macro-tag">🔥 420 kcal</span><span class="macro-tag">🍗 30g Prot</span></div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette10')">♡</button>
+      <img class="recipe-img" src="https://images.pexels.com/photos/1618898/pexels-photo-1618898.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Riz au thon">
+      <div class="recipe-info">
+        <h3>Riz & Thon</h3>
+        <p>Le classique de la muscu, rapide et protéiné.</p>
+        <div class="macros"><span class="macro-tag">🔥 480 kcal</span><span class="macro-tag">🐟 35g Prot</span></div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette11')">♡</button>
+      <img class="recipe-img" src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Porridge">
+      <div class="recipe-info">
+        <h3>Porridge Protéiné</h3>
+        <p>Flocons d'avoine et banane pour le matin.</p>
+        <div class="macros"><span class="macro-tag">🔥 350 kcal</span><span class="macro-tag">🥣 20g Prot</span></div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette12')">♡</button>
+      <img class="recipe-img" src="https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Poulet Riz">
+      <div class="recipe-info">
+        <h3>Poulet & Riz Basmati</h3>
+        <p>Le repas de base pour la prise de masse.</p>
+        <div class="macros"><span class="macro-tag">🔥 580 kcal</span><span class="macro-tag">🍗 50g Prot</span></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -152,11 +218,9 @@
   <p style="font-size: 14px;">© 2025 NutriPulse. Tous droits réservés.</p>
 </footer>
 
-<!-- LE SCRIPT POUR LE COEUR -->
 <script>
   function toggleFavori(btn, idRecette) {
     let favoris = JSON.parse(localStorage.getItem('nutripulse_favoris')) || [];
-    
     if (favoris.includes(idRecette)) {
       favoris = favoris.filter(id => id !== idRecette);
       btn.classList.remove('active');
@@ -166,16 +230,13 @@
       btn.classList.add('active');
       btn.innerHTML = '♥';
     }
-    
     localStorage.setItem('nutripulse_favoris', JSON.stringify(favoris));
   }
 
   window.onload = function() {
     let favoris = JSON.parse(localStorage.getItem('nutripulse_favoris')) || [];
     const boutons = document.querySelectorAll('.btn-fav');
-    
     boutons.forEach((btn) => {
-      // On récupère l'ID depuis l'attribut onclick
       const match = btn.getAttribute('onclick').match(/'([^']+)'/);
       if (match) {
         const idRecette = match[1];
