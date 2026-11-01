@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NutriPulse — Accueil</title>
+<title>NutriPulse — Coach Sport & Nutrition Intelligent</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d0d0d; color: #fff; line-height: 1.6; }
   a { text-decoration: none; }
+
   /* NAVBAR */
   nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
   .nav-brand { display: flex; align-items: center; gap: 10px; }
@@ -17,6 +18,7 @@
   nav ul li a { color: #cfd8cf; font-weight: 600; font-size: 15px; transition: color 0.2s; }
   nav ul li a:hover, nav ul li a.active { color: #39ff14; }
   .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
+
   /* HERO */
   .hero { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 90px 40px; flex-wrap: wrap; background: radial-gradient(circle at 80% 20%, #122512 0%, #0d0d0d 60%); }
   .hero-text { flex: 1; min-width: 280px; }
@@ -28,7 +30,8 @@
   .hero-img { flex: 1; min-width: 260px; display: flex; justify-content: center; }
   .hero-circle { width: 320px; height: 320px; border-radius: 50%; border: 2px solid #39ff14; box-shadow: 0 0 40px rgba(57,255,20,0.4), inset 0 0 40px rgba(57,255,20,0.15); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(57,255,20,0.08) 0%, transparent 70%); }
   .hero-circle svg { width: 170px; height: 170px; filter: drop-shadow(0 0 15px #39ff14); }
-  /* SECTIONS */
+
+  /* SECTIONS & CARDS */
   section { padding: 80px 40px; }
   .section-title { text-align: center; margin-bottom: 50px; }
   .section-title h2 { font-size: 38px; color: #39ff14; margin-bottom: 10px; text-shadow: 0 0 15px rgba(57,255,20,0.4); }
@@ -40,9 +43,16 @@
   .card h3 { font-size: 22px; margin-bottom: 10px; color: #fff; }
   .card p { color: #8fa394; font-size: 15px; }
   .card .tag { display: inline-block; margin-top: 15px; background: rgba(57,255,20,0.12); color: #39ff14; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; border: 1px solid #39ff14; }
-  /* FOOTER */
-  footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; text-align: center; }
-  .footer-bottom { border-top: 1px solid #1f3d1f; padding-top: 20px; font-size: 13px; margin-top: 20px; }
+
+  /* FOOTER COMPLET */
+  footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; }
+  .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; text-align: left; }
+  .footer-grid h4 { color: #fff; margin-bottom: 12px; font-size: 16px; }
+  .footer-grid a { display: block; color: #8fa394; font-size: 14px; margin-bottom: 6px; transition: color 0.2s; }
+  .footer-grid a:hover { color: #39ff14; }
+  .footer-bottom { text-align: center; border-top: 1px solid #1f3d1f; padding-top: 20px; font-size: 13px; }
+
+  /* RESPONSIVE MOBILE */
   @media (max-width: 700px) {
     nav ul { display: none; }
     .hero { text-align: center; }
@@ -50,6 +60,7 @@
     .hero-buttons { justify-content: center; }
     .hero-circle { width: 240px; height: 240px; }
     .hero-circle svg { width: 130px; height: 130px; }
+    .footer-grid { flex-direction: column; text-align: center; align-items: center; }
   }
 </style>
 </head>
@@ -76,7 +87,7 @@
   <a href="#" class="btn-nav">Commencer</a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (Haut de page) -->
 <header class="hero">
   <div class="hero-text">
     <h1>Ton coach sport & nutrition intelligent</h1>
@@ -99,7 +110,7 @@
   </div>
 </header>
 
-<!-- SECTIONS -->
+<!-- SECTION EXPLORER -->
 <section>
   <div class="section-title">
     <h2>Explore NutriPulse</h2>
@@ -127,12 +138,44 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER COMPLET -->
 <footer>
-  <div class="nav-brand" style="justify-content: center; margin-bottom: 10px;">
-    <div class="logo" style="font-size: 20px;">NutriPulse</div>
+  <div class="footer-grid">
+    <div>
+      <div class="nav-brand" style="margin-bottom:10px;">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:28px;height:28px;filter:drop-shadow(0 0 6px #39ff14);">
+          <rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/>
+          <rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/>
+          <rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/>
+          <rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/>
+          <line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div class="logo" style="font-size:20px;">NutriPulse</div>
+      </div>
+      <p style="font-size:14px; max-width:250px;">Ton coach sport & nutrition intelligent, chaque jour.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <a href="index.html">Accueil</a>
+      <a href="exercices.html">Exercices</a>
+      <a href="fuel.html">Nutrition</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h4>Ressources</h4>
+      <a href="#">Blog</a>
+      <a href="#">Recettes</a>
+      <a href="#">FAQ</a>
+      <a href="#">Mentions légales</a>
+    </div>
+    <div>
+      <h4>Suis-nous</h4>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">YouTube</a>
+    </div>
   </div>
-  <p style="font-size: 14px;">© 2025 NutriPulse. 100% Gratuit grâce à nos futurs partenaires.</p>
+  <div class="footer-bottom">© 2025 NutriPulse. Tous droits réservés. | Politique de confidentialité | CGU</div>
 </footer>
 
 </body>
