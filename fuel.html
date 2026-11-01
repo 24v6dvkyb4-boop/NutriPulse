@@ -11,7 +11,6 @@
   body { background: #0d0d0d; color: #fff; line-height: 1.6; }
   a { text-decoration: none; }
   
-  /* NAVBAR */
   nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
   .nav-brand { display: flex; align-items: center; gap: 10px; }
   .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px #39ff14); }
@@ -21,30 +20,30 @@
   nav ul li a:hover, nav ul li a.active { color: #39ff14; }
   .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
 
-  /* SECTION FUEL */
   section { padding: 60px 40px; }
   .section-title { text-align: center; margin-bottom: 50px; }
   .section-title h1 { font-size: 42px; color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.4); margin-bottom: 10px; }
   .section-title p { color: #8fa394; font-size: 17px; }
   
-  /* GRILLE DES RECETTES */
   .recipe-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
-  .recipe-card { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; overflow: hidden; width: 350px; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+  .recipe-card { position: relative; background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; overflow: hidden; width: 350px; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
   .recipe-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 0 30px rgba(57,255,20,0.3); border-color: #39ff14; }
   
-  /* IMAGE */
   .recipe-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #2a5c2a; background-color: #222; }
   
-  /* INFOS */
+  /* BOUTON FAVORI (LE COEUR) */
+  .btn-fav { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; backdrop-filter: blur(5px); }
+  .btn-fav:hover { transform: scale(1.1); }
+  .btn-fav.active { color: #ff4d4d; } /* Rouge quand c'est en favori */
+  .btn-fav:not(.active) { color: #fff; }
+  
   .recipe-info { padding: 25px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
   .recipe-info h3 { color: #fff; margin-bottom: 10px; font-size: 20px; }
   .recipe-info p { color: #8fa394; font-size: 14px; margin-bottom: 20px; flex-grow: 1; }
   
-  /* MACROS */
   .macros { display: flex; justify-content: center; gap: 10px; font-size: 13px; color: #39ff14; font-weight: 700; flex-wrap: wrap; }
   .macro-tag { background: rgba(57,255,20,0.1); border: 1px solid rgba(57,255,20,0.3); padding: 6px 12px; border-radius: 20px; }
 
-  /* FOOTER */
   footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; text-align: center; margin-top: 50px; }
   .footer-bottom { border-top: 1px solid #1f3d1f; padding-top: 20px; font-size: 13px; margin-top: 20px; }
 
@@ -58,19 +57,14 @@
 
 <nav>
   <div class="nav-brand">
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/>
-      <rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/>
-      <rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/>
-      <rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/>
-      <line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/>
-    </svg>
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/></svg>
     <div class="logo">NutriPulse</div>
   </div>
   <ul>
     <li><a href="index.html">Accueil</a></li>
     <li><a href="exercices.html">Exercices</a></li>
     <li><a href="fuel.html" class="active">Fuel (Nutrition)</a></li>
+    <li><a href="suivi.html">Mon Suivi</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="#" class="btn-nav">Commencer</a>
@@ -79,13 +73,14 @@
 <section>
   <div class="section-title">
     <h1>Fuel - Recettes Saines</h1>
-    <p>12 recettes gourmandes pour atteindre tes objectifs.</p>
+    <p>12 recettes gourmandes. Clique sur le ❤️ pour garder tes préférées !</p>
   </div>
   
   <div class="recipe-grid">
     
-    <!-- 1 -->
+    <!-- Recette 1 -->
     <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette1')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bowl Poulet">
       <div class="recipe-info">
         <h3>Bowl Poulet & Quinoa</h3>
@@ -94,48 +89,53 @@
       </div>
     </div>
     
-    <!-- 2 -->
+    <!-- Recette 2 -->
     <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette2')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Saumon Grillé">
       <div class="recipe-info">
         <h3>Saumon Grillé & Brocolis</h3>
-        <p>Oméga-3 et fibres, idéal pour la récupération musculaire.</p>
+        <p>Oméga-3 et fibres, idéal pour la récupération.</p>
         <div class="macros"><span class="macro-tag">🔥 520 kcal</span><span class="macro-tag">🐟 40g Prot</span></div>
       </div>
     </div>
 
-    <!-- 3 -->
+    <!-- Recette 3 -->
     <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette3')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Toast Avocat Oeufs">
       <div class="recipe-info">
         <h3>Toast Avocat & Œufs</h3>
-        <p>Le petit-déjeuner parfait : bons lipides et protéines.</p>
+        <p>Le petit-déjeuner parfait : lipides et protéines.</p>
         <div class="macros"><span class="macro-tag">🔥 380 kcal</span><span class="macro-tag">🥚 18g Prot</span></div>
       </div>
     </div>
 
-    <!-- 4 -->
+    <!-- Recette 4 -->
     <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette4')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Smoothie Bowl">
       <div class="recipe-info">
         <h3>Smoothie Bowl Protéiné</h3>
-        <p>Le plein d'énergie et de vitamines pour la journée.</p>
+        <p>Le plein d'énergie et de vitamines.</p>
         <div class="macros"><span class="macro-tag">🔥 320 kcal</span><span class="macro-tag">🍌 15g Prot</span></div>
       </div>
     </div>
 
-    <!-- 5 -->
+    <!-- Recette 5 -->
     <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette5')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pâtes Complètes">
       <div class="recipe-info">
         <h3>Pâtes Complètes & Poulet</h3>
-        <p>Le repas idéal avant une séance de sport intense.</p>
+        <p>Le repas idéal avant une séance de sport.</p>
         <div class="macros"><span class="macro-tag">🔥 600 kcal</span><span class="macro-tag">🍗 45g Prot</span></div>
       </div>
     </div>
 
-    <!-- 6 -->
+    <!-- Recette 6 -->
     <div class="recipe-card">
+      <button class="btn-fav" onclick="toggleFavori(this, 'recette6')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salade Lentilles">
       <div class="recipe-info">
         <h3>Salade de Lentilles</h3>
@@ -144,30 +144,8 @@
       </div>
     </div>
 
-    <!-- 7 -->
-    <div class="recipe-card">
-      <img class="recipe-img" src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Omelette">
-      <div class="recipe-info">
-        <h3>Omelette aux Légumes</h3>
-        <p>Simple, rapide et bourré de protéines pour le soir.</p>
-        <div class="macros"><span class="macro-tag">🔥 300 kcal</span><span class="macro-tag">🥚 22g Prot</span></div>
-      </div>
-    </div>
+  </div>
+</section>
 
-    <!-- 8 -->
-    <div class="recipe-card">
-      <img class="recipe-img" src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Burger Healthy">
-      <div class="recipe-info">
-        <h3>Burger Healthy</h3>
-        <p>Un burger maison avec pain complet et viande maigre.</p>
-        <div class="macros"><span class="macro-tag">🔥 550 kcal</span><span class="macro-tag">🥩 40g Prot</span></div>
-      </div>
-    </div>
-
-    <!-- 9 -->
-    <div class="recipe-card">
-      <img class="recipe-img" src="https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wrap Poulet">
-      <div class="recipe-info">
-        <h3>Wrap au Poulet</h3>
-        <p>Parfait pour un déjeuner sur le pouce après le sport.</p>
-        <div class
+<footer>
+ 
