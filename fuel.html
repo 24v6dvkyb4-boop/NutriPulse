@@ -29,8 +29,8 @@
   .recipe-card { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; overflow: hidden; width: 320px; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
   .recipe-card:hover { transform: translateY(-6px); box-shadow: 0 0 25px rgba(57,255,20,0.25); border-color: #39ff14; }
   
-  /* L'image avec un fond gris au cas où */
-  .recipe-card img { width: 100%; height: 200px; object-fit: cover; background-color: #222; border-bottom: 1px solid #2a5c2a; }
+  /* NOUVEAU : La zone avec l'emoji à la place de l'image */
+  .recipe-emoji { width: 100%; height: 180px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; font-size: 90px; border-bottom: 1px solid #2a5c2a; }
   
   .recipe-info { padding: 25px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
   .recipe-info h3 { color: #fff; margin-bottom: 10px; font-size: 20px; }
@@ -82,9 +82,9 @@
   
   <div class="recipe-grid">
     
-    <!-- Recette 1 : Bowl Poulet -->
+    <!-- Recette 1 -->
     <div class="recipe-card">
-      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bowl Poulet Quinoa">
+      <div class="recipe-emoji">🥗</div>
       <div class="recipe-info">
         <h3>Bowl Poulet & Quinoa</h3>
         <p>Riche en protéines, parfait pour la prise de muscle après la musculation.</p>
@@ -95,9 +95,9 @@
       </div>
     </div>
     
-    <!-- Recette 2 : Saumon -->
+    <!-- Recette 2 -->
     <div class="recipe-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Salmon_and_broccoli.jpg/640px-Salmon_and_broccoli.jpg" alt="Saumon et Brocolis">
+      <div class="recipe-emoji">🍣</div>
       <div class="recipe-info">
         <h3>Saumon & Brocolis</h3>
         <p>Riche en Oméga-3 et en fibres, idéal pour la récupération musculaire.</p>
@@ -108,9 +108,9 @@
       </div>
     </div>
 
-    <!-- Recette 3 : Oeufs et Avocat -->
+    <!-- Recette 3 -->
     <div class="recipe-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Healthy_breakfast_bowl.jpg/640px-Healthy_breakfast_bowl.jpg" alt="Oeufs Avocat">
+      <div class="recipe-emoji">🥑</div>
       <div class="recipe-info">
         <h3>Toast Avocat & Œufs</h3>
         <p>Le petit-déjeuner parfait : bons lipides et protéines pour la journée.</p>
