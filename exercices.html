@@ -12,8 +12,10 @@
   a { text-decoration: none; }
 
   /* BANNIÈRE FAVORIS */
-  .fav-banner { background: rgba(57,255,20,0.1); border-bottom: 1px solid #39ff14; padding: 15px; text-align: center; font-size: 14px; color: #39ff14; font-weight: 600; display: flex; justify-content: center; align-items: center; gap: 10px; }
-  .fav-banner button { background: #39ff14; color: #0d0d0d; border: none; padding: 8px 15px; border-radius: 20px; font-weight: 800; cursor: pointer; font-size: 13px; }
+  .fav-banner { background: rgba(57,255,20,0.1); border-bottom: 1px solid #39ff14; padding: 15px; text-align: center; font-size: 14px; color: #39ff14; font-weight: 600; display: flex; justify-content: center; align-items: center; gap: 10px; position: relative; z-index: 11; }
+  .fav-banner button { background: #39ff14; color: #0d0d0d; border: none; padding: 8px 15px; border-radius: 20px; font-weight: 800; cursor: pointer; font-size: 13px; transition: 0.2s; }
+  .fav-banner button:hover { background: #2ecc71; transform: scale(1.05); }
+  .close-banner { background: transparent !important; color: #8fa394 !important; font-size: 18px !important; padding: 0 10px !important; box-shadow: none !important; }
 
   /* NAVBAR */
   nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
@@ -56,10 +58,10 @@
 </head>
 <body>
 
-<!-- BANNIÈRE FAVORIS -->
 <div class="fav-banner" id="fav-banner">
   <span>⭐ Mets NutriPulse en favori pour ne rien rater !</span>
-  <button onclick="ajouterFavori()">Ajouter aux favoris</button>
+  <button onclick="alert('Appuie sur Ctrl + D (ou Cmd + D sur Mac) pour mettre le site en favori !')">Ajouter aux favoris</button>
+  <button class="close-banner" onclick="document.getElementById('fav-banner').style.display='none'">✕</button>
 </div>
 
 <nav>
@@ -129,9 +131,9 @@
         <span class="tag">15 min</span>
       </div>
     </div>
-    <!-- 6 -->
+    <!-- 6 : NOUVELLE VIDÉO BAS DU CORPS -->
     <div class="video-card">
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/1SkBf6h0sXk" title="Bas du corps" allowfullscreen></iframe></div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/2pLT-olgUJs?start=10" title="Bas du corps" allowfullscreen></iframe></div>
       <div class="video-info">
         <h3>Bas du corps</h3>
         <p>Squats et fentes pour des jambes et des fessiers solides.</p>
@@ -147,9 +149,9 @@
         <span class="tag">20 min</span>
       </div>
     </div>
-    <!-- 8 -->
+    <!-- 8 : NOUVELLE VIDÉO MOBILITÉ -->
     <div class="video-card">
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/djG6bW62g1c" title="Mobilité" allowfullscreen></iframe></div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/4pKly2JojMw" title="Mobilité" allowfullscreen></iframe></div>
       <div class="video-info">
         <h3>Mobilité & Souplesse</h3>
         <p>Des mouvements doux pour garder des articulations en pleine forme.</p>
@@ -158,7 +160,7 @@
     </div>
     <!-- 9 -->
     <div class="video-card">
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/4pKly2JojMw" title="Pilates" allowfullscreen></iframe></div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/9V6s1Jf1g1w" title="Pilates" allowfullscreen></iframe></div>
       <div class="video-info">
         <h3>Pilates</h3>
         <p>Renforce tes muscles profonds et améliore ta posture.</p>
