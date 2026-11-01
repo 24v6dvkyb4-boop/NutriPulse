@@ -11,7 +11,6 @@
   body { background: #0a0a0a; color: #fff; line-height: 1.6; overflow-x: hidden; }
   a { text-decoration: none; }
 
-  /* NAVBAR */
   nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
   .nav-brand { display: flex; align-items: center; gap: 10px; }
   .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px #39ff14); }
@@ -21,7 +20,6 @@
   nav ul li a:hover, nav ul li a.active { color: #39ff14; }
   .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
 
-  /* MODAL DE BIENVENUE */
   .welcome-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
   .welcome-box { background: #121212; border: 2px solid #39ff14; border-radius: 20px; padding: 40px; text-align: center; max-width: 400px; width: 90%; box-shadow: 0 0 50px rgba(57,255,20,0.2); }
   .welcome-box h2 { color: #39ff14; margin-bottom: 15px; font-size: 28px; }
@@ -30,7 +28,6 @@
   .welcome-box button { width: 100%; background: #39ff14; color: #000; border: none; padding: 15px; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; }
   .welcome-box button:hover { background: #fff; box-shadow: 0 0 20px rgba(57,255,20,0.5); }
 
-  /* CONTENEUR PRINCIPAL */
   section { padding: 40px 20px 80px; max-width: 1100px; margin: 0 auto; }
   
   .header-title { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 20px; flex-wrap: wrap; gap: 20px; }
@@ -38,13 +35,11 @@
   .header-title h1 span { color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.5); }
   .header-date { color: #8fa394; font-size: 15px; font-weight: 600; text-transform: capitalize; }
 
-  /* MESSAGE DU COACH */
   .coach-message { background: linear-gradient(90deg, rgba(57,255,20,0.1) 0%, transparent 100%); border-left: 4px solid #39ff14; padding: 20px; border-radius: 0 15px 15px 0; margin-bottom: 30px; display: flex; align-items: center; gap: 20px; }
   .coach-icon { font-size: 40px; flex-shrink: 0; }
   .coach-text h3 { color: #39ff14; font-size: 18px; margin-bottom: 5px; }
   .coach-text p { color: #cfd8cf; font-size: 15px; font-style: italic; }
 
-  /* GRILLE DASHBOARD */
   .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
   @media (max-width: 800px) { .dashboard-grid { grid-template-columns: 1fr; } }
 
@@ -52,7 +47,6 @@
   .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #39ff14; box-shadow: 0 0 15px #39ff14; }
   .card h2 { font-size: 20px; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #222; padding-bottom: 15px; }
 
-  /* PROFIL (XP & NIVEAU & STREAK) */
   .profile-card { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; background: linear-gradient(135deg, #121212, #0a1a0a); }
   .avatar-level { display: flex; align-items: center; gap: 20px; }
   
@@ -78,7 +72,16 @@
   .coins-display strong { color: #f1c40f; font-size: 24px; line-height: 1; }
   .coins-display span { color: #8fa394; font-size: 10px; font-weight: 800; text-transform: uppercase; }
 
-  /* CALENDRIER & VALIDATION */
+  .trophy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
+  .trophy-card { background: #0a0a0a; border: 1px solid #222; border-radius: 15px; padding: 15px 10px; text-align: center; transition: 0.3s; }
+  .trophy-card.locked { opacity: 0.4; filter: grayscale(100%); }
+  .trophy-card.unlocked { border-color: #39ff14; background: rgba(57,255,20,0.05); box-shadow: 0 0 20px rgba(57,255,20,0.1); }
+  .trophy-card.unlocked .trophy-icon { filter: drop-shadow(0 0 10px rgba(57,255,20,0.5)); animation: float 3s ease-in-out infinite; }
+  .trophy-icon { font-size: 40px; margin-bottom: 10px; }
+  .trophy-title { font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 3px; }
+  .trophy-desc { font-size: 10px; color: #8fa394; }
+  @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0px); } }
+
   .action-area { grid-column: 1 / -1; text-align: center; }
   .week-row { display: flex; justify-content: center; gap: 15px; margin: 20px 0 30px; flex-wrap: wrap; }
   .day-box { width: 70px; height: 90px; background: #0a0a0a; border: 2px solid #222; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; }
@@ -91,18 +94,6 @@
   .btn-validate { background: #39ff14; color: #000; border: none; padding: 18px 50px; border-radius: 50px; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 0 30px rgba(57,255,20,0.3); text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; }
   .btn-validate:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(57,255,20,0.6); background: #fff; }
 
-  /* SALLE DES TROPHÉES */
-  .trophy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
-  .trophy-card { background: #0a0a0a; border: 1px solid #222; border-radius: 15px; padding: 15px 10px; text-align: center; transition: 0.3s; }
-  .trophy-card.locked { opacity: 0.4; filter: grayscale(100%); }
-  .trophy-card.unlocked { border-color: #39ff14; background: rgba(57,255,20,0.05); box-shadow: 0 0 20px rgba(57,255,20,0.1); }
-  .trophy-card.unlocked .trophy-icon { filter: drop-shadow(0 0 10px rgba(57,255,20,0.5)); animation: float 3s ease-in-out infinite; }
-  .trophy-icon { font-size: 40px; margin-bottom: 10px; }
-  .trophy-title { font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 3px; }
-  .trophy-desc { font-size: 10px; color: #8fa394; }
-  @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0px); } }
-
-  /* FORMULAIRE & BILAN */
   .input-pro { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 15px; margin-bottom: 15px; outline: none; transition: 0.2s; }
   .input-pro:focus { border-color: #39ff14; }
   .coach-tip { background: rgba(57,255,20,0.05); border: 1px dashed #39ff14; padding: 10px; border-radius: 8px; color: #39ff14; font-size: 13px; text-align: center; margin-bottom: 15px; display: none; }
@@ -121,7 +112,6 @@
 </head>
 <body>
 
-<!-- FENÊTRE DE BIENVENUE -->
 <div class="welcome-modal" id="welcome-modal" style="display: none;">
   <div class="welcome-box">
     <h2>Bienvenue sur NutriPulse</h2>
@@ -147,13 +137,11 @@
 </nav>
 
 <section>
-  <!-- EN-TÊTE PERSONNALISÉ -->
   <div class="header-title">
     <h1>Salut <span id="nom-utilisateur">Champion</span>,<br>prêt à tout casser ?</h1>
     <div class="header-date" id="date-du-jour"></div>
   </div>
 
-  <!-- MESSAGE DU COACH -->
   <div class="coach-message">
     <div class="coach-icon">🤖</div>
     <div class="coach-text">
@@ -164,7 +152,6 @@
 
   <div class="dashboard-grid">
 
-    <!-- PROFIL -->
     <div class="card profile-card">
       <div class="avatar-level">
         <div class="level-shield">
@@ -199,7 +186,6 @@
       </div>
     </div>
 
-    <!-- ENTRAINEMENT -->
     <div class="card action-area">
       <h2 style="justify-content: center;">🔥 Semaine Actuelle</h2>
       <div class="week-row" id="calendrier"></div>
@@ -209,8 +195,7 @@
       </button>
     </div>
 
-    <!-- SALLE DES TROPHÉES -->
-    <div class="card" style="grid-column: 1 / -1;">
+    <div class="card">
       <h2>🏆 Salle des Trophées</h2>
       <div class="trophy-grid">
         <div class="trophy-card locked" id="badge-1"><div class="trophy-icon">🥇</div><div class="trophy-title">Premier Pas</div><div class="trophy-desc">1 séance</div></div>
@@ -222,7 +207,6 @@
       </div>
     </div>
 
-    <!-- SUIVI -->
     <div class="card">
       <h2>⚖️ Ma Journée</h2>
       <select class="input-pro" id="objectif" onchange="afficherConseilObjectif()">
@@ -236,7 +220,6 @@
       <button class="btn-save-pro" onclick="sauvegarderJournee()">Enregistrer</button>
     </div>
 
-    <!-- BILAN -->
     <div class="card">
       <h2>📊 Bilan Global</h2>
       <div class="stats-grid">
@@ -267,13 +250,11 @@
   let streak = parseInt(localStorage.getItem('nutripulse_streak')) || 0;
   let donneesJournee = JSON.parse(localStorage.getItem('nutripulse_journee')) || { poids: null, calories: null, historiquePoids: [], objectif: 'maintien' };
 
-  // --- 1. INITIALISATION & DATE ---
+  // --- 1. INITIALISATION ---
   window.onload = function() {
-    // Affichage de la date
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     document.getElementById('date-du-jour').innerText = new Date().toLocaleDateString('fr-FR', options);
 
-    // Gestion du prénom
     if (!prenom) {
       document.getElementById('welcome-modal').style.display = 'flex';
     } else {
@@ -285,7 +266,7 @@
     mettreAJourBilan();
   }
 
-  // --- 2. SAUVEGARDE DU PRÉNOM ---
+  // --- 2. SAUVEGARDE PRÉNOM ---
   function sauvegarderPrenom() {
     let input = document.getElementById('input-prenom').value.trim();
     if (input) {
@@ -298,9 +279,8 @@
     }
   }
 
-  // --- 3. MISE À JOUR DE L'INTERFACE & DES BADGES ---
+  // --- 3. MISE À JOUR INTERFACE & BADGES ---
   function mettreAJourInterface() {
-    // XP et Niveau
     let niveau = Math.floor(userXP / 500) + 1;
     let xpDansLeNiveau = userXP % 500;
     let pourcentage = (xpDansLeNiveau / 500) * 100;
@@ -311,11 +291,9 @@
     document.getElementById('nutricoins').innerText = userCoins;
     document.getElementById('streak-count').innerText = streak;
 
-    // Calcul séances
     let seancesFaites = joursCoches.filter(jour => jour === true).length;
-    document.getElementById('bilan-seances').innerText = seancesFaites * 4; // Simulation sur le mois
+    document.getElementById('bilan-seances').innerText = seancesFaites * 4;
 
-    // Message du Coach dynamique
     let message = "";
     if (seancesFaites === 0) message = "Allez, une petite séance de 15 min pour lancer la machine ?";
     else if (seancesFaites < 3) message = "C'est un bon début ! Continue sur ta lancée.";
@@ -324,7 +302,6 @@
     else message = "LÉGENDE ! Tu as tout donné. Pense à bien récupérer maintenant.";
     document.getElementById('message-coach').innerText = message;
 
-    // Déblocage des badges
     if (seancesFaites >= 1) unlockBadge('badge-1');
     if (seancesFaites >= 3) unlockBadge('badge-2');
     if (seancesFaites >= 5) unlockBadge('badge-3');
@@ -341,7 +318,7 @@
     }
   }
 
-  // --- 4. AFFICHAGE DU CALENDRIER ---
+  // --- 4. CALENDRIER ---
   function afficherCalendrier() {
     calendrierDiv.innerHTML = '';
     joursSemaine.forEach((jour, index) => {
@@ -357,7 +334,7 @@
     });
   }
 
-  // --- 5. BOUTON VALIDER LA SÉANCE (+ XP, COINS, STREAK) ---
+  // --- 5. VALIDER SÉANCE ---
   function validerSeance() {
     let jourIndex = joursCoches.indexOf(false);
     
@@ -375,7 +352,6 @@
       afficherCalendrier();
       mettreAJourInterface();
       
-      // Animation du bouton
       btnValider.innerHTML = `<span>✅</span> Séance validée !`;
       btnValider.style.background = '#fff';
       
@@ -400,7 +376,7 @@
     else tipDiv.innerText = "💡 Astuce Maintien : Continue comme ça, l'équilibre c'est la clé.";
   }
 
-  // --- 7. SAUVEGARDE POIDS ET CALORIES ---
+  // --- 7. SAUVEGARDER POIDS / CALORIES ---
   function sauvegarderJournee() {
     const poidsInput = document.getElementById('poids-jour').value;
     const caloriesInput = document.getElementById('calories-jour').value;
@@ -423,7 +399,7 @@
     mettreAJourBilan();
   }
 
-  // --- 8. MISE À JOUR DU BILAN (POIDS, ÉVOLUTION) ---
+  // --- 8. BILAN ---
   function mettreAJourBilan() {
     if(donneesJournee.poids) {
       document.getElementById('bilan-poids').innerText = donneesJournee.poids + ' kg';
