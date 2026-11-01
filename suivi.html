@@ -78,25 +78,27 @@
   .coins-display strong { color: #f1c40f; font-size: 24px; line-height: 1; }
   .coins-display span { color: #8fa394; font-size: 10px; font-weight: 800; text-transform: uppercase; }
 
-  /* CALENDRIER */
-  .action-area { text-align: center; }
+  /* --- LE BLOC UNIFIÉ --- */
+  .unified-card { grid-column: 1 / -1; text-align: center; }
   .week-row { display: flex; justify-content: center; gap: 10px; margin: 20px 0 30px; flex-wrap: wrap; }
-  .day-box { width: 60px; height: 80px; background: #0a0a0a; border: 2px solid #222; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; }
+  .day-box { width: 70px; height: 90px; background: #0a0a0a; border: 2px solid #222; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; }
   .day-box.active { border-color: #39ff14; background: rgba(57,255,20,0.05); box-shadow: 0 0 20px rgba(57,255,20,0.2); transform: translateY(-5px); }
-  .day-box .day-name { font-size: 12px; font-weight: 800; color: #666; text-transform: uppercase; }
+  .day-box .day-name { font-size: 14px; font-weight: 800; color: #666; text-transform: uppercase; }
   .day-box.active .day-name { color: #39ff14; }
-  .day-box .day-icon { font-size: 24px; margin-top: 5px; filter: grayscale(100%) opacity(0.3); }
+  .day-box .day-icon { font-size: 28px; margin-top: 5px; filter: grayscale(100%) opacity(0.3); }
   .day-box.active .day-icon { filter: grayscale(0%) opacity(1); }
 
-  .btn-validate { background: #39ff14; color: #000; border: none; padding: 15px 30px; border-radius: 50px; font-size: 16px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 0 30px rgba(57,255,20,0.3); text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; width: 100%; justify-content: center; }
-  .btn-validate:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(57,255,20,0.6); background: #fff; }
+  .unified-form { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 25px; }
+  .unified-form .input-pro { width: auto; flex: 1; min-width: 200px; margin-bottom: 0; }
 
-  /* FORMULAIRE & BILAN */
+  .btn-unified { background: #39ff14; color: #000; border: none; padding: 18px 40px; border-radius: 50px; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 0 30px rgba(57,255,20,0.3); text-transform: uppercase; display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 400px; margin: 0 auto; }
+  .btn-unified:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(57,255,20,0.6); background: #fff; }
+  .btn-unified:disabled { background: #333; color: #888; cursor: not-allowed; transform: none; box-shadow: none; border: 1px solid #444; }
+
+  /* FORMULAIRE GLOBAL */
   .input-pro { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 15px; margin-bottom: 15px; outline: none; transition: 0.2s; }
   .input-pro:focus { border-color: #39ff14; }
   .coach-tip { background: rgba(57,255,20,0.05); border: 1px dashed #39ff14; padding: 10px; border-radius: 8px; color: #39ff14; font-size: 13px; text-align: center; margin-bottom: 15px; display: none; }
-  .btn-save-pro { width: 100%; background: transparent; border: 2px solid #39ff14; color: #39ff14; padding: 15px; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; }
-  .btn-save-pro:hover { background: #39ff14; color: #000; }
 
   .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
   .stat-box { background: #0a0a0a; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #222; }
@@ -105,7 +107,7 @@
   .stat-box .val.green { color: #39ff14; }
   .stat-box .val.orange { color: #f39c12; }
 
-  /* SALLE DES TROPHÉES (GRANDE LARGEUR) */
+  /* SALLE DES TROPHÉES */
   .trophy-card-container { grid-column: 1 / -1; }
   .trophy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px; }
   .trophy-item { background: #0a0a0a; border: 1px solid #222; border-radius: 12px; padding: 12px 5px; text-align: center; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
@@ -196,26 +198,19 @@
       </div>
     </div>
 
-    <div class="card action-area">
-      <h2 style="justify-content: center;">🔥 Semaine Actuelle</h2>
+    <div class="card unified-card">
+      <h2 style="justify-content: center;">🔥 Mon Bilan Quotidien</h2>
+      
       <div class="week-row" id="calendrier"></div>
       
-      <button class="btn-validate" id="btn-valider" onclick="validerSeance()">
-        <span>💪</span> Valider ma séance
-      </button>
-    </div>
+      <div class="unified-form">
+        <input type="number" class="input-pro" id="poids-jour" placeholder="Poids actuel (kg) ex: 75.5" step="0.1">
+        <input type="number" class="input-pro" id="calories-jour" placeholder="Calories consommées (kcal)">
+      </div>
 
-    <div class="card">
-      <h2>⚖️ Ma Journée</h2>
-      <select class="input-pro" id="objectif" onchange="afficherConseilObjectif()">
-        <option value="seche">Objectif : Sèche</option>
-        <option value="maintien">Objectif : Maintien</option>
-        <option value="masse">Objectif : Prise de masse</option>
-      </select>
-      <div class="coach-tip" id="coach-tip"></div>
-      <input type="number" class="input-pro" id="poids-jour" placeholder="Poids actuel (kg)" step="0.1">
-      <input type="number" class="input-pro" id="calories-jour" placeholder="Calories consommées">
-      <button class="btn-save-pro" onclick="sauvegarderJournee()">Enregistrer</button>
+      <button class="btn-unified" id="btn-valider" onclick="enregistrerJournee()">
+        <span>💾</span> Enregistrer ma journée
+      </button>
     </div>
 
     <div class="card">
@@ -226,6 +221,16 @@
         <div class="stat-box"><h3>Calories/Jour</h3><div class="val" id="bilan-calories">-- kcal</div></div>
         <div class="stat-box"><h3>Évolution</h3><div class="val green" id="bilan-evolution">-- kg</div></div>
       </div>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Mon Objectif</h2>
+      <select class="input-pro" id="objectif" onchange="afficherConseilObjectif()">
+        <option value="seche">Objectif : Sèche</option>
+        <option value="maintien">Objectif : Maintien</option>
+        <option value="masse">Objectif : Prise de masse</option>
+      </select>
+      <div class="coach-tip" id="coach-tip"></div>
     </div>
 
     <div class="card trophy-card-container">
@@ -254,11 +259,38 @@
   const btnValider = document.getElementById('btn-valider');
 
   let prenom = localStorage.getItem('nutripulse_prenom') || "";
-  let joursCoches = JSON.parse(localStorage.getItem('nutripulse_sport')) || [false, false, false, false, false, false, false];
   let userXP = parseInt(localStorage.getItem('nutripulse_xp')) || 0;
   let userCoins = parseInt(localStorage.getItem('nutripulse_coins')) || 0;
   let streak = parseInt(localStorage.getItem('nutripulse_streak')) || 0;
   let donneesJournee = JSON.parse(localStorage.getItem('nutripulse_journee')) || { poids: null, calories: null, historiquePoids: [], objectif: 'maintien' };
+
+  // GESTION DU TEMPS RÉEL
+  let today = new Date();
+  let currentDay = today.getDay(); // 0 = Dimanche, 1 = Lundi, etc.
+  let currentDayIndex = currentDay === 0 ? 6 : currentDay - 1; // Ajusté pour que Lundi = 0
+  let currentWeekStr = getWeekNumber(today); // Numéro de la semaine pour le reset
+
+  // Récupération de la semaine sauvegardée
+  let savedWeek = localStorage.getItem('nutripulse_week');
+  let joursCoches = JSON.parse(localStorage.getItem('nutripulse_sport')) || [false, false, false, false, false, false, false];
+
+  // SI NOUVELLE SEMAINE : RESET DU CALENDRIER SEULEMENT (XP et badges conservés)
+  if (savedWeek !== currentWeekStr) {
+    joursCoches = [false, false, false, false, false, false, false];
+    localStorage.setItem('nutripulse_week', currentWeekStr);
+    localStorage.setItem('nutripulse_sport', JSON.stringify(joursCoches));
+    streak = 0; // On reset la flamme si on a loupé une semaine
+    localStorage.setItem('nutripulse_streak', streak);
+  }
+
+  // --- FONCTION POUR AVOIR LE NUMÉRO DE LA SEMAINE ---
+  function getWeekNumber(d) {
+    d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+    return d.getUTCFullYear() + "-W" + weekNo;
+  }
 
   // --- 1. INITIALISATION ---
   window.onload = function() {
@@ -274,6 +306,7 @@
     afficherCalendrier();
     mettreAJourInterface();
     mettreAJourBilan();
+    afficherConseilObjectif(); // Affiche le conseil par défaut
   }
 
   // --- 2. SAUVEGARDE PRÉNOM ---
@@ -318,6 +351,21 @@
     if (niveau >= 3) unlockBadge('badge-4');
     if (niveau >= 5) unlockBadge('badge-5');
     if (streak >= 7) unlockBadge('badge-6');
+
+    // BLOCAGE DU BOUTON SI DÉJÀ FAIT AUJOURD'HUI
+    if (joursCoches[currentDayIndex]) {
+      btnValider.innerHTML = `<span>✅</span> Journée déjà enregistrée`;
+      btnValider.disabled = true;
+      btnValider.style.background = '#333';
+      btnValider.style.color = '#888';
+      btnValider.style.boxShadow = 'none';
+    } else {
+      btnValider.innerHTML = `<span>💾</span> Enregistrer ma journée`;
+      btnValider.disabled = false;
+      btnValider.style.background = '#39ff14';
+      btnValider.style.color = '#000';
+      btnValider.style.boxShadow = '0 0 30px rgba(57,255,20,0.3)';
+    }
   }
 
   function unlockBadge(id) {
@@ -336,6 +384,11 @@
       box.classList.add('day-box');
       if(joursCoches[index]) box.classList.add('active');
       
+      // Mettre en évidence le jour actuel avec un contour pointillé s'il n'est pas coché
+      if (index === currentDayIndex && !joursCoches[index]) {
+        box.style.border = "2px dashed #39ff14"; 
+      }
+
       box.innerHTML = `
         <div class="day-name">${jour}</div>
         <div class="day-icon">${joursCoches[index] ? '🔥' : '⚪'}</div>
@@ -344,35 +397,47 @@
     });
   }
 
-  // --- 5. VALIDER SÉANCE ---
-  function validerSeance() {
-    let jourIndex = joursCoches.indexOf(false);
-    
-    if (jourIndex !== -1) {
-      joursCoches[jourIndex] = true;
+  // --- 5. BOUTON MAGIQUE (Enregistrer) ---
+  function enregistrerJournee() {
+    const poidsInput = document.getElementById('poids-jour').value;
+    const caloriesInput = document.getElementById('calories-jour').value;
+
+    if(!poidsInput || !caloriesInput) {
+      alert("Remplis le poids et les calories pour valider ta journée !");
+      return;
+    }
+
+    // Sécurité : on vérifie qu'il n'a pas déjà validé aujourd'hui
+    if (!joursCoches[currentDayIndex]) {
+      joursCoches[currentDayIndex] = true;
       userXP += 50;
       userCoins += 10;
       streak += 1; 
-
-      localStorage.setItem('nutripulse_sport', JSON.stringify(joursCoches));
-      localStorage.setItem('nutripulse_xp', userXP);
-      localStorage.setItem('nutripulse_coins', userCoins);
-      localStorage.setItem('nutripulse_streak', streak);
-
-      afficherCalendrier();
-      mettreAJourInterface();
-      
-      btnValider.innerHTML = `<span>✅</span> Séance validée !`;
-      btnValider.style.background = '#fff';
-      
-      setTimeout(() => {
-        btnValider.innerHTML = `<span>💪</span> Valider ma séance`;
-        btnValider.style.background = '#39ff14';
-      }, 2000);
-
-    } else {
-      alert("Bravo ! Tu as déjà validé toutes tes séances de la semaine. Repose-toi ! 🧘‍♂️");
     }
+
+    // Sauvegarde du poids et calories
+    donneesJournee.poids = parseFloat(poidsInput);
+    donneesJournee.calories = parseInt(caloriesInput);
+    if(!donneesJournee.historiquePoids) donneesJournee.historiquePoids = [];
+    donneesJournee.historiquePoids.push(donneesJournee.poids);
+
+    // Sauvegarde globale
+    localStorage.setItem('nutripulse_sport', JSON.stringify(joursCoches));
+    localStorage.setItem('nutripulse_xp', userXP);
+    localStorage.setItem('nutripulse_coins', userCoins);
+    localStorage.setItem('nutripulse_streak', streak);
+    localStorage.setItem('nutripulse_journee', JSON.stringify(donneesJournee));
+
+    // Mise à jour visuelle
+    afficherCalendrier();
+    mettreAJourInterface();
+    mettreAJourBilan();
+    
+    // Animation du bouton
+    btnValider.innerHTML = `<span>🎉</span> Journée enregistrée !`;
+    setTimeout(() => {
+      mettreAJourInterface(); // Remet le bouton dans son état "Déjà enregistré"
+    }, 2000);
   }
 
   // --- 6. CONSEILS OBJECTIFS ---
@@ -386,30 +451,7 @@
     else tipDiv.innerText = "💡 Astuce Maintien : Continue comme ça, l'équilibre c'est la clé.";
   }
 
-  // --- 7. SAUVEGARDER POIDS / CALORIES ---
-  function sauvegarderJournee() {
-    const poidsInput = document.getElementById('poids-jour').value;
-    const caloriesInput = document.getElementById('calories-jour').value;
-    const objectifInput = document.getElementById('objectif').value;
-
-    if(!poidsInput || !caloriesInput) {
-      alert("Remplis le poids et les calories pour enregistrer !");
-      return;
-    }
-
-    donneesJournee.poids = parseFloat(poidsInput);
-    donneesJournee.calories = parseInt(caloriesInput);
-    donneesJournee.objectif = objectifInput;
-
-    if(!donneesJournee.historiquePoids) donneesJournee.historiquePoids = [];
-    donneesJournee.historiquePoids.push(donneesJournee.poids);
-
-    localStorage.setItem('nutripulse_journee', JSON.stringify(donneesJournee));
-    alert("Données enregistrées ! 💪");
-    mettreAJourBilan();
-  }
-
-  // --- 8. BILAN ---
+  // --- 7. BILAN ---
   function mettreAJourBilan() {
     if(donneesJournee.poids) {
       document.getElementById('bilan-poids').innerText = donneesJournee.poids + ' kg';
