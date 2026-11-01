@@ -29,7 +29,8 @@
   .recipe-card { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; overflow: hidden; width: 320px; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
   .recipe-card:hover { transform: translateY(-6px); box-shadow: 0 0 25px rgba(57,255,20,0.25); border-color: #39ff14; }
   
-  .recipe-card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #2a5c2a; }
+  /* L'image avec un fond gris au cas où */
+  .recipe-card img { width: 100%; height: 200px; object-fit: cover; background-color: #222; border-bottom: 1px solid #2a5c2a; }
   
   .recipe-info { padding: 25px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
   .recipe-info h3 { color: #fff; margin-bottom: 10px; font-size: 20px; }
@@ -81,7 +82,7 @@
   
   <div class="recipe-grid">
     
-    <!-- Recette 1 -->
+    <!-- Recette 1 : Bowl Poulet -->
     <div class="recipe-card">
       <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bowl Poulet Quinoa">
       <div class="recipe-info">
@@ -94,28 +95,28 @@
       </div>
     </div>
     
-    <!-- Recette 2 -->
+    <!-- Recette 2 : Saumon -->
     <div class="recipe-card">
-      <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Smoothie Bowl Protéiné">
-      <div class="recipe-info">
-        <h3>Smoothie Bowl Protéiné</h3>
-        <p>Le plein d'énergie et de vitamines pour bien commencer la journée.</p>
-        <div class="macros">
-          <span class="macro-tag">🔥 320 kcal</span>
-          <span class="macro-tag">🍌 15g Prot</span>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Recette 3 -->
-    <div class="recipe-card">
-      <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Saumon et Brocolis">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Salmon_and_broccoli.jpg/640px-Salmon_and_broccoli.jpg" alt="Saumon et Brocolis">
       <div class="recipe-info">
         <h3>Saumon & Brocolis</h3>
         <p>Riche en Oméga-3 et en fibres, idéal pour la récupération musculaire.</p>
         <div class="macros">
           <span class="macro-tag">🔥 520 kcal</span>
           <span class="macro-tag">🐟 40g Prot</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recette 3 : Oeufs et Avocat -->
+    <div class="recipe-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Healthy_breakfast_bowl.jpg/640px-Healthy_breakfast_bowl.jpg" alt="Oeufs Avocat">
+      <div class="recipe-info">
+        <h3>Toast Avocat & Œufs</h3>
+        <p>Le petit-déjeuner parfait : bons lipides et protéines pour la journée.</p>
+        <div class="macros">
+          <span class="macro-tag">🔥 380 kcal</span>
+          <span class="macro-tag">🥚 18g Prot</span>
         </div>
       </div>
     </div>
