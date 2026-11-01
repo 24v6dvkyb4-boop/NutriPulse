@@ -11,7 +11,6 @@
   body { background: #0d0d0d; color: #fff; line-height: 1.6; }
   a { text-decoration: none; }
 
-  /* NAVBAR */
   nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
   .nav-brand { display: flex; align-items: center; gap: 10px; }
   .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px #39ff14); }
@@ -21,7 +20,6 @@
   nav ul li a:hover, nav ul li a.active { color: #39ff14; }
   .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
 
-  /* CONTENU SUIVI */
   section { padding: 40px 40px 60px; max-width: 1000px; margin: 0 auto; }
   .section-title { text-align: center; margin-bottom: 40px; }
   .section-title h1 { font-size: 42px; color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.4); margin-bottom: 10px; }
@@ -41,19 +39,22 @@
   .nutricoins-box span { font-size: 20px; display: block; margin-bottom: 2px; }
   .nutricoins-box strong { color: #f1c40f; font-size: 20px; }
 
-  /* GRILLE DASHBOARD */
   .dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
   @media (max-width: 800px) { .dashboard { grid-template-columns: 1fr; } }
 
   .bloc { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; padding: 30px; box-shadow: 0 0 20px rgba(57,255,20,0.05); }
   .bloc h2 { color: #39ff14; font-size: 20px; margin-bottom: 20px; border-bottom: 1px solid #1f3d1f; padding-bottom: 10px; }
   
-  /* CALENDRIER HEBDO */
+  /* CALENDRIER HEBDO ET BOUTON VALIDER */
   .week-grid { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-  .day-btn { flex: 1; min-width: 50px; background: #0d0d0d; border: 2px solid #2a5c2a; border-radius: 12px; padding: 12px 5px; color: #fff; cursor: pointer; transition: 0.2s; display: flex; flex-direction: column; align-items: center; gap: 5px; font-weight: bold; }
-  .day-btn:hover { border-color: #39ff14; }
+  .day-btn { flex: 1; min-width: 50px; background: #0d0d0d; border: 2px solid #2a5c2a; border-radius: 12px; padding: 12px 5px; color: #fff; transition: 0.2s; display: flex; flex-direction: column; align-items: center; gap: 5px; font-weight: bold; }
   .day-btn.active { background: rgba(57,255,20,0.1); border-color: #39ff14; color: #39ff14; box-shadow: 0 0 15px rgba(57,255,20,0.2); }
   .day-btn .icon { font-size: 18px; }
+
+  /* LE BOUTON VALIDER */
+  .btn-valider-seance { width: 100%; background: #39ff14; color: #0d0d0d; padding: 15px; border: none; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.3s; font-family: 'Montserrat', sans-serif; display: flex; justify-content: center; align-items: center; gap: 10px; }
+  .btn-valider-seance:hover { background: #2ecc71; box-shadow: 0 0 20px rgba(57,255,20,0.5); transform: translateY(-2px); }
+  .btn-valider-seance:disabled { background: #333; color: #888; cursor: not-allowed; transform: none; box-shadow: none; }
 
   /* FORMULAIRE POIDS / CALORIES */
   .form-row { display: flex; gap: 15px; margin-bottom: 15px; }
@@ -61,8 +62,8 @@
   .input-group label { display: block; color: #8fa394; font-size: 13px; margin-bottom: 5px; font-weight: 600; }
   .input-group input, .input-group select { width: 100%; padding: 12px; background: #0d0d0d; border: 1px solid #2a5c2a; border-radius: 8px; color: #fff; font-size: 15px; outline: none; font-family: 'Montserrat', sans-serif; }
   .input-group input:focus, .input-group select:focus { border-color: #39ff14; }
-  .btn-save { width: 100%; background: #39ff14; color: #0d0d0d; padding: 12px; border: none; border-radius: 8px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; margin-top: 10px; font-family: 'Montserrat', sans-serif; }
-  .btn-save:hover { background: #2ecc71; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
+  .btn-save { width: 100%; background: transparent; border: 2px solid #39ff14; color: #39ff14; padding: 12px; border-radius: 8px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; margin-top: 10px; font-family: 'Montserrat', sans-serif; }
+  .btn-save:hover { background: rgba(57,255,20,0.1); }
 
   /* BILAN DU MOIS */
   .bilan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -103,7 +104,7 @@
     <p>Gère tes séances, ton poids et tes objectifs au même endroit.</p>
   </div>
 
-  <!-- BLOC GAMIFICATION (XP, NIVEAU, NUTRICOINS) -->
+  <!-- BLOC GAMIFICATION -->
   <div class="gamification-panel">
     <div class="level-info">
       <div class="level-circle">
@@ -128,28 +129,24 @@
 
   <!-- BADGES -->
   <div class="badges-container" id="badges-container">
-    <div class="badge" id="badge-1">
-      <div class="icon">🥇</div>
-      <h4>1ère Séance</h4>
-    </div>
-    <div class="badge" id="badge-3">
-      <div class="icon">⚔️</div>
-      <h4>Guerrier (3j)</h4>
-    </div>
-    <div class="badge" id="badge-5">
-      <div class="icon">🔥</div>
-      <h4>En Feu (5j)</h4>
-    </div>
+    <div class="badge" id="badge-1"><div class="icon">🥇</div><h4>1ère Séance</h4></div>
+    <div class="badge" id="badge-3"><div class="icon">⚔️</div><h4>Guerrier (3j)</h4></div>
+    <div class="badge" id="badge-5"><div class="icon">🔥</div><h4>En Feu (5j)</h4></div>
   </div>
 
   <div class="dashboard">
     
-    <!-- BLOC 1 : CALENDRIER SEMAINE -->
+    <!-- BLOC 1 : CALENDRIER SEMAINE AVEC BOUTON -->
     <div class="bloc">
       <h2>📅 Mes Séances (Cette semaine)</h2>
       <div class="week-grid" id="calendrier"></div>
+      
+      <!-- LE BOUTON DE VALIDATION -->
+      <button class="btn-valider-seance" id="btn-valider" onclick="validerSeance()">
+        <span>💪</span> Valider ma séance du jour
+      </button>
       <p style="text-align: center; color: #8fa394; font-size: 13px; margin-top: 15px;">
-        Chaque jour coché te rapporte <strong style="color:#39ff14;">50 XP</strong> et <strong style="color:#f1c40f;">10 NC</strong>.
+        Clique sur le bouton chaque fois que tu finis un entraînement !
       </p>
     </div>
 
@@ -176,29 +173,17 @@
           <input type="number" id="calories-jour" placeholder="Ex: 2000">
         </div>
       </div>
-      <button class="btn-save" onclick="sauvegarderJournee()">Enregistrer pour aujourd'hui</button>
+      <button class="btn-save" onclick="sauvegarderJournee()">Enregistrer mes données</button>
     </div>
 
     <!-- BLOC 3 : BILAN DU MOIS -->
     <div class="bloc" style="grid-column: 1 / -1;">
       <h2>📊 Mon Bilan du Mois</h2>
       <div class="bilan-grid">
-        <div class="bilan-item">
-          <h3>Total Séances</h3>
-          <div class="value" id="bilan-seances">0</div>
-        </div>
-        <div class="bilan-item">
-          <h3>Poids Actuel</h3>
-          <div class="value" id="bilan-poids">-- kg</div>
-        </div>
-        <div class="bilan-item">
-          <h3>Moyenne Calories / Jour</h3>
-          <div class="value" id="bilan-calories">-- kcal</div>
-        </div>
-        <div class="bilan-item">
-          <h3>Évolution Poids</h3>
-          <div class="value" id="bilan-evolution">-- kg</div>
-        </div>
+        <div class="bilan-item"><h3>Total Séances</h3><div class="value" id="bilan-seances">0</div></div>
+        <div class="bilan-item"><h3>Poids Actuel</h3><div class="value" id="bilan-poids">-- kg</div></div>
+        <div class="bilan-item"><h3>Moyenne Calories / Jour</h3><div class="value" id="bilan-calories">-- kcal</div></div>
+        <div class="bilan-item"><h3>Évolution Poids</h3><div class="value" id="bilan-evolution">-- kg</div></div>
       </div>
     </div>
 
@@ -210,17 +195,15 @@
 </footer>
 
 <script>
-  // --- VARIABLES GLOBALES ---
   const joursSemaine = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
   const calendrierDiv = document.getElementById('calendrier');
+  const btnValider = document.getElementById('btn-valider');
 
-  // Récupération des données du navigateur
   let joursCoches = JSON.parse(localStorage.getItem('nutripulse_sport')) || [false, false, false, false, false, false, false];
   let userXP = parseInt(localStorage.getItem('nutripulse_xp')) || 0;
   let userCoins = parseInt(localStorage.getItem('nutripulse_coins')) || 0;
   let donneesJournee = JSON.parse(localStorage.getItem('nutripulse_journee')) || { poids: null, calories: null, historiquePoids: [], objectif: 'maintien' };
 
-  // --- 1. METTRE À JOUR L'INTERFACE (XP, NIVEAU, COINS, BADGES) ---
   function mettreAJourInterface() {
     let niveau = Math.floor(userXP / 500) + 1;
     let xpDansLeNiveau = userXP % 500;
@@ -236,39 +219,55 @@
     if (seancesFaites >= 3) document.getElementById('badge-3').classList.add('unlocked');
     if (seancesFaites >= 5) document.getElementById('badge-5').classList.add('unlocked');
 
-    document.getElementById('bilan-seances').innerText = seancesFaites * 4; // Simulation sur le mois
+    document.getElementById('bilan-seances').innerText = seancesFaites * 4;
   }
 
-  // --- 2. AFFICHER LE CALENDRIER ---
   function afficherCalendrier() {
     calendrierDiv.innerHTML = '';
     joursSemaine.forEach((jour, index) => {
-      const btn = document.createElement('button');
+      const btn = document.createElement('div');
       btn.classList.add('day-btn');
       if(joursCoches[index]) btn.classList.add('active');
       btn.innerHTML = `<span>${jour}</span><span class="icon">${joursCoches[index] ? '🔥' : '⚪'}</span>`;
-      
-      btn.onclick = function() {
-        joursCoches[index] = !joursCoches[index];
-        
-        if (joursCoches[index]) {
-          userXP += 50;
-          userCoins += 10;
-        } else {
-          userXP -= 50;
-          userCoins -= 10;
-        }
-        localStorage.setItem('nutripulse_sport', JSON.stringify(joursCoches));
-        localStorage.setItem('nutripulse_xp', userXP);
-        localStorage.setItem('nutripulse_coins', userCoins);
-        afficherCalendrier();
-        mettreAJourInterface();
-      };
       calendrierDiv.appendChild(btn);
     });
   }
 
-  // --- 3. SAUVEGARDER POIDS ET CALORIES ---
+  // --- LA FONCTION DU BOUTON VALIDER ---
+  function validerSeance() {
+    // On trouve le premier jour non coché de la semaine
+    let jourIndex = joursCoches.indexOf(false);
+    
+    if (jourIndex !== -1) {
+      // On le coche
+      joursCoches[jourIndex] = true;
+      userXP += 50;
+      userCoins += 10;
+
+      // On sauvegarde
+      localStorage.setItem('nutripulse_sport', JSON.stringify(joursCoches));
+      localStorage.setItem('nutripulse_xp', userXP);
+      localStorage.setItem('nutripulse_coins', userCoins);
+
+      // Mise à jour visuelle
+      afficherCalendrier();
+      mettreAJourInterface();
+      
+      // Animation de confirmation
+      btnValider.innerHTML = `<span>✅</span> Séance validée ! +50 XP`;
+      btnValider.style.background = '#2ecc71';
+      
+      setTimeout(() => {
+        btnValider.innerHTML = `<span>💪</span> Valider ma séance du jour`;
+        btnValider.style.background = '#39ff14';
+      }, 2000);
+
+    } else {
+      // Si tous les jours sont cochés
+      alert("Bravo ! Tu as déjà validé toutes tes séances de la semaine. Repose-toi ! 🧘‍♂️");
+    }
+  }
+
   function sauvegarderJournee() {
     const poidsInput = document.getElementById('poids-jour').value;
     const caloriesInput = document.getElementById('calories-jour').value;
@@ -291,7 +290,6 @@
     mettreAJourBilan();
   }
 
-  // --- 4. METTRE À JOUR LE BILAN ---
   function mettreAJourBilan() {
     if(donneesJournee.poids) {
       document.getElementById('bilan-poids').innerText = donneesJournee.poids + ' kg';
@@ -311,20 +309,12 @@
       const evolution = (dernierPoids - premierPoids).toFixed(1);
       
       const evoDiv = document.getElementById('bilan-evolution');
-      if(evolution < 0) {
-        evoDiv.innerText = evolution + ' kg';
-        evoDiv.style.color = '#39ff14';
-      } else if (evolution > 0) {
-        evoDiv.innerText = '+' + evolution + ' kg';
-        evoDiv.style.color = '#f39c12';
-      } else {
-        evoDiv.innerText = '0 kg';
-        evoDiv.style.color = '#fff';
-      }
+      if(evolution < 0) { evoDiv.innerText = evolution + ' kg'; evoDiv.style.color = '#39ff14'; }
+      else if (evolution > 0) { evoDiv.innerText = '+' + evolution + ' kg'; evoDiv.style.color = '#f39c12'; }
+      else { evoDiv.innerText = '0 kg'; evoDiv.style.color = '#fff'; }
     }
   }
 
-  // --- LANCEMENT AU CHARGEMENT ---
   window.onload = function() {
     afficherCalendrier();
     mettreAJourInterface();
