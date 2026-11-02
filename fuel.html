@@ -4,32 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NutriPulse — Fuel (Nutrition)</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23121B2B'/><rect x='10' y='40' width='10' height='20' rx='2' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='80' y='40' width='10' height='20' rx='2' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='25' y='30' width='15' height='40' rx='4' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='60' y='30' width='15' height='40' rx='4' fill='none' stroke='%23E08B4F' stroke-width='6'/><line x1='40' y1='50' x2='60' y2='50' stroke='%23E08B4F' stroke-width='6' stroke-linecap='round'/></svg>">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-  body { background: #0d0d0d; color: #fff; line-height: 1.6; }
+  body { background: #121B2B; color: #fff; line-height: 1.6; }
   a { text-decoration: none; }
   
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #121B2B; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #263552; }
   .nav-brand { display: flex; align-items: center; gap: 10px; }
-  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px #39ff14); }
-  .logo { font-size: 24px; font-weight: 800; color: #39ff14; letter-spacing: 1px; text-shadow: 0 0 12px #39ff14; }
+  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px rgba(224,139,79,0.4)); }
+  .logo { font-size: 24px; font-weight: 800; color: #E08B4F; letter-spacing: 1px; }
   nav ul { display: flex; gap: 20px; list-style: none; }
   nav ul li a { color: #cfd8cf; font-weight: 600; font-size: 15px; transition: color 0.2s; }
-  nav ul li a:hover, nav ul li a.active { color: #39ff14; }
-  .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
+  nav ul li a:hover, nav ul li a.active { color: #E08B4F; }
 
   section { padding: 60px 40px; }
   .section-title { text-align: center; margin-bottom: 50px; }
-  .section-title h1 { font-size: 42px; color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.4); margin-bottom: 10px; }
-  .section-title p { color: #8fa394; font-size: 17px; }
+  .section-title h1 { font-size: 42px; color: #E08B4F; margin-bottom: 10px; }
+  .section-title p { color: #a0b0c8; font-size: 17px; }
   
   .recipe-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
-  .recipe-card { position: relative; background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; overflow: hidden; width: 350px; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
-  .recipe-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 0 30px rgba(57,255,20,0.3); border-color: #39ff14; }
+  .recipe-card { position: relative; background: #1C2D4A; border: 1px solid #263552; border-radius: 18px; overflow: hidden; width: 350px; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+  .recipe-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 0 30px rgba(224,139,79,0.15); border-color: #E08B4F; }
   
-  .recipe-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #2a5c2a; background-color: #222; }
+  .recipe-img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #263552; background-color: #222; }
   
   .btn-fav { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; backdrop-filter: blur(5px); z-index: 5; }
   .btn-fav:hover { transform: scale(1.1); }
@@ -38,12 +37,12 @@
   
   .recipe-info { padding: 25px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
   .recipe-info h3 { color: #fff; margin-bottom: 10px; font-size: 20px; }
-  .recipe-info p { color: #8fa394; font-size: 14px; margin-bottom: 20px; flex-grow: 1; }
+  .recipe-info p { color: #a0b0c8; font-size: 14px; margin-bottom: 20px; flex-grow: 1; }
   
-  .macros { display: flex; justify-content: center; gap: 10px; font-size: 13px; color: #39ff14; font-weight: 700; flex-wrap: wrap; }
-  .macro-tag { background: rgba(57,255,20,0.1); border: 1px solid rgba(57,255,20,0.3); padding: 6px 12px; border-radius: 20px; }
+  .macros { display: flex; justify-content: center; gap: 10px; font-size: 13px; color: #E08B4F; font-weight: 700; flex-wrap: wrap; }
+  .macro-tag { background: rgba(224,139,79,0.1); border: 1px solid rgba(224,139,79,0.3); padding: 6px 12px; border-radius: 20px; }
 
-  footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; text-align: center; margin-top: 50px; }
+  footer { background: #0d1522; color: #a0b0c8; padding: 50px 40px 25px; border-top: 1px solid #263552; text-align: center; margin-top: 50px; }
 
   @media (max-width: 700px) {
     nav ul { display: none; }
@@ -55,7 +54,7 @@
 
 <nav>
   <div class="nav-brand">
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/></svg>
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#E08B4F" stroke-width="3" stroke-linecap="round"/></svg>
     <div class="logo">NutriPulse</div>
   </div>
   <ul>
@@ -65,7 +64,6 @@
     <li><a href="suivi.html">Mon Suivi</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="#" class="btn-nav">Commencer</a>
 </nav>
 
 <section>
@@ -75,147 +73,71 @@
   </div>
   
   <div class="recipe-grid">
-    
-    <!-- 1 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette1')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bowl Poulet">
-      <div class="recipe-info">
-        <h3>Bowl Poulet & Quinoa</h3>
-        <p>Riche en protéines, parfait pour la prise de muscle.</p>
-        <div class="macros"><span class="macro-tag">🔥 450 kcal</span><span class="macro-tag">🥩 35g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Bowl Poulet & Quinoa</h3><p>Riche en protéines, parfait pour la prise de muscle.</p><div class="macros"><span class="macro-tag">🔥 450 kcal</span><span class="macro-tag">🥩 35g Prot</span></div></div>
     </div>
-    
-    <!-- 2 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette2')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Saumon Grillé">
-      <div class="recipe-info">
-        <h3>Saumon Grillé & Brocolis</h3>
-        <p>Oméga-3 et fibres, idéal pour la récupération.</p>
-        <div class="macros"><span class="macro-tag">🔥 520 kcal</span><span class="macro-tag">🐟 40g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Saumon Grillé & Brocolis</h3><p>Oméga-3 et fibres, idéal pour la récupération.</p><div class="macros"><span class="macro-tag">🔥 520 kcal</span><span class="macro-tag">🐟 40g Prot</span></div></div>
     </div>
-
-    <!-- 3 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette3')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Toast Avocat Oeufs">
-      <div class="recipe-info">
-        <h3>Toast Avocat & Œufs</h3>
-        <p>Le petit-déjeuner parfait : lipides et protéines.</p>
-        <div class="macros"><span class="macro-tag">🔥 380 kcal</span><span class="macro-tag">🥚 18g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Toast Avocat & Œufs</h3><p>Le petit-déjeuner parfait : lipides et protéines.</p><div class="macros"><span class="macro-tag">🔥 380 kcal</span><span class="macro-tag">🥚 18g Prot</span></div></div>
     </div>
-
-    <!-- 4 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette4')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Smoothie Bowl">
-      <div class="recipe-info">
-        <h3>Smoothie Bowl Protéiné</h3>
-        <p>Le plein d'énergie et de vitamines.</p>
-        <div class="macros"><span class="macro-tag">🔥 320 kcal</span><span class="macro-tag">🍌 15g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Smoothie Bowl Protéiné</h3><p>Le plein d'énergie et de vitamines.</p><div class="macros"><span class="macro-tag">🔥 320 kcal</span><span class="macro-tag">🍌 15g Prot</span></div></div>
     </div>
-
-    <!-- 5 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette5')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pâtes Complètes">
-      <div class="recipe-info">
-        <h3>Pâtes Complètes & Poulet</h3>
-        <p>Le repas idéal avant une séance de sport.</p>
-        <div class="macros"><span class="macro-tag">🔥 600 kcal</span><span class="macro-tag">🍗 45g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Pâtes Complètes & Poulet</h3><p>Le repas idéal avant une séance de sport.</p><div class="macros"><span class="macro-tag">🔥 600 kcal</span><span class="macro-tag">🍗 45g Prot</span></div></div>
     </div>
-
-    <!-- 6 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette6')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salade Lentilles">
-      <div class="recipe-info">
-        <h3>Salade de Lentilles</h3>
-        <p>Riche en fibres et en protéines végétales.</p>
-        <div class="macros"><span class="macro-tag">🔥 350 kcal</span><span class="macro-tag">🌱 20g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Salade de Lentilles</h3><p>Riche en fibres et en protéines végétales.</p><div class="macros"><span class="macro-tag">🔥 350 kcal</span><span class="macro-tag">🌱 20g Prot</span></div></div>
     </div>
-
-    <!-- 7 : NOUVELLE IMAGE OMELETTE -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette7')">♡</button>
-      <img class="recipe-img" src="https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Omelette aux Légumes">
-      <div class="recipe-info">
-        <h3>Omelette aux Légumes</h3>
-        <p>Simple, rapide et bourré de protéines.</p>
-        <div class="macros"><span class="macro-tag">🔥 300 kcal</span><span class="macro-tag">🥚 22g Prot</span></div>
-      </div>
+      <img class="recipe-img" src="https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Omelette">
+      <div class="recipe-info"><h3>Omelette aux Légumes</h3><p>Simple, rapide et bourré de protéines.</p><div class="macros"><span class="macro-tag">🔥 300 kcal</span><span class="macro-tag">🥚 22g Prot</span></div></div>
     </div>
-
-    <!-- 8 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette8')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Burger Healthy">
-      <div class="recipe-info">
-        <h3>Burger Healthy</h3>
-        <p>Un burger maison avec pain complet.</p>
-        <div class="macros"><span class="macro-tag">🔥 550 kcal</span><span class="macro-tag">🥩 40g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Burger Healthy</h3><p>Un burger maison avec pain complet.</p><div class="macros"><span class="macro-tag">🔥 550 kcal</span><span class="macro-tag">🥩 40g Prot</span></div></div>
     </div>
-
-    <!-- 9 : NOUVELLE IMAGE WRAP -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette9')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/2955819/pexels-photo-2955819.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wrap Poulet">
-      <div class="recipe-info">
-        <h3>Wrap au Poulet</h3>
-        <p>Parfait pour un déjeuner sur le pouce.</p>
-        <div class="macros"><span class="macro-tag">🔥 420 kcal</span><span class="macro-tag">🍗 30g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Wrap au Poulet</h3><p>Parfait pour un déjeuner sur le pouce.</p><div class="macros"><span class="macro-tag">🔥 420 kcal</span><span class="macro-tag">🍗 30g Prot</span></div></div>
     </div>
-
-    <!-- 10 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette10')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1618898/pexels-photo-1618898.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Riz au thon">
-      <div class="recipe-info">
-        <h3>Riz & Thon</h3>
-        <p>Le classique de la muscu, rapide et protéiné.</p>
-        <div class="macros"><span class="macro-tag">🔥 480 kcal</span><span class="macro-tag">🐟 35g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Riz & Thon</h3><p>Le classique de la muscu, rapide et protéiné.</p><div class="macros"><span class="macro-tag">🔥 480 kcal</span><span class="macro-tag">🐟 35g Prot</span></div></div>
     </div>
-
-    <!-- 11 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette11')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Porridge">
-      <div class="recipe-info">
-        <h3>Porridge Protéiné</h3>
-        <p>Flocons d'avoine et banane pour le matin.</p>
-        <div class="macros"><span class="macro-tag">🔥 350 kcal</span><span class="macro-tag">🥣 20g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Porridge Protéiné</h3><p>Flocons d'avoine et banane pour le matin.</p><div class="macros"><span class="macro-tag">🔥 350 kcal</span><span class="macro-tag">🥣 20g Prot</span></div></div>
     </div>
-
-    <!-- 12 -->
     <div class="recipe-card">
       <button class="btn-fav" onclick="toggleFavori(this, 'recette12')">♡</button>
       <img class="recipe-img" src="https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Poulet Riz">
-      <div class="recipe-info">
-        <h3>Poulet & Riz Basmati</h3>
-        <p>Le repas de base pour la prise de masse.</p>
-        <div class="macros"><span class="macro-tag">🔥 580 kcal</span><span class="macro-tag">🍗 50g Prot</span></div>
-      </div>
+      <div class="recipe-info"><h3>Poulet & Riz Basmati</h3><p>Le repas de base pour la prise de masse.</p><div class="macros"><span class="macro-tag">🔥 580 kcal</span><span class="macro-tag">🍗 50g Prot</span></div></div>
     </div>
-
   </div>
 </section>
 
 <footer>
-  <div class="nav-brand" style="justify-content: center; margin-bottom: 10px;">
-    <div class="logo" style="font-size: 20px;">NutriPulse</div>
-  </div>
-  <p style="font-size: 14px;">© 2025 NutriPulse. Tous droits réservés.</p>
+  <p>© 2025 NutriPulse. Tous droits réservés.</p>
 </footer>
 
 <script>
