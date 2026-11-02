@@ -3,141 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NutriPulse — QG du Champion</title>
+<title>NutriPulse — Tableau de Bord</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23121B2B'/><rect x='10' y='40' width='10' height='20' rx='2' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='80' y='40' width='10' height='20' rx='2' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='25' y='30' width='15' height='40' rx='4' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='60' y='30' width='15' height='40' rx='4' fill='none' stroke='%23E08B4F' stroke-width='6'/><line x1='40' y1='50' x2='60' y2='50' stroke='%23E08B4F' stroke-width='6' stroke-linecap='round'/></svg>">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+  
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
   body { background: #121B2B; color: #fff; line-height: 1.6; overflow-x: hidden; }
-  a { text-decoration: none; }
+  a { text-decoration: none; color: inherit; }
 
   /* NAVBAR */
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #121B2B; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #263552; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: #0d1522; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #263552; }
   .nav-brand { display: flex; align-items: center; gap: 10px; }
-  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px rgba(224,139,79,0.4)); }
-  .logo { font-size: 24px; font-weight: 800; color: #E08B4F; letter-spacing: 1px; }
-  nav ul { display: flex; gap: 20px; list-style: none; }
-  nav ul li a { color: #cfd8cf; font-weight: 600; font-size: 15px; transition: color 0.2s; }
+  .logo { font-size: 22px; font-weight: 800; color: #E08B4F; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;}
+  .logo-icon { font-size: 24px; }
+  nav ul { display: flex; gap: 30px; list-style: none; }
+  nav ul li a { color: #a0b0c8; font-weight: 600; font-size: 14px; transition: color 0.2s; }
   nav ul li a:hover, nav ul li a.active { color: #E08B4F; }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .bell-icon { font-size: 20px; color: #a0b0c8; cursor: pointer; }
+  .user-avatar { width: 35px; height: 35px; background: #1C2D4A; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; color: #E08B4F; border: 1px solid #E08B4F; }
 
-  /* MODAL DE BIENVENUE */
-  .welcome-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 21, 34, 0.95); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
-  .welcome-box { background: #1C2D4A; border: 2px solid #E08B4F; border-radius: 20px; padding: 40px; text-align: center; max-width: 400px; width: 90%; box-shadow: 0 0 50px rgba(224,139,79,0.15); }
-  .welcome-box h2 { color: #E08B4F; margin-bottom: 15px; font-size: 28px; }
-  .welcome-box p { color: #a0b0c8; margin-bottom: 25px; }
-  .welcome-box input { width: 100%; padding: 15px; background: #121B2B; border: 1px solid #E08B4F; border-radius: 10px; color: #fff; font-size: 18px; text-align: center; outline: none; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; }
-  .welcome-box button { width: 100%; background: #E08B4F; color: #121B2B; border: none; padding: 15px; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; }
-  .welcome-box button:hover { background: #f0a36a; box-shadow: 0 0 20px rgba(224,139,79,0.5); }
+  /* HEADER */
+  .header-section { position: relative; padding: 40px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid #263552; background: linear-gradient(rgba(18, 27, 43, 0.8), rgba(18, 27, 43, 1)), url('https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover; }
+  .header-text h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; }
+  .header-text h1 span { color: #E08B4F; }
+  .header-text p { color: #a0b0c8; font-size: 16px; }
+  .date-selector { background: #1C2D4A; border: 1px solid #263552; padding: 10px 20px; border-radius: 10px; display: flex; align-items: center; gap: 15px; font-weight: 600; font-size: 14px; color: #D1D5DB; }
+  .date-selector span { cursor: pointer; color: #E08B4F; }
 
-  /* CONTENEUR PRINCIPAL */
-  section { padding: 40px 20px 80px; max-width: 1100px; margin: 0 auto; }
+  /* GRILLE PRINCIPALE */
+  .dashboard { padding: 30px 40px; display: grid; grid-template-columns: 2fr 1fr; gap: 25px; }
   
-  .header-title { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid #263552; padding-bottom: 20px; flex-wrap: wrap; gap: 20px; }
-  .header-title h1 { font-size: 36px; color: #fff; line-height: 1.2; }
-  .header-title h1 span { color: #E08B4F; }
-  .header-date { color: #a0b0c8; font-size: 15px; font-weight: 600; text-transform: capitalize; }
+  /* CARTES */
+  .card { background: #1C2D4A; border: 1px solid #263552; border-radius: 20px; padding: 25px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+  .card-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 18px; font-weight: 700; color: #E08B4F; }
+  .card-title span { font-size: 20px; }
 
-  /* MESSAGE DU COACH */
-  .coach-message { background: linear-gradient(90deg, rgba(224,139,79,0.1) 0%, transparent 100%); border-left: 4px solid #E08B4F; padding: 20px; border-radius: 0 15px 15px 0; margin-bottom: 30px; display: flex; align-items: center; gap: 20px; }
-  .coach-icon { font-size: 40px; flex-shrink: 0; }
-  .coach-text h3 { color: #E08B4F; font-size: 18px; margin-bottom: 5px; }
-  .coach-text p { color: #cfd8cf; font-size: 15px; font-style: italic; }
+  /* BADGES */
+  .badges-row { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+  .badge-item { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 80px; }
+  .badge-shield { width: 70px; height: 80px; background: #121B2B; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: flex; justify-content: center; align-items: center; font-size: 30px; position: relative; border: 2px solid transparent; }
+  .badge-item.unlocked .badge-shield { background: linear-gradient(135deg, #4A2E12, #E08B4F); border-color: #E08B4F; box-shadow: 0 0 15px rgba(224,139,79,0.4); }
+  .badge-item.locked .badge-shield { background: #121B2B; border-color: #263552; filter: grayscale(100%); opacity: 0.5; }
+  .badge-name { font-size: 11px; font-weight: 700; color: #fff; text-align: center; }
+  .badge-req { font-size: 9px; color: #a0b0c8; text-align: center; }
 
-  /* GRILLE DASHBOARD */
-  .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-  @media (max-width: 800px) { .dashboard-grid { grid-template-columns: 1fr; } }
+  /* RANG */
+  .rank-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: linear-gradient(180deg, #1C2D4A 0%, #121B2B 100%); border: 1px solid #E08B4F; box-shadow: 0 0 20px rgba(224,139,79,0.1); }
+  .crown-icon { font-size: 40px; margin-bottom: 10px; filter: drop-shadow(0 0 10px #E08B4F); }
+  .rank-title { font-size: 14px; color: #a0b0c8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+  .rank-name { font-size: 28px; font-weight: 800; color: #E08B4F; margin-bottom: 15px; }
+  .rank-progress-bg { width: 100%; height: 8px; background: #121B2B; border-radius: 10px; overflow: hidden; margin-bottom: 5px; border: 1px solid #263552; }
+  .rank-progress-fill { height: 100%; background: #E08B4F; width: 25%; border-radius: 10px; box-shadow: 0 0 10px #E08B4F; }
+  .rank-percent { font-size: 12px; color: #a0b0c8; align-self: flex-end; font-weight: 600; }
 
-  .card { background: #1C2D4A; border: 1px solid #263552; border-radius: 20px; padding: 30px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-  .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #E08B4F; box-shadow: 0 0 15px rgba(224,139,79,0.5); }
-  .card h2 { font-size: 20px; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #263552; padding-bottom: 15px; }
+  /* NIVEAU */
+  .level-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .circle-progress { position: relative; width: 140px; height: 140px; border-radius: 50%; background: conic-gradient(#E08B4F 40%, #121B2B 0); display: flex; justify-content: center; align-items: center; margin-bottom: 15px; }
+  .circle-inner { width: 120px; height: 120px; background: #1C2D4A; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .circle-inner span { font-size: 12px; color: #a0b0c8; text-transform: uppercase; font-weight: 700; }
+  .circle-inner strong { font-size: 36px; font-weight: 800; color: #fff; line-height: 1; margin: 5px 0; }
+  .circle-inner .star { color: #E08B4F; font-size: 14px; }
+  .level-xp { font-size: 14px; font-weight: 700; color: #a0b0c8; }
+  .level-xp span { color: #E08B4F; }
 
-  /* PROFIL (XP & NIVEAU & STREAK) */
-  .profile-card { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; background: linear-gradient(135deg, #1C2D4A, #121B2B); }
-  .avatar-level { display: flex; align-items: center; gap: 20px; }
+  /* SEMAINE */
+  .week-card { grid-column: 1 / -1; }
+  .week-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  .btn-reset { background: transparent; border: 1px solid #263552; color: #a0b0c8; padding: 8px 15px; border-radius: 8px; font-size: 12px; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: 0.2s; }
+  .btn-reset:hover { border-color: #E08B4F; color: #E08B4F; }
+  .days-row { display: flex; gap: 10px; justify-content: space-between; }
+  .day-col { flex: 1; background: #121B2B; border: 1px solid #263552; border-radius: 15px; padding: 15px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; transition: 0.3s; }
+  .day-col.today { border-color: #E08B4F; box-shadow: 0 0 15px rgba(224,139,79,0.15); background: #1C2D4A; }
+  .day-col.validated { border-color: #2ECC71; background: rgba(46, 204, 113, 0.05); }
+  .day-col .day-name { font-size: 12px; font-weight: 700; color: #a0b0c8; text-transform: uppercase; }
+  .day-col .day-date { font-size: 11px; color: #6B7280; }
+  .day-col .day-icon { font-size: 20px; margin: 5px 0; filter: grayscale(100%); opacity: 0.5; }
+  .day-col.validated .day-icon { filter: grayscale(0%); opacity: 1; }
+  .day-col .day-stat { font-size: 11px; font-weight: 600; }
+  .day-col .day-stat span { display: block; font-size: 10px; color: #a0b0c8; font-weight: 400; }
+  .btn-validate { width: 100%; background: #E08B4F; color: #121B2B; border: none; padding: 15px; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; margin-top: 20px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px; }
+  .btn-validate:hover { background: #f0a36a; transform: translateY(-2px); box-shadow: 0 0 20px rgba(224,139,79,0.4); }
+  .validate-info { text-align: center; font-size: 12px; color: #6B7280; margin-top: 10px; }
+
+  /* BILAN */
+  .bilan-card { display: flex; flex-direction: column; gap: 20px; }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+  .stat-box { background: #121B2B; border: 1px solid #263552; border-radius: 12px; padding: 15px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .stat-icon { font-size: 24px; margin-bottom: 10px; }
+  .stat-val { font-size: 20px; font-weight: 800; color: #fff; }
+  .stat-label { font-size: 11px; color: #a0b0c8; text-transform: uppercase; font-weight: 600; }
+  .stat-trend { font-size: 11px; font-weight: 700; margin-top: 5px; }
+  .stat-trend.up { color: #2ECC71; }
+  .stat-trend.down { color: #E74C3C; }
   
-  .level-shield { width: 80px; height: 90px; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L100 20 L100 80 Q100 110 50 120 Q0 110 0 80 L0 20 Z" fill="%231C2D4A" stroke="%23E08B4F" stroke-width="6"/></svg>') no-repeat center center; background-size: contain; display: flex; flex-direction: column; justify-content: center; align-items: center; filter: drop-shadow(0 0 10px rgba(224,139,79,0.4)); }
-  .level-shield span { font-size: 9px; color: #E08B4F; font-weight: 800; text-transform: uppercase; }
-  .level-shield strong { font-size: 28px; color: #fff; line-height: 1; }
-  
-  .streak-box { background: #121B2B; border: 1px solid #E08B4F; border-radius: 15px; padding: 10px 20px; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 15px rgba(224,139,79,0.15); }
-  .streak-box .fire { font-size: 26px; }
-  .streak-box .streak-text { display: flex; flex-direction: column; }
-  .streak-box strong { color: #E08B4F; font-size: 22px; line-height: 1; }
-  .streak-box span { color: #a0b0c8; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+  /* Graphique */
+  .chart-container { background: #121B2B; border: 1px solid #263552; border-radius: 12px; padding: 20px; height: 180px; position: relative; display: flex; align-items: flex-end; justify-content: space-between; }
+  .chart-line { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 400 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,80 Q50,40 100,60 T200,30 T300,70 T400,20" fill="none" stroke="%23E08B4F" stroke-width="3"/><path d="M0,80 Q50,40 100,60 T200,30 T300,70 T400,20 L400,100 L0,100 Z" fill="rgba(224,139,79,0.1)"/></svg>') no-repeat bottom; background-size: 100% 100%; }
+  .chart-labels { display: flex; justify-content: space-between; width: 100%; font-size: 10px; color: #6B7280; position: absolute; bottom: -20px; left: 0; }
+  .chart-y { position: absolute; left: 0; top: 0; height: 100%; display: flex; flex-direction: column; justify-content: space-between; font-size: 10px; color: #6B7280; padding-right: 10px; }
 
-  .xp-container { flex: 1; min-width: 250px; margin: 0 20px; }
-  .xp-header { display: flex; justify-content: space-between; font-size: 14px; font-weight: 800; margin-bottom: 8px; color: #a0b0c8; }
-  .xp-header span:last-child { color: #E08B4F; }
-  .xp-track { width: 100%; height: 20px; background: #121B2B; border-radius: 20px; border: 1px solid #263552; overflow: hidden; position: relative; box-shadow: inset 0 2px 5px rgba(0,0,0,0.5); }
-  .xp-progress { height: 100%; background: linear-gradient(90deg, #c46d32, #E08B4F); width: 0%; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 15px rgba(224,139,79,0.4); }
+  /* PERFORMANCES */
+  .perf-card { display: flex; flex-direction: column; gap: 15px; }
+  .perf-row { display: flex; justify-content: space-between; align-items: center; background: #121B2B; border: 1px solid #263552; border-radius: 12px; padding: 15px; }
+  .perf-circle { width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; position: relative; }
+  .perf-circle-inner { width: 40px; height: 40px; background: #121B2B; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 16px; }
+  .perf-circle-1 { background: conic-gradient(#E08B4F 70%, #263552 0); }
+  .perf-circle-2 { background: conic-gradient(#9B51E0 66%, #263552 0); }
+  .perf-circle-3 { background: conic-gradient(#2ECC71 86%, #263552 0); }
+  .perf-text { flex: 1; margin-left: 15px; }
+  .perf-title { font-size: 12px; color: #a0b0c8; font-weight: 600; }
+  .perf-val { font-size: 16px; font-weight: 800; color: #fff; }
+  .perf-sub { font-size: 10px; color: #6B7280; }
 
-  .coins-display { background: #121B2B; border: 2px solid #E08B4F; border-radius: 15px; padding: 12px 20px; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 20px rgba(224,139,79,0.15); }
-  .coins-display .coin-icon { font-size: 28px; }
-  .coins-display .coin-text { display: flex; flex-direction: column; }
-  .coins-display strong { color: #E08B4F; font-size: 24px; line-height: 1; }
-  .coins-display span { color: #a0b0c8; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+  /* MESSAGE COACH */
+  .coach-message { background: linear-gradient(90deg, rgba(224,139,79,0.1) 0%, transparent 100%); border-left: 4px solid #E08B4F; padding: 20px; border-radius: 0 15px 15px 0; display: flex; align-items: center; gap: 15px; }
+  .coach-message h4 { color: #E08B4F; font-size: 16px; margin-bottom: 5px; }
+  .coach-message p { color: #a0b0c8; font-size: 13px; }
 
-  /* BLOC D'ACTION (CALENDRIER + FORMULAIRE) */
-  .action-card { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 25px; }
-  
-  .week-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-  .day-box { width: 70px; height: 90px; background: #121B2B; border: 2px solid #263552; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; }
-  .day-box.active { border-color: #E08B4F; background: rgba(224,139,79,0.05); box-shadow: 0 0 20px rgba(224,139,79,0.15); transform: translateY(-5px); }
-  .day-box .day-name { font-size: 14px; font-weight: 800; color: #666; text-transform: uppercase; }
-  .day-box.active .day-name { color: #E08B4F; }
-  .day-box .day-icon { font-size: 28px; margin-top: 5px; filter: grayscale(100%) opacity(0.3); }
-  .day-box.active .day-icon { filter: grayscale(0%) opacity(1); }
+  footer { text-align: center; padding: 30px; color: #6B7280; font-size: 12px; border-top: 1px solid #263552; margin-top: 20px; }
 
-  .input-row { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-  .input-group { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 5px; }
-  .input-group label { font-size: 13px; color: #a0b0c8; font-weight: 600; margin-left: 5px; }
-  .input-pro { width: 100%; padding: 15px; background: #121B2B; border: 1px solid #263552; border-radius: 10px; color: #fff; font-size: 16px; outline: none; transition: 0.2s; }
-  .input-pro:focus { border-color: #E08B4F; }
-
-  .btn-unified { background: #E08B4F; color: #121B2B; border: none; padding: 18px 40px; border-radius: 50px; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 0 30px rgba(224,139,79,0.2); text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 400px; margin: 0 auto; }
-  .btn-unified:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(224,139,79,0.4); background: #f0a36a; }
-  .btn-unified:disabled { background: #263552; color: #8fa394; cursor: not-allowed; transform: none; box-shadow: none; border: 1px solid #333; }
-
-  /* CARTES BILAN / OBJECTIF */
-  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-  .stat-box { background: #121B2B; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #263552; }
-  .stat-box h3 { color: #a0b0c8; font-size: 11px; text-transform: uppercase; margin-bottom: 8px; }
-  .stat-box .val { font-size: 24px; font-weight: 800; color: #fff; }
-  .stat-box .val.green { color: #E08B4F; }
-  .stat-box .val.orange { color: #f39c12; }
-
-  .coach-tip { background: rgba(224,139,79,0.05); border: 1px dashed #E08B4F; padding: 10px; border-radius: 8px; color: #E08B4F; font-size: 13px; text-align: center; margin-bottom: 15px; display: none; }
-
-  /* SALLE DES TROPHÉES */
-  .trophy-card-container { grid-column: 1 / -1; }
-  .trophy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px; }
-  .trophy-item { background: #121B2B; border: 1px solid #263552; border-radius: 12px; padding: 12px 5px; text-align: center; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-  .trophy-item.locked { opacity: 0.3; filter: grayscale(100%); }
-  .trophy-item.unlocked { border-color: #E08B4F; background: rgba(224,139,79,0.05); box-shadow: 0 0 15px rgba(224,139,79,0.15); }
-  .trophy-item.unlocked .trophy-icon { filter: drop-shadow(0 0 8px rgba(224,139,79,0.6)); animation: float 3s ease-in-out infinite; }
-  .trophy-icon { font-size: 30px; margin-bottom: 5px; }
-  .trophy-title { font-size: 11px; font-weight: 800; color: #fff; margin-bottom: 2px; }
-  .trophy-desc { font-size: 9px; color: #a0b0c8; }
-  @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-3px); } 100% { transform: translateY(0px); } }
-
-  footer { background: #0d1522; color: #a0b0c8; padding: 30px; border-top: 1px solid #263552; text-align: center; font-size: 13px; }
+  @media (max-width: 900px) {
+    .dashboard { grid-template-columns: 1fr; }
+    .header-section { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .days-row { flex-wrap: wrap; }
+    .day-col { min-width: 100px; margin-bottom: 10px; }
+    nav ul { display: none; }
+  }
 </style>
 </head>
 <body>
 
-<div class="welcome-modal" id="welcome-modal" style="display: none;">
-  <div class="welcome-box">
-    <h2>Bienvenue sur NutriPulse</h2>
-    <p>Comment veux-tu qu'on t'appelle, Champion ?</p>
-    <input type="text" id="input-prenom" placeholder="Ton prénom..." maxlength="15">
-    <button onclick="sauvegarderPrenom()">C'est parti ! 🚀</button>
-  </div>
-</div>
-
+<!-- NAVBAR HORIZONTALE -->
 <nav>
   <div class="nav-brand">
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#E08B4F" stroke-width="3" stroke-linecap="round"/></svg>
-    <div class="logo">NutriPulse</div>
+    <div class="logo"><span class="logo-icon">⏱️</span> NutriPulse</div>
   </div>
   <ul>
     <li><a href="index.html">Accueil</a></li>
@@ -146,348 +147,153 @@
     <li><a href="suivi.html" class="active">Mon Suivi</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
+  <div class="nav-right">
+    <span class="bell-icon">🔔</span>
+    <div class="user-avatar">R</div>
+  </div>
 </nav>
 
-<section>
-  <div class="header-title">
-    <h1>Salut <span id="nom-utilisateur">Champion</span>,<br>prêt à tout casser ?</h1>
-    <div class="header-date" id="date-du-jour"></div>
+<!-- EN-TÊTE -->
+<header class="header-section">
+  <div class="header-text">
+    <h1>Salut <span id="nom-utilisateur">Champion</span>,<br>prêt à tout casser ? 🔥</h1>
+    <p>Voici ton suivi de la semaine et tes performances !</p>
+  </div>
+  <div class="date-selector">
+    <span>◀</span> Semaine actuelle <span>▶</span>
+  </div>
+</header>
+
+<!-- DASHBOARD -->
+<div class="dashboard">
+
+  <!-- 1. TROPHÉES -->
+  <div class="card">
+    <div class="card-title"><span>🏆</span> Tes Badges de Performance</div>
+    <div class="badges-row">
+      <div class="badge-item unlocked"><div class="badge-shield">🐺</div><div class="badge-name">Loup</div><div class="badge-req">10 perf.</div></div>
+      <div class="badge-item unlocked"><div class="badge-shield" style="background: linear-gradient(135deg, #4A2E12, #E08B4F);">🦁</div><div class="badge-name">Lion</div><div class="badge-req">25 perf.</div></div>
+      <div class="badge-item locked"><div class="badge-shield">🦍</div><div class="badge-name">Gorille</div><div class="badge-req">50 perf.</div></div>
+      <div class="badge-item locked"><div class="badge-shield">🦌</div><div class="badge-name">Cerf</div><div class="badge-req">75 perf.</div></div>
+      <div class="badge-item locked"><div class="badge-shield">🐊</div><div class="badge-name">Crocodile</div><div class="badge-req">100 perf.</div></div>
+      <div class="badge-item locked"><div class="badge-shield">🐻</div><div class="badge-name">Grizzly</div><div class="badge-req">150 perf.</div></div>
+    </div>
   </div>
 
-  <div class="coach-message">
-    <div class="coach-icon">🤖</div>
-    <div class="coach-text">
-      <h3>Le conseil de ton Coach</h3>
-      <p id="message-coach">Allez, on commence ? Valide ta première séance de la semaine !</p>
+  <!-- 2. RANG -->
+  <div class="card rank-card">
+    <div class="crown-icon">👑</div>
+    <div class="rank-title">Ton niveau</div>
+    <div class="rank-name">Débutant</div>
+    <div class="rank-progress-bg"><div class="rank-progress-fill"></div></div>
+    <div class="rank-percent">25%</div>
+  </div>
+
+  <!-- 3. NIVEAU -->
+  <div class="card level-card">
+    <div class="circle-progress">
+      <div class="circle-inner">
+        <span>Niveau</span>
+        <strong>1</strong>
+        <div class="star">⭐</div>
+      </div>
+    </div>
+    <div class="level-xp"><span>25</span> / 100 XP</div>
+  </div>
+
+  <!-- 4. LA SEMAINE -->
+  <div class="card week-card">
+    <div class="week-header">
+      <div class="card-title" style="margin:0;"><span>📅</span> Ma Semaine</div>
+      <button class="btn-reset">↻ Réinitialiser</button>
+    </div>
+    <div class="days-row" id="calendrier"></div>
+    <button class="btn-validate" id="btn-valider" onclick="validerSemaine()">✔ Valider ma semaine</button>
+    <p class="validate-info">🔒 Une fois validée, ta progression sera mise à jour.</p>
+  </div>
+
+  <!-- 5. BILAN -->
+  <div class="card bilan-card">
+    <div class="card-title"><span>📊</span> Bilan de la Semaine</div>
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-icon">🔥</div><div class="stat-val">3 520</div><div class="stat-label">kcal totales</div><div class="stat-trend up">↑ +12%</div></div>
+      <div class="stat-box"><div class="stat-icon">⚖️</div><div class="stat-val">69.6</div><div class="stat-label">kg moyen</div><div class="stat-trend down">↓ -0.4 kg</div></div>
+      <div class="stat-box"><div class="stat-icon">🏋️</div><div class="stat-val">6 / 7</div><div class="stat-label">séances</div><div class="stat-trend up">↑ +1</div></div>
+    </div>
+    <div style="margin-top: 15px;">
+      <div class="stat-label" style="text-align: left; margin-bottom: 10px;">Évolution du Poids</div>
+      <div class="chart-container">
+        <div class="chart-y"><span>71 kg</span><span>69 kg</span><span>67 kg</span></div>
+        <div class="chart-line"></div>
+        <div class="chart-labels"><span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span></div>
+      </div>
     </div>
   </div>
 
-  <div class="dashboard-grid">
-
-    <div class="card profile-card">
-      <div class="avatar-level">
-        <div class="level-shield">
-          <span>Niv.</span>
-          <strong id="niveau-actuel">1</strong>
-        </div>
-        <div class="streak-box">
-          <span class="fire">🔥</span>
-          <div class="streak-text">
-            <strong id="streak-count">0</strong>
-            <span>Jours d'affilée</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="xp-container">
-        <div class="xp-header">
-          <span>Progression</span>
-          <span id="texte-xp">0 / 500 XP</span>
-        </div>
-        <div class="xp-track">
-          <div class="xp-progress" id="barre-xp"></div>
-        </div>
-      </div>
-
-      <div class="coins-display">
-        <div class="coin-icon">🪙</div>
-        <div class="coin-text">
-          <strong id="nutricoins">0</strong>
-          <span>NutriCoins</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card action-card">
-      <h2 style="justify-content: center;">🔥 Mon Bilan Quotidien</h2>
-      
-      <div class="week-row" id="calendrier"></div>
-      
-      <div class="input-row">
-        <div class="input-group">
-          <label>Poids (kg)</label>
-          <input type="number" class="input-pro" id="poids-jour" placeholder="Ex: 75.5" step="0.1">
-        </div>
-        <div class="input-group">
-          <label>Calories (kcal)</label>
-          <input type="number" class="input-pro" id="calories-jour" placeholder="Ex: 2200">
-        </div>
-      </div>
-
-      <button class="btn-unified" id="btn-valider" onclick="enregistrerJournee()">
-        <span>💾</span> Enregistrer ma journée
-      </button>
-    </div>
-
-    <div class="card">
-      <h2>📊 Bilan Global</h2>
-      <div class="stats-grid">
-        <div class="stat-box"><h3>Séances</h3><div class="val green" id="bilan-seances">0</div></div>
-        <div class="stat-box"><h3>Poids Actuel</h3><div class="val" id="bilan-poids">-- kg</div></div>
-        <div class="stat-box"><h3>Calories/Jour</h3><div class="val" id="bilan-calories">-- kcal</div></div>
-        <div class="stat-box"><h3>Évolution</h3><div class="val green" id="bilan-evolution">-- kg</div></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>🎯 Mon Objectif</h2>
-      <select class="input-pro" id="objectif" onchange="afficherConseilObjectif()">
-        <option value="seche">Objectif : Sèche</option>
-        <option value="maintien">Objectif : Maintien</option>
-        <option value="masse">Objectif : Prise de masse</option>
-      </select>
-      <div class="coach-tip" id="coach-tip" style="margin-top: 15px;"></div>
-    </div>
-
-    <div class="card trophy-card-container">
-      <h2>🏆 Salle des Trophées</h2>
-      <div class="trophy-grid">
-        <div class="trophy-item locked" id="badge-1"><div class="trophy-icon">🥇</div><div class="trophy-title">Premier Pas</div><div class="trophy-desc">1 séance</div></div>
-        <div class="trophy-item locked" id="badge-2"><div class="trophy-icon">⚔️</div><div class="trophy-title">Guerrier</div><div class="trophy-desc">3 séances</div></div>
-        <div class="trophy-item locked" id="badge-3"><div class="trophy-icon">🔥</div><div class="trophy-title">En Feu</div><div class="trophy-desc">5 séances</div></div>
-        <div class="trophy-item locked" id="badge-4"><div class="trophy-icon">⚡</div><div class="trophy-title">Machine</div><div class="trophy-desc">Niveau 3</div></div>
-        <div class="trophy-item locked" id="badge-5"><div class="trophy-icon">👑</div><div class="trophy-title">Légende</div><div class="trophy-desc">Niveau 5</div></div>
-        <div class="trophy-item locked" id="badge-6"><div class="trophy-icon">🦍</div><div class="trophy-title">Bête</div><div class="trophy-desc">7 jrs suite</div></div>
-      </div>
-    </div>
-
+  <!-- 6. PERFORMANCES -->
+  <div class="card perf-card">
+    <div class="card-title"><span>⭐</span> Tes Performances</div>
+    <div class="perf-row"><div class="perf-circle perf-circle-1"><div class="perf-circle-inner">🔥</div></div><div class="perf-text"><div class="perf-title">Calories</div><div class="perf-val">3 520 / 3 500</div></div><div class="perf-sub">100%</div></div>
+    <div class="perf-row"><div class="perf-circle perf-circle-2"><div class="perf-circle-inner">🏋️</div></div><div class="perf-text"><div class="perf-title">Séances</div><div class="perf-val">6 / 7</div></div><div class="perf-sub">66%</div></div>
+    <div class="perf-row"><div class="perf-circle perf-circle-3"><div class="perf-circle-inner">🏆</div></div><div class="perf-text"><div class="perf-title">XP Gagnés</div><div class="perf-val">+50 XP</div></div><div class="perf-sub">86%</div></div>
   </div>
-</section>
+
+  <!-- 7. MESSAGE COACH -->
+  <div class="card" style="grid-column: 1 / -1; background: transparent; border: none; padding: 0;">
+    <div class="coach-message">
+      <div style="font-size: 30px;">💪</div>
+      <div>
+        <h4>Bravo <span id="nom-utilisateur-2">Champion</span> !</h4>
+        <p>Tu es sur la bonne voie pour atteindre ton prochain badge !</p>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 <footer>
   <p>© 2025 NutriPulse. Tous droits réservés.</p>
 </footer>
 
 <script>
-    // --- DONNÉES GLOBALES ---
   const joursSemaine = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
   const calendrierDiv = document.getElementById('calendrier');
-  const btnValider = document.getElementById('btn-valider');
+  
+  let prenom = localStorage.getItem('nutripulse_prenom') || "Champion";
+  let joursCoches = JSON.parse(localStorage.getItem('nutripulse_sport')) || [true, true, true, true, true, true, false];
 
-  let prenom = localStorage.getItem('nutripulse_prenom') || "";
-  let userXP = parseInt(localStorage.getItem('nutripulse_xp')) || 0;
-  let userCoins = parseInt(localStorage.getItem('nutripulse_coins')) || 0;
-  let streak = parseInt(localStorage.getItem('nutripulse_streak')) || 0;
-  let donneesJournee = JSON.parse(localStorage.getItem('nutripulse_journee')) || { poids: null, calories: null, historiquePoids: [], objectif: 'maintien' };
-
-  // GESTION DU TEMPS RÉEL
-  let today = new Date();
-  let currentDay = today.getDay(); 
-  let currentDayIndex = currentDay === 0 ? 6 : currentDay - 1; // Lundi = 0, Dimanche = 6
-  let currentWeekStr = getWeekNumber(today); 
-
-  // Récupération de la semaine sauvegardée
-  let savedWeek = localStorage.getItem('nutripulse_week');
-  let joursCoches = JSON.parse(localStorage.getItem('nutripulse_sport')) || [false, false, false, false, false, false, false];
-
-  // SI NOUVELLE SEMAINE : RESET DU CALENDRIER SEULEMENT (XP et badges conservés)
-  if (savedWeek !== currentWeekStr) {
-    joursCoches = [false, false, false, false, false, false, false];
-    localStorage.setItem('nutripulse_week', currentWeekStr);
-    localStorage.setItem('nutripulse_sport', JSON.stringify(joursCoches));
-    streak = 0; 
-    localStorage.setItem('nutripulse_streak', streak);
-  }
-
-  function getWeekNumber(d) {
-    d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
-    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
-    var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
-    return d.getUTCFullYear() + "-W" + weekNo;
-  }
-
-  // --- 1. INITIALISATION ---
   window.onload = function() {
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById('date-du-jour').innerText = new Date().toLocaleDateString('fr-FR', options);
-
-    if (!prenom) {
-      document.getElementById('welcome-modal').style.display = 'flex';
-    } else {
-      document.getElementById('nom-utilisateur').innerText = prenom;
-    }
-
+    document.getElementById('nom-utilisateur').innerText = prenom;
+    document.getElementById('nom-utilisateur-2').innerText = prenom;
     afficherCalendrier();
-    mettreAJourInterface();
-    mettreAJourBilan();
-    afficherConseilObjectif();
   }
 
-  // --- 2. SAUVEGARDE PRÉNOM ---
-  function sauvegarderPrenom() {
-    let input = document.getElementById('input-prenom').value.trim();
-    if (input) {
-      prenom = input;
-      localStorage.setItem('nutripulse_prenom', prenom);
-      document.getElementById('nom-utilisateur').innerText = prenom;
-      document.getElementById('welcome-modal').style.display = 'none';
-    } else {
-      alert("N'oublie pas d'écrire ton prénom !");
-    }
-  }
-
-  // --- 3. MISE À JOUR INTERFACE & BADGES ---
-  function mettreAJourInterface() {
-    let niveau = Math.floor(userXP / 500) + 1;
-    let xpDansLeNiveau = userXP % 500;
-    let pourcentage = (xpDansLeNiveau / 500) * 100;
-
-    document.getElementById('niveau-actuel').innerText = niveau;
-    document.getElementById('texte-xp').innerText = `${xpDansLeNiveau} / 500 XP`;
-    document.getElementById('barre-xp').style.width = `${pourcentage}%`;
-    document.getElementById('nutricoins').innerText = userCoins;
-    document.getElementById('streak-count').innerText = streak;
-
-    let seancesFaites = joursCoches.filter(jour => jour === true).length;
-    document.getElementById('bilan-seances').innerText = seancesFaites * 4;
-
-    let message = "";
-    if (seancesFaites === 0) message = "Allez, une petite séance de 15 min pour lancer la machine ?";
-    else if (seancesFaites < 3) message = "C'est un bon début ! Continue sur ta lancée.";
-    else if (seancesFaites < 5) message = "Tu es en feu ! Ne lâche rien, tu es sur la bonne voie.";
-    else if (seancesFaites < 7) message = "Incroyable ! Tu es une vraie machine cette semaine.";
-    else message = "LÉGENDE ! Tu as tout donné. Pense à bien récupérer maintenant.";
-    document.getElementById('message-coach').innerText = message;
-
-    if (seancesFaites >= 1) unlockBadge('badge-1');
-    if (seancesFaites >= 3) unlockBadge('badge-2');
-    if (seancesFaites >= 5) unlockBadge('badge-3');
-    if (niveau >= 3) unlockBadge('badge-4');
-    if (niveau >= 5) unlockBadge('badge-5');
-    if (streak >= 7) unlockBadge('badge-6');
-
-    // BLOCAGE DU BOUTON SI DÉJÀ FAIT AUJOURD'HUI
-    if (joursCoches[currentDayIndex]) {
-      btnValider.innerHTML = `<span>✅</span> Journée déjà enregistrée`;
-      btnValider.disabled = true;
-      btnValider.style.background = '#263552';
-      btnValider.style.color = '#8fa394';
-      btnValider.style.boxShadow = 'none';
-    } else {
-      btnValider.innerHTML = `<span>💾</span> Enregistrer ma journée`;
-      btnValider.disabled = false;
-      btnValider.style.background = '#E08B4F';
-      btnValider.style.color = '#121B2B';
-      btnValider.style.boxShadow = '0 0 30px rgba(224,139,79,0.2)';
-    }
-  }
-
-  function unlockBadge(id) {
-    let badge = document.getElementById(id);
-    if (badge && !badge.classList.contains('unlocked')) {
-      badge.classList.remove('locked');
-      badge.classList.add('unlocked');
-    }
-  }
-
-  // --- 4. CALENDRIER ---
   function afficherCalendrier() {
     calendrierDiv.innerHTML = '';
     joursSemaine.forEach((jour, index) => {
-      const box = document.createElement('div');
-      box.classList.add('day-box');
-      if(joursCoches[index]) box.classList.add('active');
-      
-      if (index === currentDayIndex && !joursCoches[index]) {
-        box.style.border = "2px dashed #E08B4F"; 
-      }
+      const isCoche = joursCoches[index];
+      const isToday = (index === 4);
 
-      box.innerHTML = `
+      let col = document.createElement('div');
+      col.classList.add('day-col');
+      if (isCoche) col.classList.add('validated');
+      if (isToday && !isCoche) col.classList.add('today');
+
+      let iconHTML = isCoche ? '✅' : (isToday ? '🏋️' : '💤');
+      let statsHTML = isCoche ? `<div class="day-stat">70 kg <span>520 kcal</span></div>` : (isToday ? `<div class="day-stat" style="color:#E08B4F;">En cours</div>` : `<div class="day-stat">-- kg <span>-- kcal</span></div>`);
+
+      col.innerHTML = `
         <div class="day-name">${jour}</div>
-        <div class="day-icon">${joursCoches[index] ? '🔥' : '⚪'}</div>
+        <div class="day-date">${2+index} Nov.</div>
+        <div class="day-icon">${iconHTML}</div>
+        ${statsHTML}
       `;
-      calendrierDiv.appendChild(box);
+      calendrierDiv.appendChild(col);
     });
   }
 
-  // --- 5. ENREGISTRER LA JOURNÉE (Bouton Unique) ---
-  function enregistrerJournee() {
-    const poidsInput = document.getElementById('poids-jour').value;
-    const caloriesInput = document.getElementById('calories-jour').value;
-
-    if(!poidsInput || !caloriesInput) {
-      alert("Remplis le poids et les calories pour valider ta journée !");
-      return;
-    }
-
-    // Validation de la séance (seulement si pas déjà fait)
-    if (!joursCoches[currentDayIndex]) {
-      joursCoches[currentDayIndex] = true;
-      userXP += 50;
-      userCoins += 10;
-      streak += 1; 
-    }
-
-    // Sauvegarde du poids et calories
-    donneesJournee.poids = parseFloat(poidsInput);
-    donneesJournee.calories = parseInt(caloriesInput);
-    if(!donneesJournee.historiquePoids) donneesJournee.historiquePoids = [];
-    donneesJournee.historiquePoids.push(donneesJournee.poids);
-
-    // Sauvegarde globale
-    localStorage.setItem('nutripulse_sport', JSON.stringify(joursCoches));
-    localStorage.setItem('nutripulse_xp', userXP);
-    localStorage.setItem('nutripulse_coins', userCoins);
-    localStorage.setItem('nutripulse_streak', streak);
-    localStorage.setItem('nutripulse_journee', JSON.stringify(donneesJournee));
-
-    // Mise à jour visuelle
-    afficherCalendrier();
-    mettreAJourInterface();
-    mettreAJourBilan();
-    
-    // Animation du bouton
-    btnValider.innerHTML = `<span>🎉</span> Journée enregistrée !`;
-    setTimeout(() => {
-      mettreAJourInterface();
-    }, 2000);
-  }
-
-  // --- 6. CONSEILS OBJECTIFS ---
-  function afficherConseilObjectif() {
-    const objectif = document.getElementById('objectif').value;
-    const tipDiv = document.getElementById('coach-tip');
-    tipDiv.style.display = 'block';
-
-    if (objectif === 'seche') tipDiv.innerText = "💡 Astuce Sèche : Maintiens un déficit de 300 kcal et privilégie les protéines.";
-    else if (objectif === 'masse') tipDiv.innerText = "💡 Astuce Masse : Mange 300 kcal de plus que ta maintenance. Ne néglige pas les glucides !";
-    else tipDiv.innerText = "💡 Astuce Maintien : Continue comme ça, l'équilibre c'est la clé.";
-  }
-
-  // --- 7. BILAN ---
-  function mettreAJourBilan() {
-    if(donneesJournee.poids) {
-      document.getElementById('bilan-poids').innerText = donneesJournee.poids + ' kg';
-      document.getElementById('poids-jour').value = donneesJournee.poids;
-    }
-    if(donneesJournee.calories) {
-      document.getElementById('bilan-calories').innerText = donneesJournee.calories + ' kcal';
-      document.getElementById('calories-jour').value = donneesJournee.calories;
-    }
-    if(donneesJournee.objectif) {
-      document.getElementById('objectif').value = donneesJournee.objectif;
-    }
-
-    if(donneesJournee.historiquePoids && donneesJournee.historiquePoids.length > 1) {
-      const premierPoids = donneesJournee.historiquePoids[0];
-      const dernierPoids = donneesJournee.historiquePoids[donneesJournee.historiquePoids.length - 1];
-      const evolution = (dernierPoids - premierPoids).toFixed(1);
-      
-      const evoDiv = document.getElementById('bilan-evolution');
-      if(evolution < 0) { 
-        evoDiv.innerText = evolution + ' kg'; 
-        evoDiv.className = 'val green'; 
-      }
-      else if (evolution > 0) { 
-        evoDiv.innerText = '+' + evolution + ' kg'; 
-        evoDiv.className = 'val orange'; 
-      }
-      else { 
-        evoDiv.innerText = '0 kg'; 
-        evoDiv.className = 'val'; 
-      }
-    }
+  function validerSemaine() {
+    alert("Félicitations ! Ta semaine a été validée !");
   }
 </script>
 </body>
