@@ -4,124 +4,123 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NutriPulse — QG du Champion</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230d0d0d'/><rect x='10' y='40' width='10' height='20' rx='2' fill='none' stroke='%2339ff14' stroke-width='6'/><rect x='80' y='40' width='10' height='20' rx='2' fill='none' stroke='%2339ff14' stroke-width='6'/><rect x='25' y='30' width='15' height='40' rx='4' fill='none' stroke='%2339ff14' stroke-width='6'/><rect x='60' y='30' width='15' height='40' rx='4' fill='none' stroke='%2339ff14' stroke-width='6'/><line x1='40' y1='50' x2='60' y2='50' stroke='%2339ff14' stroke-width='6' stroke-linecap='round'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23121B2B'/><rect x='10' y='40' width='10' height='20' rx='2' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='80' y='40' width='10' height='20' rx='2' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='25' y='30' width='15' height='40' rx='4' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='60' y='30' width='15' height='40' rx='4' fill='none' stroke='%23E08B4F' stroke-width='6'/><line x1='40' y1='50' x2='60' y2='50' stroke='%23E08B4F' stroke-width='6' stroke-linecap='round'/></svg>">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-  body { background: #0a0a0a; color: #fff; line-height: 1.6; overflow-x: hidden; }
+  body { background: #121B2B; color: #fff; line-height: 1.6; overflow-x: hidden; }
   a { text-decoration: none; }
 
   /* NAVBAR */
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #121B2B; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #263552; }
   .nav-brand { display: flex; align-items: center; gap: 10px; }
-  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px #39ff14); }
-  .logo { font-size: 24px; font-weight: 800; color: #39ff14; letter-spacing: 1px; text-shadow: 0 0 12px #39ff14; }
+  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px rgba(224,139,79,0.4)); }
+  .logo { font-size: 24px; font-weight: 800; color: #E08B4F; letter-spacing: 1px; }
   nav ul { display: flex; gap: 20px; list-style: none; }
   nav ul li a { color: #cfd8cf; font-weight: 600; font-size: 15px; transition: color 0.2s; }
-  nav ul li a:hover, nav ul li a.active { color: #39ff14; }
-  .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
+  nav ul li a:hover, nav ul li a.active { color: #E08B4F; }
 
   /* MODAL DE BIENVENUE */
-  .welcome-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
-  .welcome-box { background: #121212; border: 2px solid #39ff14; border-radius: 20px; padding: 40px; text-align: center; max-width: 400px; width: 90%; box-shadow: 0 0 50px rgba(57,255,20,0.2); }
-  .welcome-box h2 { color: #39ff14; margin-bottom: 15px; font-size: 28px; }
-  .welcome-box p { color: #8fa394; margin-bottom: 25px; }
-  .welcome-box input { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #39ff14; border-radius: 10px; color: #fff; font-size: 18px; text-align: center; outline: none; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; }
-  .welcome-box button { width: 100%; background: #39ff14; color: #000; border: none; padding: 15px; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; }
-  .welcome-box button:hover { background: #fff; box-shadow: 0 0 20px rgba(57,255,20,0.5); }
+  .welcome-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 21, 34, 0.95); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
+  .welcome-box { background: #1C2D4A; border: 2px solid #E08B4F; border-radius: 20px; padding: 40px; text-align: center; max-width: 400px; width: 90%; box-shadow: 0 0 50px rgba(224,139,79,0.15); }
+  .welcome-box h2 { color: #E08B4F; margin-bottom: 15px; font-size: 28px; }
+  .welcome-box p { color: #a0b0c8; margin-bottom: 25px; }
+  .welcome-box input { width: 100%; padding: 15px; background: #121B2B; border: 1px solid #E08B4F; border-radius: 10px; color: #fff; font-size: 18px; text-align: center; outline: none; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; }
+  .welcome-box button { width: 100%; background: #E08B4F; color: #121B2B; border: none; padding: 15px; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.2s; }
+  .welcome-box button:hover { background: #f0a36a; box-shadow: 0 0 20px rgba(224,139,79,0.5); }
 
   /* CONTENEUR PRINCIPAL */
   section { padding: 40px 20px 80px; max-width: 1100px; margin: 0 auto; }
   
-  .header-title { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 20px; flex-wrap: wrap; gap: 20px; }
+  .header-title { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid #263552; padding-bottom: 20px; flex-wrap: wrap; gap: 20px; }
   .header-title h1 { font-size: 36px; color: #fff; line-height: 1.2; }
-  .header-title h1 span { color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.5); }
-  .header-date { color: #8fa394; font-size: 15px; font-weight: 600; text-transform: capitalize; }
+  .header-title h1 span { color: #E08B4F; }
+  .header-date { color: #a0b0c8; font-size: 15px; font-weight: 600; text-transform: capitalize; }
 
   /* MESSAGE DU COACH */
-  .coach-message { background: linear-gradient(90deg, rgba(57,255,20,0.1) 0%, transparent 100%); border-left: 4px solid #39ff14; padding: 20px; border-radius: 0 15px 15px 0; margin-bottom: 30px; display: flex; align-items: center; gap: 20px; }
+  .coach-message { background: linear-gradient(90deg, rgba(224,139,79,0.1) 0%, transparent 100%); border-left: 4px solid #E08B4F; padding: 20px; border-radius: 0 15px 15px 0; margin-bottom: 30px; display: flex; align-items: center; gap: 20px; }
   .coach-icon { font-size: 40px; flex-shrink: 0; }
-  .coach-text h3 { color: #39ff14; font-size: 18px; margin-bottom: 5px; }
+  .coach-text h3 { color: #E08B4F; font-size: 18px; margin-bottom: 5px; }
   .coach-text p { color: #cfd8cf; font-size: 15px; font-style: italic; }
 
   /* GRILLE DASHBOARD */
   .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
   @media (max-width: 800px) { .dashboard-grid { grid-template-columns: 1fr; } }
 
-  .card { background: #121212; border: 1px solid #2a5c2a; border-radius: 20px; padding: 30px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-  .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #39ff14; box-shadow: 0 0 15px #39ff14; }
-  .card h2 { font-size: 20px; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #222; padding-bottom: 15px; }
+  .card { background: #1C2D4A; border: 1px solid #263552; border-radius: 20px; padding: 30px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #E08B4F; box-shadow: 0 0 15px rgba(224,139,79,0.5); }
+  .card h2 { font-size: 20px; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #263552; padding-bottom: 15px; }
 
   /* PROFIL (XP & NIVEAU & STREAK) */
-  .profile-card { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; background: linear-gradient(135deg, #121212, #0a1a0a); }
+  .profile-card { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; background: linear-gradient(135deg, #1C2D4A, #121B2B); }
   .avatar-level { display: flex; align-items: center; gap: 20px; }
   
-  .level-shield { width: 80px; height: 90px; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L100 20 L100 80 Q100 110 50 120 Q0 110 0 80 L0 20 Z" fill="%23121212" stroke="%2339ff14" stroke-width="6"/></svg>') no-repeat center center; background-size: contain; display: flex; flex-direction: column; justify-content: center; align-items: center; filter: drop-shadow(0 0 10px rgba(57,255,20,0.5)); }
-  .level-shield span { font-size: 9px; color: #39ff14; font-weight: 800; text-transform: uppercase; }
+  .level-shield { width: 80px; height: 90px; background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L100 20 L100 80 Q100 110 50 120 Q0 110 0 80 L0 20 Z" fill="%231C2D4A" stroke="%23E08B4F" stroke-width="6"/></svg>') no-repeat center center; background-size: contain; display: flex; flex-direction: column; justify-content: center; align-items: center; filter: drop-shadow(0 0 10px rgba(224,139,79,0.4)); }
+  .level-shield span { font-size: 9px; color: #E08B4F; font-weight: 800; text-transform: uppercase; }
   .level-shield strong { font-size: 28px; color: #fff; line-height: 1; }
   
-  .streak-box { background: #1a1a1a; border: 1px solid #ff4d4d; border-radius: 15px; padding: 10px 20px; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 15px rgba(255,77,77,0.2); }
+  .streak-box { background: #121B2B; border: 1px solid #E08B4F; border-radius: 15px; padding: 10px 20px; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 15px rgba(224,139,79,0.15); }
   .streak-box .fire { font-size: 26px; }
   .streak-box .streak-text { display: flex; flex-direction: column; }
-  .streak-box strong { color: #ff4d4d; font-size: 22px; line-height: 1; }
-  .streak-box span { color: #8fa394; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+  .streak-box strong { color: #E08B4F; font-size: 22px; line-height: 1; }
+  .streak-box span { color: #a0b0c8; font-size: 10px; font-weight: 800; text-transform: uppercase; }
 
   .xp-container { flex: 1; min-width: 250px; margin: 0 20px; }
-  .xp-header { display: flex; justify-content: space-between; font-size: 14px; font-weight: 800; margin-bottom: 8px; color: #8fa394; }
-  .xp-header span:last-child { color: #39ff14; }
-  .xp-track { width: 100%; height: 20px; background: #000; border-radius: 20px; border: 1px solid #333; overflow: hidden; position: relative; box-shadow: inset 0 2px 5px rgba(0,0,0,0.8); }
-  .xp-progress { height: 100%; background: linear-gradient(90deg, #1faa00, #39ff14); width: 0%; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 15px #39ff14; }
+  .xp-header { display: flex; justify-content: space-between; font-size: 14px; font-weight: 800; margin-bottom: 8px; color: #a0b0c8; }
+  .xp-header span:last-child { color: #E08B4F; }
+  .xp-track { width: 100%; height: 20px; background: #121B2B; border-radius: 20px; border: 1px solid #263552; overflow: hidden; position: relative; box-shadow: inset 0 2px 5px rgba(0,0,0,0.5); }
+  .xp-progress { height: 100%; background: linear-gradient(90deg, #c46d32, #E08B4F); width: 0%; transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 15px rgba(224,139,79,0.4); }
 
-  .coins-display { background: #1a1a1a; border: 2px solid #f1c40f; border-radius: 15px; padding: 12px 20px; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 20px rgba(241,196,15,0.15); }
+  .coins-display { background: #121B2B; border: 2px solid #E08B4F; border-radius: 15px; padding: 12px 20px; display: flex; align-items: center; gap: 10px; box-shadow: 0 0 20px rgba(224,139,79,0.15); }
   .coins-display .coin-icon { font-size: 28px; }
   .coins-display .coin-text { display: flex; flex-direction: column; }
-  .coins-display strong { color: #f1c40f; font-size: 24px; line-height: 1; }
-  .coins-display span { color: #8fa394; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+  .coins-display strong { color: #E08B4F; font-size: 24px; line-height: 1; }
+  .coins-display span { color: #a0b0c8; font-size: 10px; font-weight: 800; text-transform: uppercase; }
 
   /* BLOC D'ACTION (CALENDRIER + FORMULAIRE) */
   .action-card { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 25px; }
   
   .week-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-  .day-box { width: 70px; height: 90px; background: #0a0a0a; border: 2px solid #222; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; }
-  .day-box.active { border-color: #39ff14; background: rgba(57,255,20,0.05); box-shadow: 0 0 20px rgba(57,255,20,0.2); transform: translateY(-5px); }
+  .day-box { width: 70px; height: 90px; background: #121B2B; border: 2px solid #263552; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; }
+  .day-box.active { border-color: #E08B4F; background: rgba(224,139,79,0.05); box-shadow: 0 0 20px rgba(224,139,79,0.15); transform: translateY(-5px); }
   .day-box .day-name { font-size: 14px; font-weight: 800; color: #666; text-transform: uppercase; }
-  .day-box.active .day-name { color: #39ff14; }
+  .day-box.active .day-name { color: #E08B4F; }
   .day-box .day-icon { font-size: 28px; margin-top: 5px; filter: grayscale(100%) opacity(0.3); }
   .day-box.active .day-icon { filter: grayscale(0%) opacity(1); }
 
   .input-row { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
   .input-group { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 5px; }
-  .input-group label { font-size: 13px; color: #8fa394; font-weight: 600; margin-left: 5px; }
-  .input-pro { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 16px; outline: none; transition: 0.2s; }
-  .input-pro:focus { border-color: #39ff14; }
+  .input-group label { font-size: 13px; color: #a0b0c8; font-weight: 600; margin-left: 5px; }
+  .input-pro { width: 100%; padding: 15px; background: #121B2B; border: 1px solid #263552; border-radius: 10px; color: #fff; font-size: 16px; outline: none; transition: 0.2s; }
+  .input-pro:focus { border-color: #E08B4F; }
 
-  .btn-unified { background: #39ff14; color: #000; border: none; padding: 18px 40px; border-radius: 50px; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 0 30px rgba(57,255,20,0.3); text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 400px; margin: 0 auto; }
-  .btn-unified:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(57,255,20,0.6); background: #fff; }
-  .btn-unified:disabled { background: #333; color: #888; cursor: not-allowed; transform: none; box-shadow: none; border: 1px solid #444; }
+  .btn-unified { background: #E08B4F; color: #121B2B; border: none; padding: 18px 40px; border-radius: 50px; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 0 30px rgba(224,139,79,0.2); text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 400px; margin: 0 auto; }
+  .btn-unified:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(224,139,79,0.4); background: #f0a36a; }
+  .btn-unified:disabled { background: #263552; color: #8fa394; cursor: not-allowed; transform: none; box-shadow: none; border: 1px solid #333; }
 
   /* CARTES BILAN / OBJECTIF */
   .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-  .stat-box { background: #0a0a0a; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #222; }
-  .stat-box h3 { color: #8fa394; font-size: 11px; text-transform: uppercase; margin-bottom: 8px; }
+  .stat-box { background: #121B2B; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #263552; }
+  .stat-box h3 { color: #a0b0c8; font-size: 11px; text-transform: uppercase; margin-bottom: 8px; }
   .stat-box .val { font-size: 24px; font-weight: 800; color: #fff; }
-  .stat-box .val.green { color: #39ff14; }
+  .stat-box .val.green { color: #E08B4F; }
   .stat-box .val.orange { color: #f39c12; }
 
-  .coach-tip { background: rgba(57,255,20,0.05); border: 1px dashed #39ff14; padding: 10px; border-radius: 8px; color: #39ff14; font-size: 13px; text-align: center; margin-bottom: 15px; display: none; }
+  .coach-tip { background: rgba(224,139,79,0.05); border: 1px dashed #E08B4F; padding: 10px; border-radius: 8px; color: #E08B4F; font-size: 13px; text-align: center; margin-bottom: 15px; display: none; }
 
   /* SALLE DES TROPHÉES */
   .trophy-card-container { grid-column: 1 / -1; }
   .trophy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px; }
-  .trophy-item { background: #0a0a0a; border: 1px solid #222; border-radius: 12px; padding: 12px 5px; text-align: center; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .trophy-item { background: #121B2B; border: 1px solid #263552; border-radius: 12px; padding: 12px 5px; text-align: center; transition: 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; }
   .trophy-item.locked { opacity: 0.3; filter: grayscale(100%); }
-  .trophy-item.unlocked { border-color: #39ff14; background: rgba(57,255,20,0.05); box-shadow: 0 0 15px rgba(57,255,20,0.15); }
-  .trophy-item.unlocked .trophy-icon { filter: drop-shadow(0 0 8px rgba(57,255,20,0.6)); animation: float 3s ease-in-out infinite; }
+  .trophy-item.unlocked { border-color: #E08B4F; background: rgba(224,139,79,0.05); box-shadow: 0 0 15px rgba(224,139,79,0.15); }
+  .trophy-item.unlocked .trophy-icon { filter: drop-shadow(0 0 8px rgba(224,139,79,0.6)); animation: float 3s ease-in-out infinite; }
   .trophy-icon { font-size: 30px; margin-bottom: 5px; }
   .trophy-title { font-size: 11px; font-weight: 800; color: #fff; margin-bottom: 2px; }
-  .trophy-desc { font-size: 9px; color: #8fa394; }
+  .trophy-desc { font-size: 9px; color: #a0b0c8; }
   @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-3px); } 100% { transform: translateY(0px); } }
 
-  footer { background: #050505; color: #8fa394; padding: 30px; border-top: 1px solid #1f3d1f; text-align: center; font-size: 13px; }
+  footer { background: #0d1522; color: #a0b0c8; padding: 30px; border-top: 1px solid #263552; text-align: center; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -137,7 +136,7 @@
 
 <nav>
   <div class="nav-brand">
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/></svg>
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#E08B4F" stroke-width="3" stroke-linecap="round"/></svg>
     <div class="logo">NutriPulse</div>
   </div>
   <ul>
@@ -147,7 +146,6 @@
     <li><a href="suivi.html" class="active">Mon Suivi</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="#" class="btn-nav">Commencer</a>
 </nav>
 
 <section>
@@ -166,7 +164,6 @@
 
   <div class="dashboard-grid">
 
-    <!-- PROFIL -->
     <div class="card profile-card">
       <div class="avatar-level">
         <div class="level-shield">
@@ -201,14 +198,11 @@
       </div>
     </div>
 
-    <!-- BLOC D'ACTION UNIFIÉ (CALENDRIER + CHAMPS) -->
     <div class="card action-card">
       <h2 style="justify-content: center;">🔥 Mon Bilan Quotidien</h2>
       
-      <!-- Calendrier -->
       <div class="week-row" id="calendrier"></div>
       
-      <!-- Formulaire -->
       <div class="input-row">
         <div class="input-group">
           <label>Poids (kg)</label>
@@ -220,13 +214,11 @@
         </div>
       </div>
 
-      <!-- Bouton de validation -->
       <button class="btn-unified" id="btn-valider" onclick="enregistrerJournee()">
         <span>💾</span> Enregistrer ma journée
       </button>
     </div>
 
-    <!-- BILAN GLOBAL -->
     <div class="card">
       <h2>📊 Bilan Global</h2>
       <div class="stats-grid">
@@ -237,7 +229,6 @@
       </div>
     </div>
 
-    <!-- OBJECTIF -->
     <div class="card">
       <h2>🎯 Mon Objectif</h2>
       <select class="input-pro" id="objectif" onchange="afficherConseilObjectif()">
@@ -248,7 +239,6 @@
       <div class="coach-tip" id="coach-tip" style="margin-top: 15px;"></div>
     </div>
 
-    <!-- TROPHÉES -->
     <div class="card trophy-card-container">
       <h2>🏆 Salle des Trophées</h2>
       <div class="trophy-grid">
@@ -290,7 +280,7 @@
   let savedWeek = localStorage.getItem('nutripulse_week');
   let joursCoches = JSON.parse(localStorage.getItem('nutripulse_sport')) || [false, false, false, false, false, false, false];
 
-  // SI NOUVELLE SEMAINE : RESET DU CALENDRIER SEULEMENT
+  // SI NOUVELLE SEMAINE : RESET DU CALENDRIER SEULEMENT (XP et badges conservés)
   if (savedWeek !== currentWeekStr) {
     joursCoches = [false, false, false, false, false, false, false];
     localStorage.setItem('nutripulse_week', currentWeekStr);
@@ -371,15 +361,15 @@
     if (joursCoches[currentDayIndex]) {
       btnValider.innerHTML = `<span>✅</span> Journée déjà enregistrée`;
       btnValider.disabled = true;
-      btnValider.style.background = '#333';
-      btnValider.style.color = '#888';
+      btnValider.style.background = '#263552';
+      btnValider.style.color = '#8fa394';
       btnValider.style.boxShadow = 'none';
     } else {
       btnValider.innerHTML = `<span>💾</span> Enregistrer ma journée`;
       btnValider.disabled = false;
-      btnValider.style.background = '#39ff14';
-      btnValider.style.color = '#000';
-      btnValider.style.boxShadow = '0 0 30px rgba(57,255,20,0.3)';
+      btnValider.style.background = '#E08B4F';
+      btnValider.style.color = '#121B2B';
+      btnValider.style.boxShadow = '0 0 30px rgba(224,139,79,0.2)';
     }
   }
 
@@ -400,7 +390,7 @@
       if(joursCoches[index]) box.classList.add('active');
       
       if (index === currentDayIndex && !joursCoches[index]) {
-        box.style.border = "2px dashed #39ff14"; 
+        box.style.border = "2px dashed #E08B4F"; 
       }
 
       box.innerHTML = `
