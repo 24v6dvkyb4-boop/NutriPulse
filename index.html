@@ -4,77 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NutriPulse — Coach Sport & Nutrition Intelligent</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💪</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23121B2B'/><rect x='10' y='40' width='10' height='20' rx='2' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='80' y='40' width='10' height='20' rx='2' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='25' y='30' width='15' height='40' rx='4' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='60' y='30' width='15' height='40' rx='4' fill='none' stroke='%23E08B4F' stroke-width='6'/><line x1='40' y1='50' x2='60' y2='50' stroke='%23E08B4F' stroke-width='6' stroke-linecap='round'/></svg>">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-  body { background: #0d0d0d; color: #fff; line-height: 1.6; }
+  body { background: #121B2B; color: #fff; line-height: 1.6; }
   a { text-decoration: none; }
 
   /* NAVBAR */
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #121B2B; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #263552; }
   .nav-brand { display: flex; align-items: center; gap: 10px; }
-  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px #39ff14); }
-  .logo { font-size: 24px; font-weight: 800; color: #39ff14; letter-spacing: 1px; text-shadow: 0 0 12px #39ff14; }
-  nav ul { display: flex; gap: 28px; list-style: none; }
+  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px rgba(224,139,79,0.4)); }
+  .logo { font-size: 24px; font-weight: 800; color: #E08B4F; letter-spacing: 1px; text-shadow: 0 0 12px rgba(224,139,79,0.3); }
+  nav ul { display: flex; gap: 20px; list-style: none; }
   nav ul li a { color: #cfd8cf; font-weight: 600; font-size: 15px; transition: color 0.2s; }
-  nav ul li a:hover, nav ul li a.active { color: #39ff14; }
-  .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
+  nav ul li a:hover, nav ul li a.active { color: #E08B4F; }
 
   /* HERO */
-  .hero { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 90px 40px; flex-wrap: wrap; background: radial-gradient(circle at 80% 20%, #122512 0%, #0d0d0d 60%); }
+  .hero { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 90px 40px; flex-wrap: wrap; background: radial-gradient(circle at 80% 20%, #1C2D4A 0%, #121B2B 60%); }
   .hero-text { flex: 1; min-width: 280px; }
-  .hero-text h1 { font-size: 54px; line-height: 1.1; margin-bottom: 20px; color: #39ff14; text-shadow: 0 0 25px rgba(57,255,20,0.6); }
-  .hero-text p { font-size: 18px; color: #b8c9bf; margin-bottom: 30px; max-width: 480px; }
+  .hero-text h1 { font-size: 54px; line-height: 1.1; margin-bottom: 20px; color: #fff; text-shadow: 0 0 25px rgba(255,255,255,0.1); }
+  .hero-text h1 span { color: #E08B4F; }
+  .hero-text p { font-size: 18px; color: #a0b0c8; margin-bottom: 30px; max-width: 480px; }
   .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
-  .btn-primary { background: #39ff14; color: #0d0d0d; padding: 15px 32px; border-radius: 40px; font-weight: 800; font-size: 16px; box-shadow: 0 0 20px rgba(57,255,20,0.4); }
-  .btn-secondary { background: transparent; color: #39ff14; border: 2px solid #39ff14; padding: 13px 30px; border-radius: 40px; font-weight: 700; font-size: 16px; }
+  .btn-primary { background: #E08B4F; color: #121B2B; padding: 15px 32px; border-radius: 40px; font-weight: 800; font-size: 16px; box-shadow: 0 0 20px rgba(224,139,79,0.3); transition: 0.2s; }
+  .btn-primary:hover { transform: translateY(-3px); background: #f0a36a; }
+  .btn-secondary { background: transparent; color: #E08B4F; border: 2px solid #E08B4F; padding: 13px 30px; border-radius: 40px; font-weight: 700; font-size: 16px; transition: 0.2s; }
+  .btn-secondary:hover { background: rgba(224,139,79,0.1); transform: translateY(-3px); }
   .hero-img { flex: 1; min-width: 260px; display: flex; justify-content: center; }
-  .hero-circle { width: 320px; height: 320px; border-radius: 50%; border: 2px solid #39ff14; box-shadow: 0 0 40px rgba(57,255,20,0.4), inset 0 0 40px rgba(57,255,20,0.15); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(57,255,20,0.08) 0%, transparent 70%); animation: float 4s ease-in-out infinite; }
-  .hero-circle svg { width: 170px; height: 170px; filter: drop-shadow(0 0 15px #39ff14); }
+  .hero-circle { width: 320px; height: 320px; border-radius: 50%; border: 2px solid #E08B4F; box-shadow: 0 0 40px rgba(224,139,79,0.2), inset 0 0 40px rgba(224,139,79,0.1); display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(224,139,79,0.05) 0%, transparent 70%); animation: float 4s ease-in-out infinite; }
+  .hero-circle svg { width: 170px; height: 170px; filter: drop-shadow(0 0 15px rgba(224,139,79,0.5)); }
   @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
 
   /* SECTIONS */
   section { padding: 80px 40px; }
   .section-title { text-align: center; margin-bottom: 50px; }
-  .section-title h2 { font-size: 38px; color: #39ff14; margin-bottom: 10px; text-shadow: 0 0 15px rgba(57,255,20,0.4); }
-  .section-title p { color: #8fa394; font-size: 17px; }
+  .section-title h2 { font-size: 38px; color: #E08B4F; margin-bottom: 10px; }
+  .section-title p { color: #a0b0c8; font-size: 17px; }
 
-  /* CALCULATEUR IMC */
-  .bmi-section { text-align: center; background: #0a1a0a; border-bottom: 1px solid #1f3d1f; }
-  .bmi-box { background: #141414; border: 1px solid #39ff14; border-radius: 20px; padding: 40px; max-width: 500px; margin: 0 auto; box-shadow: 0 0 30px rgba(57,255,20,0.15); }
-  .bmi-box input { width: 100%; padding: 15px; margin-bottom: 15px; background: #0d0d0d; border: 1px solid #2a5c2a; border-radius: 10px; color: #fff; font-size: 16px; outline: none; font-family: 'Montserrat', sans-serif; }
-  .bmi-box input:focus { border-color: #39ff14; }
-  .bmi-box button { width: 100%; background: #39ff14; color: #0d0d0d; padding: 15px; border: none; border-radius: 10px; font-weight: 800; font-size: 18px; cursor: pointer; transition: 0.2s; font-family: 'Montserrat', sans-serif; }
-  .bmi-box button:hover { background: #2ecc71; box-shadow: 0 0 15px rgba(57,255,20,0.5); }
-  #resultat-imc { margin-top: 20px; font-size: 20px; font-weight: 800; color: #fff; }
-
-  /* POURQUOI */
-  .why-section { background: #111; border-bottom: 1px solid #1f3d1f; text-align: center; }
-  .why-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
-  .why-item { flex: 1; min-width: 250px; padding: 30px; background: #1a1a1a; border-radius: 15px; border: 1px solid #2a5c2a; }
-  .why-item h3 { color: #39ff14; margin-bottom: 10px; font-size: 22px; }
-  
   /* CARDS */
   .cards { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; }
-  .card { background: #141414; border: 1px solid #2a5c2a; border-radius: 18px; padding: 35px 25px; width: 280px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
-  .card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 0 30px rgba(57,255,20,0.3); border-color: #39ff14; }
+  .card { background: #1C2D4A; border: 1px solid #263552; border-radius: 18px; padding: 35px 25px; width: 280px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+  .card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 0 30px rgba(224,139,79,0.15); border-color: #E08B4F; }
   .card .icon { font-size: 50px; margin-bottom: 15px; }
   .card h3 { font-size: 22px; margin-bottom: 10px; color: #fff; }
-  .card p { color: #8fa394; font-size: 15px; }
+  .card p { color: #a0b0c8; font-size: 15px; }
 
   /* TÉMOIGNAGES */
-  .testimonials { background: #0d0d0d; text-align: center; }
-  .stars { color: #f1c40f; font-size: 20px; margin-bottom: 10px; }
-  .testi-name { color: #39ff14; font-weight: bold; margin-top: 15px; display: block; }
+  .testimonials { background: #0d1522; text-align: center; }
+  .stars { color: #E08B4F; font-size: 20px; margin-bottom: 10px; }
+  .testi-name { color: #E08B4F; font-weight: bold; margin-top: 15px; display: block; }
 
-  /* FOOTER COMPLET */
-  footer { background: #050505; color: #8fa394; padding: 50px 40px 25px; border-top: 1px solid #1f3d1f; }
+  /* CALCULATEUR IMC */
+  .bmi-section { text-align: center; background: #121B2B; border-top: 1px solid #263552; }
+  .bmi-box { background: #1C2D4A; border: 1px solid #E08B4F; border-radius: 20px; padding: 40px; max-width: 500px; margin: 0 auto; box-shadow: 0 0 30px rgba(224,139,79,0.1); }
+  .bmi-box input { width: 100%; padding: 15px; margin-bottom: 15px; background: #121B2B; border: 1px solid #263552; border-radius: 10px; color: #fff; font-size: 16px; outline: none; font-family: 'Montserrat', sans-serif; }
+  .bmi-box input:focus { border-color: #E08B4F; }
+  .bmi-box button { width: 100%; background: #E08B4F; color: #121B2B; padding: 15px; border: none; border-radius: 10px; font-weight: 800; font-size: 18px; cursor: pointer; transition: 0.2s; font-family: 'Montserrat', sans-serif; }
+  .bmi-box button:hover { background: #f0a36a; }
+  #resultat-imc { margin-top: 20px; font-size: 20px; font-weight: 800; color: #fff; }
+
+  /* FOOTER */
+  footer { background: #0d1522; color: #a0b0c8; padding: 50px 40px 25px; border-top: 1px solid #263552; }
   .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; text-align: left; }
   .footer-grid h4 { color: #fff; margin-bottom: 12px; font-size: 16px; }
-  .footer-grid a { display: block; color: #8fa394; font-size: 14px; margin-bottom: 6px; transition: color 0.2s; }
-  .footer-grid a:hover { color: #39ff14; }
-  .footer-bottom { text-align: center; border-top: 1px solid #1f3d1f; padding-top: 20px; font-size: 13px; }
+  .footer-grid a { display: block; color: #a0b0c8; font-size: 14px; margin-bottom: 6px; transition: color 0.2s; }
+  .footer-grid a:hover { color: #E08B4F; }
+  .footer-bottom { text-align: center; border-top: 1px solid #263552; padding-top: 20px; font-size: 13px; }
 
   @media (max-width: 700px) {
     nav ul { display: none; }
@@ -90,22 +86,21 @@
 
 <nav>
   <div class="nav-brand">
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/></svg>
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#E08B4F" stroke-width="3" stroke-linecap="round"/></svg>
     <div class="logo">NutriPulse</div>
   </div>
   <ul>
     <li><a href="index.html" class="active">Accueil</a></li>
     <li><a href="exercices.html">Exercices</a></li>
     <li><a href="fuel.html">Fuel (Nutrition)</a></li>
-    <li><a href="suivi.html">Mon Suivi</a></li> <!-- NOUVEAU LIEN -->
+    <li><a href="suivi.html">Mon Suivi</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="#" class="btn-nav">Commencer</a>
 </nav>
 
 <header class="hero">
   <div class="hero-text">
-    <h1>Ton coach sport & nutrition intelligent</h1>
+    <h1>Ton coach sport & nutrition <span>intelligent</span></h1>
     <p>NutriPulse t'accompagne chaque jour avec des programmes d'exercices adaptés et des conseils nutrition pour un équilibre sain et durable.</p>
     <div class="hero-buttons">
       <a href="exercices.html" class="btn-primary">Voir les exercices</a>
@@ -114,10 +109,48 @@
   </div>
   <div class="hero-img">
     <div class="hero-circle">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#E08B4F" stroke-width="3" stroke-linecap="round"/></svg>
     </div>
   </div>
 </header>
+
+<section>
+  <div class="section-title">
+    <h2>Pourquoi NutriPulse ?</h2>
+    <p>L'équilibre sans te ruiner.</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">💎</div>
+      <h3>100% Gratuit</h3>
+      <p>Accède à toutes nos vidéos et recettes sans jamais sortir ta carte bancaire.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🎯</div>
+      <h3>Sans engagement</h3>
+      <p>Entraîne-toi quand tu veux, où tu veux. Aucune limite de temps.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="section-title">
+    <h2>Ils ont changé leur quotidien</h2>
+    <p>Des résultats concrets, une vraie motivation</p>
+  </div>
+  <div class="cards">
+    <div class="card" style="background: #1C2D4A;">
+      <div class="stars">★★★★★</div>
+      <p>"Grâce à NutriPulse, j'ai enfin trouvé un équilibre. Le fait que ce soit gratuit change tout."</p>
+      <span class="testi-name">— Sarah, 28 ans</span>
+    </div>
+    <div class="card" style="background: #1C2D4A;">
+      <div class="stars">★★★★★</div>
+      <p>"Les recettes sont claires et délicieuses. J'ai perdu 5 kg sans me priver."</p>
+      <span class="testi-name">— Thomas, 34 ans</span>
+    </div>
+  </div>
+</section>
 
 <section class="bmi-section">
   <div class="section-title">
@@ -129,66 +162,6 @@
     <input type="number" id="taille" placeholder="Ta taille (en cm) ex: 175">
     <button onclick="calculerIMC()">Calculer mon IMC</button>
     <div id="resultat-imc"></div>
-  </div>
-</section>
-
-<section class="why-section">
-  <div class="section-title">
-    <h2>Pourquoi NutriPulse ?</h2>
-    <p>L'équilibre sans te ruiner.</p>
-  </div>
-  <div class="why-grid">
-    <div class="why-item">
-      <h3>100% Gratuit</h3>
-      <p>Accède à toutes nos vidéos et recettes sans jamais sortir ta carte bancaire.</p>
-    </div>
-    <div class="why-item">
-      <h3>Sans engagement</h3>
-      <p>Entraîne-toi quand tu veux, où tu veux. Aucune limite de temps.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="section-title">
-    <h2>Explore NutriPulse</h2>
-    <p>Clique pour découvrir nos programmes</p>
-  </div>
-  <div class="cards">
-    <a href="exercices.html" class="card" style="text-decoration:none;">
-      <div class="icon">🏋️</div>
-      <h3>Exercices</h3>
-      <p>Des vidéos et des programmes pour t'entraîner.</p>
-    </a>
-    <a href="fuel.html" class="card" style="text-decoration:none;">
-      <div class="icon">🥗</div>
-      <h3>Fuel (Nutrition)</h3>
-      <p>Des recettes saines adaptées à tes objectifs.</p>
-    </a>
-    <a href="suivi.html" class="card" style="text-decoration:none;">
-      <div class="icon">📅</div>
-      <h3>Mon Suivi</h3>
-      <p>Coche tes jours de sport et garde ta motivation.</p>
-    </a>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="section-title">
-    <h2>Ils ont changé leur quotidien</h2>
-    <p>Des résultats concrets, une vraie motivation</p>
-  </div>
-  <div class="cards">
-    <div class="card" style="background: #141414;">
-      <div class="stars">★★★★★</div>
-      <p>"Grâce à NutriPulse, j'ai enfin trouvé un équilibre. Le fait que ce soit gratuit change tout."</p>
-      <span class="testi-name">— Sarah, 28 ans</span>
-    </div>
-    <div class="card" style="background: #141414;">
-      <div class="stars">★★★★★</div>
-      <p>"Les recettes sont claires et délicieuses. J'ai perdu 5 kg sans me priver."</p>
-      <span class="testi-name">— Thomas, 34 ans</span>
-    </div>
   </div>
 </section>
 
@@ -218,7 +191,6 @@
 </footer>
 
 <script>
-  // --- CALCULATEUR IMC AVEC SAUVEGARDE ---
   function calculerIMC() {
     const poids = parseFloat(document.getElementById('poids').value);
     const tailleCm = parseFloat(document.getElementById('taille').value);
@@ -235,28 +207,11 @@
     let interpretation = ""; let couleur = "";
     
     if (imc < 18.5) { interpretation = "Insuffisance pondérale"; couleur = "#f39c12"; }
-    else if (imc >= 18.5 && imc < 25) { interpretation = "Corpulence normale (Bonne santé)"; couleur = "#39ff14"; }
+    else if (imc >= 18.5 && imc < 25) { interpretation = "Corpulence normale (Bonne santé)"; couleur = "#E08B4F"; }
     else if (imc >= 25 && imc < 30) { interpretation = "Surpoids"; couleur = "#f39c12"; }
     else { interpretation = "Obésité"; couleur = "#ff4d4d"; }
 
-    resultatDiv.innerHTML = `Ton IMC est de <span style="color: ${couleur}; font-size: 24px;">${imc}</span><br><span style="font-size: 16px; color: #b8c9bf;">${interpretation}</span>`;
-    
-    // SAUVEGARDE dans le navigateur
-    localStorage.setItem('nutripulse_imc', imc);
-    localStorage.setItem('nutripulse_imc_texte', interpretation);
-    localStorage.setItem('nutripulse_imc_couleur', couleur);
-  }
-
-  // Au chargement de la page, on vérifie s'il y a un IMC sauvegardé
-  window.onload = function() {
-    const savedImc = localStorage.getItem('nutripulse_imc');
-    const savedText = localStorage.getItem('nutripulse_imc_texte');
-    const savedColor = localStorage.getItem('nutripulse_imc_couleur');
-    
-    if(savedImc) {
-      const resultatDiv = document.getElementById('resultat-imc');
-      resultatDiv.innerHTML = `Dernier IMC enregistré : <span style="color: ${savedColor}; font-size: 24px;">${savedImc}</span><br><span style="font-size: 16px; color: #b8c9bf;">${savedText}</span>`;
-    }
+    resultatDiv.innerHTML = `Ton IMC est de <span style="color: ${couleur}; font-size: 24px;">${imc}</span><br><span style="font-size: 16px; color: #a0b0c8;">${interpretation}</span>`;
   }
 </script>
 </body>
