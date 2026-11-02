@@ -71,6 +71,13 @@
   .stars { color: #E08B4F; font-size: 20px; margin-bottom: 10px; }
   .testi-name { color: #E08B4F; font-weight: bold; margin-top: 15px; display: block; }
 
+  /* CTA FINAL */
+  .cta-section { background: linear-gradient(135deg, #121B2B 0%, #1a2a1a 100%); text-align: center; border-top: 1px solid #263552; }
+  .cta-section h2 { font-size: 42px; color: #fff; margin-bottom: 20px; font-weight: 800; }
+  .cta-section h2 span { color: #E08B4F; }
+  .cta-section p { color: #a0b0c8; font-size: 18px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
   /* FOOTER */
   footer { background: #0d1522; color: #a0b0c8; padding: 50px 40px 25px; border-top: 1px solid #263552; }
   .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; text-align: left; }
@@ -86,6 +93,7 @@
     .hero-buttons { justify-content: center; }
     .hero-circle { width: 240px; height: 240px; }
     .footer-grid { flex-direction: column; text-align: center; align-items: center; }
+    .cta-section h2 { font-size: 32px; }
   }
 </style>
 </head>
@@ -100,7 +108,7 @@
     <li><a href="index.html" class="active">Accueil</a></li>
     <li><a href="exercices.html">Exercices</a></li>
     <li><a href="fuel.html">Fuel (Nutrition)</a></li>
-    <li><a href="suivi.html">Mon Suivi</a></li>
+    <li><a href="suivi.html">Voir le suivi</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
@@ -122,7 +130,7 @@
   </div>
 </header>
 
-<!-- 2. CALCULATEUR IMC (Juste en dessous) -->
+<!-- 2. CALCULATEUR IMC -->
 <section class="bmi-section">
   <div class="section-title">
     <h2>Calcule ton IMC</h2>
@@ -179,7 +187,7 @@
   </div>
 </section>
 
-<!-- 5. TÉMOIGNAGES (En dernier) -->
+<!-- 5. TÉMOIGNAGES -->
 <section class="testimonials">
   <div class="section-title">
     <h2>Ils ont changé leur quotidien</h2>
@@ -199,7 +207,17 @@
   </div>
 </section>
 
-<!-- 6. FOOTER -->
+<!-- 6. CTA FINAL (CE QUI MANQUAIT) -->
+<section class="cta-section">
+  <h2>Prêt à commencer ton <span>équilibre</span> ?</h2>
+  <p>Rejoins des milliers de personnes qui prennent soin d'elles avec NutriPulse. C'est 100% gratuit et sans engagement.</p>
+  <div class="cta-buttons">
+    <a href="suivi.html" class="btn-primary">Créer mon suivi gratuit</a>
+    <a href="exercices.html" class="btn-secondary">Voir les exercices</a>
+  </div>
+</section>
+
+<!-- 7. FOOTER -->
 <footer>
   <div class="footer-grid">
     <div>
