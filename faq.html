@@ -4,35 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NutriPulse — FAQ</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23121B2B'/><rect x='10' y='40' width='10' height='20' rx='2' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='80' y='40' width='10' height='20' rx='2' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='25' y='30' width='15' height='40' rx='4' fill='none' stroke='%23E08B4F' stroke-width='6'/><rect x='60' y='30' width='15' height='40' rx='4' fill='none' stroke='%23E08B4F' stroke-width='6'/><line x1='40' y1='50' x2='60' y2='50' stroke='%23E08B4F' stroke-width='6' stroke-linecap='round'/></svg>">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d0d0d; color: #fff; line-height: 1.6; }
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+  body { background: #121B2B; color: #fff; line-height: 1.6; }
   a { text-decoration: none; }
 
-  /* NAVBAR (identique) */
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #0d0d0d; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #1f3d1f; }
+  /* NAVBAR */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #121B2B; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #263552; }
   .nav-brand { display: flex; align-items: center; gap: 10px; }
-  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px #39ff14); }
-  .logo { font-size: 24px; font-weight: 800; color: #39ff14; letter-spacing: 1px; text-shadow: 0 0 12px #39ff14; }
-  nav ul { display: flex; gap: 28px; list-style: none; }
+  .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px rgba(224,139,79,0.4)); }
+  .logo { font-size: 24px; font-weight: 800; color: #E08B4F; letter-spacing: 1px; }
+  nav ul { display: flex; gap: 20px; list-style: none; }
   nav ul li a { color: #cfd8cf; font-weight: 600; font-size: 15px; transition: color 0.2s; }
-  nav ul li a:hover, nav ul li a.active { color: #39ff14; }
-  .btn-nav { background: #39ff14; color: #0d0d0d; padding: 10px 22px; border-radius: 30px; font-weight: 800; font-size: 14px; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
+  nav ul li a:hover, nav ul li a.active { color: #E08B4F; }
 
   /* SECTION FAQ */
   section { padding: 80px 40px; max-width: 800px; margin: 0 auto; }
   .section-title { text-align: center; margin-bottom: 50px; }
-  .section-title h1 { font-size: 42px; color: #39ff14; text-shadow: 0 0 15px rgba(57,255,20,0.4); margin-bottom: 10px; }
-  .section-title p { color: #8fa394; font-size: 17px; }
+  .section-title h1 { font-size: 42px; color: #E08B4F; margin-bottom: 10px; }
+  .section-title p { color: #a0b0c8; font-size: 17px; }
 
-  .faq-item { background: #141414; border: 1px solid #2a5c2a; border-radius: 12px; padding: 25px; margin-bottom: 20px; transition: border-color 0.2s, box-shadow 0.2s; }
-  .faq-item:hover { border-color: #39ff14; box-shadow: 0 0 15px rgba(57,255,20,0.15); }
-  .faq-item h3 { color: #39ff14; margin-bottom: 12px; font-size: 20px; }
-  .faq-item p { color: #b8c9bf; font-size: 16px; }
-  .faq-item a { color: #39ff14; text-decoration: underline; }
+  .faq-item { background: #1C2D4A; border: 1px solid #263552; border-radius: 12px; padding: 25px; margin-bottom: 20px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .faq-item:hover { border-color: #E08B4F; box-shadow: 0 0 15px rgba(224,139,79,0.1); }
+  .faq-item h3 { color: #E08B4F; margin-bottom: 12px; font-size: 20px; }
+  .faq-item p { color: #cfd8cf; font-size: 16px; }
+  .faq-item a { color: #E08B4F; text-decoration: underline; }
 
-  /* FOOTER SIMPLE */
-  footer { background: #050505; color: #8fa394; padding: 40px; border-top: 1px solid #1f3d1f; text-align: center; font-size: 14px; }
+  /* FOOTER */
+  footer { background: #0d1522; color: #a0b0c8; padding: 40px; border-top: 1px solid #263552; text-align: center; font-size: 14px; }
 
   @media (max-width: 700px) {
     nav ul { display: none; }
@@ -42,28 +43,20 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <div class="nav-brand">
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="4" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/>
-      <rect x="52" y="26" width="8" height="12" rx="2" stroke="#39ff14" stroke-width="3"/>
-      <rect x="14" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/>
-      <rect x="40" y="22" width="10" height="20" rx="3" stroke="#39ff14" stroke-width="3"/>
-      <line x1="24" y1="32" x2="40" y2="32" stroke="#39ff14" stroke-width="3" stroke-linecap="round"/>
-    </svg>
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="52" y="26" width="8" height="12" rx="2" stroke="#E08B4F" stroke-width="3"/><rect x="14" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><rect x="40" y="22" width="10" height="20" rx="3" stroke="#E08B4F" stroke-width="3"/><line x1="24" y1="32" x2="40" y2="32" stroke="#E08B4F" stroke-width="3" stroke-linecap="round"/></svg>
     <div class="logo">NutriPulse</div>
   </div>
   <ul>
     <li><a href="index.html">Accueil</a></li>
     <li><a href="exercices.html">Exercices</a></li>
     <li><a href="fuel.html">Fuel (Nutrition)</a></li>
+    <li><a href="suivi.html">Mon Suivi</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="#" class="btn-nav">Commencer</a>
 </nav>
 
-<!-- CONTENU FAQ -->
 <section>
   <div class="section-title">
     <h1>Foire Aux Questions</h1>
@@ -91,7 +84,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2025 NutriPulse. Tous droits réservés.</p>
 </footer>
