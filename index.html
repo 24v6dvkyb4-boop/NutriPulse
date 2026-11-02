@@ -15,7 +15,7 @@
   nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #121B2B; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #263552; }
   .nav-brand { display: flex; align-items: center; gap: 10px; }
   .nav-brand svg { width: 32px; height: 32px; filter: drop-shadow(0 0 6px rgba(224,139,79,0.4)); }
-  .logo { font-size: 24px; font-weight: 800; color: #E08B4F; letter-spacing: 1px; text-shadow: 0 0 12px rgba(224,139,79,0.3); }
+  .logo { font-size: 24px; font-weight: 800; color: #E08B4F; letter-spacing: 1px; }
   nav ul { display: flex; gap: 20px; list-style: none; }
   nav ul li a { color: #cfd8cf; font-weight: 600; font-size: 15px; transition: color 0.2s; }
   nav ul li a:hover, nav ul li a.active { color: #E08B4F; }
@@ -23,7 +23,7 @@
   /* HERO */
   .hero { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 90px 40px; flex-wrap: wrap; background: radial-gradient(circle at 80% 20%, #1C2D4A 0%, #121B2B 60%); }
   .hero-text { flex: 1; min-width: 280px; }
-  .hero-text h1 { font-size: 54px; line-height: 1.1; margin-bottom: 20px; color: #fff; text-shadow: 0 0 25px rgba(255,255,255,0.1); }
+  .hero-text h1 { font-size: 54px; line-height: 1.1; margin-bottom: 20px; color: #fff; }
   .hero-text h1 span { color: #E08B4F; }
   .hero-text p { font-size: 18px; color: #a0b0c8; margin-bottom: 30px; max-width: 480px; }
   .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
@@ -42,6 +42,22 @@
   .section-title h2 { font-size: 38px; color: #E08B4F; margin-bottom: 10px; }
   .section-title p { color: #a0b0c8; font-size: 17px; }
 
+  /* CALCULATEUR IMC */
+  .bmi-section { text-align: center; background: #0d1522; border-bottom: 1px solid #263552; }
+  .bmi-box { background: #1C2D4A; border: 1px solid #E08B4F; border-radius: 20px; padding: 40px; max-width: 500px; margin: 0 auto; box-shadow: 0 0 30px rgba(224,139,79,0.1); }
+  .bmi-box input { width: 100%; padding: 15px; margin-bottom: 15px; background: #121B2B; border: 1px solid #263552; border-radius: 10px; color: #fff; font-size: 16px; outline: none; font-family: 'Montserrat', sans-serif; }
+  .bmi-box input:focus { border-color: #E08B4F; }
+  .bmi-box button { width: 100%; background: #E08B4F; color: #121B2B; padding: 15px; border: none; border-radius: 10px; font-weight: 800; font-size: 18px; cursor: pointer; transition: 0.2s; font-family: 'Montserrat', sans-serif; }
+  .bmi-box button:hover { background: #f0a36a; }
+  #resultat-imc { margin-top: 20px; font-size: 20px; font-weight: 800; color: #fff; }
+
+  /* POURQUOI */
+  .why-section { background: #121B2B; text-align: center; }
+  .why-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
+  .why-item { flex: 1; min-width: 250px; padding: 30px; background: #1C2D4A; border-radius: 15px; border: 1px solid #263552; }
+  .why-item h3 { color: #E08B4F; margin-bottom: 10px; font-size: 22px; }
+  .why-item p { color: #a0b0c8; }
+  
   /* CARDS */
   .cards { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; }
   .card { background: #1C2D4A; border: 1px solid #263552; border-radius: 18px; padding: 35px 25px; width: 280px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
@@ -51,18 +67,9 @@
   .card p { color: #a0b0c8; font-size: 15px; }
 
   /* TÉMOIGNAGES */
-  .testimonials { background: #0d1522; text-align: center; }
+  .testimonials { background: #0d1522; text-align: center; border-top: 1px solid #263552; }
   .stars { color: #E08B4F; font-size: 20px; margin-bottom: 10px; }
   .testi-name { color: #E08B4F; font-weight: bold; margin-top: 15px; display: block; }
-
-  /* CALCULATEUR IMC */
-  .bmi-section { text-align: center; background: #121B2B; border-top: 1px solid #263552; }
-  .bmi-box { background: #1C2D4A; border: 1px solid #E08B4F; border-radius: 20px; padding: 40px; max-width: 500px; margin: 0 auto; box-shadow: 0 0 30px rgba(224,139,79,0.1); }
-  .bmi-box input { width: 100%; padding: 15px; margin-bottom: 15px; background: #121B2B; border: 1px solid #263552; border-radius: 10px; color: #fff; font-size: 16px; outline: none; font-family: 'Montserrat', sans-serif; }
-  .bmi-box input:focus { border-color: #E08B4F; }
-  .bmi-box button { width: 100%; background: #E08B4F; color: #121B2B; padding: 15px; border: none; border-radius: 10px; font-weight: 800; font-size: 18px; cursor: pointer; transition: 0.2s; font-family: 'Montserrat', sans-serif; }
-  .bmi-box button:hover { background: #f0a36a; }
-  #resultat-imc { margin-top: 20px; font-size: 20px; font-weight: 800; color: #fff; }
 
   /* FOOTER */
   footer { background: #0d1522; color: #a0b0c8; padding: 50px 40px 25px; border-top: 1px solid #263552; }
@@ -98,6 +105,7 @@
   </ul>
 </nav>
 
+<!-- 1. HERO -->
 <header class="hero">
   <div class="hero-text">
     <h1>Ton coach sport & nutrition <span>intelligent</span></h1>
@@ -114,25 +122,64 @@
   </div>
 </header>
 
-<section>
+<!-- 2. CALCULATEUR IMC (Juste en dessous) -->
+<section class="bmi-section">
+  <div class="section-title">
+    <h2>Calcule ton IMC</h2>
+    <p>Découvre ton Indice de Masse Corporelle en 2 secondes</p>
+  </div>
+  <div class="bmi-box">
+    <input type="number" id="poids" placeholder="Ton poids (en kg) ex: 75">
+    <input type="number" id="taille" placeholder="Ta taille (en cm) ex: 175">
+    <button onclick="calculerIMC()">Calculer mon IMC</button>
+    <div id="resultat-imc"></div>
+  </div>
+</section>
+
+<!-- 3. POURQUOI NUTRIPULSE -->
+<section class="why-section">
   <div class="section-title">
     <h2>Pourquoi NutriPulse ?</h2>
     <p>L'équilibre sans te ruiner.</p>
   </div>
-  <div class="cards">
-    <div class="card">
-      <div class="icon">💎</div>
+  <div class="why-grid">
+    <div class="why-item">
       <h3>100% Gratuit</h3>
       <p>Accède à toutes nos vidéos et recettes sans jamais sortir ta carte bancaire.</p>
     </div>
-    <div class="card">
-      <div class="icon">🎯</div>
+    <div class="why-item">
       <h3>Sans engagement</h3>
       <p>Entraîne-toi quand tu veux, où tu veux. Aucune limite de temps.</p>
     </div>
   </div>
 </section>
 
+<!-- 4. EXPLORE NUTRIPULSE -->
+<section>
+  <div class="section-title">
+    <h2>Explore NutriPulse</h2>
+    <p>Clique pour découvrir nos programmes</p>
+  </div>
+  <div class="cards">
+    <a href="exercices.html" class="card" style="text-decoration:none;">
+      <div class="icon">🏋️</div>
+      <h3>Exercices</h3>
+      <p>Des vidéos et des programmes pour t'entraîner.</p>
+    </a>
+    <a href="fuel.html" class="card" style="text-decoration:none;">
+      <div class="icon">🥗</div>
+      <h3>Fuel (Nutrition)</h3>
+      <p>Des recettes saines adaptées à tes objectifs.</p>
+    </a>
+    <a href="suivi.html" class="card" style="text-decoration:none;">
+      <div class="icon">📅</div>
+      <h3>Mon Suivi</h3>
+      <p>Coche tes jours de sport et garde ta motivation.</p>
+    </a>
+  </div>
+</section>
+
+<!-- 5. TÉMOIGNAGES (En dernier) -->
 <section class="testimonials">
   <div class="section-title">
     <h2>Ils ont changé leur quotidien</h2>
@@ -152,19 +199,7 @@
   </div>
 </section>
 
-<section class="bmi-section">
-  <div class="section-title">
-    <h2>Calcule ton IMC</h2>
-    <p>Découvre ton Indice de Masse Corporelle en 2 secondes</p>
-  </div>
-  <div class="bmi-box">
-    <input type="number" id="poids" placeholder="Ton poids (en kg) ex: 75">
-    <input type="number" id="taille" placeholder="Ta taille (en cm) ex: 175">
-    <button onclick="calculerIMC()">Calculer mon IMC</button>
-    <div id="resultat-imc"></div>
-  </div>
-</section>
-
+<!-- 6. FOOTER -->
 <footer>
   <div class="footer-grid">
     <div>
