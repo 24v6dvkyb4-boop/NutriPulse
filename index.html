@@ -71,20 +71,29 @@
   .stars { color: #E08B4F; font-size: 20px; margin-bottom: 10px; }
   .testi-name { color: #E08B4F; font-weight: bold; margin-top: 15px; display: block; }
 
-  /* CTA FINAL */
-  .cta-section { background: linear-gradient(135deg, #121B2B 0%, #1a2a1a 100%); text-align: center; border-top: 1px solid #263552; }
-  .cta-section h2 { font-size: 42px; color: #fff; margin-bottom: 20px; font-weight: 800; }
-  .cta-section h2 span { color: #E08B4F; }
-  .cta-section p { color: #a0b0c8; font-size: 18px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  /* FOOTER PROPRE */
+  footer { background: #0d1522; color: #a0b0c8; padding: 60px 40px 30px; border-top: 1px solid #263552; }
+  .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; text-align: left; max-width: 1200px; margin-left: auto; margin-right: auto; }
+  .footer-brand { max-width: 300px; }
+  .footer-brand h2 { font-size: 24px; color: #E08B4F; margin-bottom: 15px; font-weight: 800; }
+  .footer-brand p { font-size: 14px; color: #a0b0c8; }
+  .footer-col h4 { color: #fff; margin-bottom: 20px; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+  .footer-col a { display: block; color: #a0b0c8; font-size: 14px; margin-bottom: 10px; transition: color 0.2s; }
+  .footer-col a:hover { color: #E08B4F; }
+  
+  /* NEWSLETTER FOOTER */
+  .footer-newsletter { max-width: 250px; }
+  .footer-newsletter h4 { color: #fff; margin-bottom: 20px; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+  .footer-newsletter p { font-size: 13px; margin-bottom: 15px; }
+  .footer-newsletter input { width: 100%; padding: 12px; background: #121B2B; border: 1px solid #263552; border-radius: 8px; color: #fff; margin-bottom: 10px; outline: none; }
+  .footer-newsletter input:focus { border-color: #E08B4F; }
+  .footer-newsletter button { width: 100%; background: #E08B4F; color: #121B2B; border: none; padding: 12px; border-radius: 8px; font-weight: 800; cursor: pointer; transition: 0.2s; }
+  .footer-newsletter button:hover { background: #f0a36a; }
 
-  /* FOOTER */
-  footer { background: #0d1522; color: #a0b0c8; padding: 50px 40px 25px; border-top: 1px solid #263552; }
-  .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; text-align: left; }
-  .footer-grid h4 { color: #fff; margin-bottom: 12px; font-size: 16px; }
-  .footer-grid a { display: block; color: #a0b0c8; font-size: 14px; margin-bottom: 6px; transition: color 0.2s; }
-  .footer-grid a:hover { color: #E08B4F; }
-  .footer-bottom { text-align: center; border-top: 1px solid #263552; padding-top: 20px; font-size: 13px; }
+  .footer-bottom { text-align: center; border-top: 1px solid #263552; padding-top: 20px; font-size: 13px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .footer-bottom .socials { display: flex; gap: 15px; }
+  .footer-bottom .socials a { color: #a0b0c8; font-size: 18px; }
+  .footer-bottom .socials a:hover { color: #E08B4F; }
 
   @media (max-width: 700px) {
     nav ul { display: none; }
@@ -92,8 +101,8 @@
     .hero-text h1 { font-size: 36px; }
     .hero-buttons { justify-content: center; }
     .hero-circle { width: 240px; height: 240px; }
-    .footer-grid { flex-direction: column; text-align: center; align-items: center; }
-    .cta-section h2 { font-size: 32px; }
+    .footer-grid { flex-direction: column; align-items: center; text-align: center; }
+    .footer-bottom { flex-direction: column; }
   }
 </style>
 </head>
@@ -108,12 +117,11 @@
     <li><a href="index.html" class="active">Accueil</a></li>
     <li><a href="exercices.html">Exercices</a></li>
     <li><a href="fuel.html">Fuel (Nutrition)</a></li>
-    <li><a href="suivi.html">Voir le suivi</a></li>
+    <li><a href="suivi.html">Mon Suivi</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<!-- 1. HERO -->
 <header class="hero">
   <div class="hero-text">
     <h1>Ton coach sport & nutrition <span>intelligent</span></h1>
@@ -121,6 +129,7 @@
     <div class="hero-buttons">
       <a href="exercices.html" class="btn-primary">Voir les exercices</a>
       <a href="fuel.html" class="btn-secondary">Voir les recettes</a>
+      <a href="suivi.html" class="btn-secondary">Voir mon suivi</a>
     </div>
   </div>
   <div class="hero-img">
@@ -130,7 +139,6 @@
   </div>
 </header>
 
-<!-- 2. CALCULATEUR IMC -->
 <section class="bmi-section">
   <div class="section-title">
     <h2>Calcule ton IMC</h2>
@@ -144,7 +152,6 @@
   </div>
 </section>
 
-<!-- 3. POURQUOI NUTRIPULSE -->
 <section class="why-section">
   <div class="section-title">
     <h2>Pourquoi NutriPulse ?</h2>
@@ -162,7 +169,6 @@
   </div>
 </section>
 
-<!-- 4. EXPLORE NUTRIPULSE -->
 <section>
   <div class="section-title">
     <h2>Explore NutriPulse</h2>
@@ -187,7 +193,6 @@
   </div>
 </section>
 
-<!-- 5. TÉMOIGNAGES -->
 <section class="testimonials">
   <div class="section-title">
     <h2>Ils ont changé leur quotidien</h2>
@@ -207,26 +212,18 @@
   </div>
 </section>
 
-<!-- 6. CTA FINAL (CE QUI MANQUAIT) -->
-<section class="cta-section">
-  <h2>Prêt à commencer ton <span>équilibre</span> ?</h2>
-  <p>Rejoins des milliers de personnes qui prennent soin d'elles avec NutriPulse. C'est 100% gratuit et sans engagement.</p>
-  <div class="cta-buttons">
-    <a href="suivi.html" class="btn-primary">Créer mon suivi gratuit</a>
-    <a href="exercices.html" class="btn-secondary">Voir les exercices</a>
-  </div>
-</section>
-
-<!-- 7. FOOTER -->
+<!-- FOOTER PROPRE ET COMPLET -->
 <footer>
   <div class="footer-grid">
-    <div>
-      <div class="nav-brand" style="margin-bottom:10px;">
-        <div class="logo" style="font-size:20px;">NutriPulse</div>
-      </div>
-      <p style="font-size:14px; max-width:250px;">Ton coach sport & nutrition intelligent, chaque jour.</p>
+    
+    <!-- Colonne 1 : Marque -->
+    <div class="footer-brand">
+      <h2>NutriPulse</h2>
+      <p>Ton coach sport & nutrition intelligent, chaque jour.</p>
     </div>
-    <div>
+
+    <!-- Colonne 2 : Navigation -->
+    <div class="footer-col">
       <h4>Navigation</h4>
       <a href="index.html">Accueil</a>
       <a href="exercices.html">Exercices</a>
@@ -234,13 +231,35 @@
       <a href="suivi.html">Mon Suivi</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div>
+
+    <!-- Colonne 3 : Ressources -->
+    <div class="footer-col">
       <h4>Ressources</h4>
       <a href="faq.html">FAQ</a>
       <a href="mentions-legales.html">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+      <a href="#">CGU</a>
+    </div>
+
+    <!-- Colonne 4 : Newsletter -->
+    <div class="footer-newsletter">
+      <h4>Newsletter</h4>
+      <p>Reçois nos meilleurs conseils sport & nutrition.</p>
+      <input type="email" placeholder="Ton email">
+      <button>S'inscrire</button>
+    </div>
+
+  </div>
+
+  <!-- Bas du footer -->
+  <div class="footer-bottom">
+    <div>© 2025 NutriPulse. Tous droits réservés.</div>
+    <div class="socials">
+      <a href="#">📸</a> <!-- Instagram -->
+      <a href="#">🎵</a> <!-- TikTok -->
+      <a href="#">▶️</a> <!-- YouTube -->
     </div>
   </div>
-  <div class="footer-bottom">© 2025 NutriPulse. Tous droits réservés.</div>
 </footer>
 
 <script>
